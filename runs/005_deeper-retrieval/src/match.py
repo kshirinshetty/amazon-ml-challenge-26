@@ -18,9 +18,8 @@ THREADS = int(os.environ.get("OMP_NUM_THREADS") or os.cpu_count())  # Modal sets
 FOLD = pl.col("s1").hash(seed=42) % 5
 VALID_FOLD, TRAIN_FOLDS = 0, [1, 2, 3, 4]  # 20% validation, 80% training
 PSEUDO_HI, PSEUDO_LO = 0.97, 0.03  # --pseudo: confident test pairs of unseen countries become labels
-PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=511, min_data_in_leaf=50,
-              feature_fraction=0.8, bagging_fraction=0.8, bagging_freq=1, num_threads=THREADS, verbose=-1)
-ROUNDS, PATIENCE = 3000, 60
+PARAMS = dict(objective="binary", learning_rate=0.1, num_leaves=255, min_data_in_leaf=100,
+              feature_fraction=0.9, bagging_fraction=0.8, bagging_freq=1, num_threads=THREADS, verbose=-1)
 
 
 def assign(pairs, t):
@@ -107,9 +106,9 @@ def fit(run_dir, pseudo=False):
     va = f.filter(pl.col("fold") == VALID_FOLD).sample(fraction=0.25, seed=0)
     t0 = time.time()
     model = lgb.train(PARAMS, lgb.Dataset(tr.select(feats).to_numpy(), tr["label"].to_numpy()),
-                      num_boost_round=ROUNDS,
+                      num_boost_round=1000,
                       valid_sets=[lgb.Dataset(va.select(feats).to_numpy(), va["label"].to_numpy())],
-                      callbacks=[lgb.early_stopping(PATIENCE), lgb.log_evaluation(100)])
+                      callbacks=[lgb.early_stopping(30), lgb.log_evaluation(50)])
     train_s, n_train = time.time() - t0, len(tr)
     print(f"trained on {n_train} pairs in {train_s:.0f}s, best iter {model.best_iteration}")
     del tr, va
@@ -150,9 +149,7 @@ def write(s1_ids, pairs, col, path):
      .rename({"s1": "source1_entity_id"}).write_csv(path, separator="\t", quote_style="never"))
 
 
-def predict(run_dir, unseen_t=None):
-    """unseen_t: separate threshold for countries absent from training (France); output goes to
-    output_unseen{t}/ so it can be compared with output/ on the leaderboard."""
+def predict(run_dir):
     metrics = json.load(open(f"{run_dir}/metrics.json"))
     model = lgb.Booster(model_file=f"{run_dir}/model.txt")
     pairs = predict_pairs(model, pl.read_parquet(f"{WORK}/test_feats.parquet"), metrics["feats"])
@@ -160,22 +157,15 @@ def predict(run_dir, unseen_t=None):
     s1 = (pl.read_parquet(f"{WORK}/test.parquet", columns=["entity_id", "src", "country"])
           .filter(pl.col("src") == 1).select(s1="entity_id", country="country"))
     m = decide(pairs, metrics.get("rule", "threshold"), metrics["threshold"])
-    out = f"{run_dir}/output"
-    if unseen_t is not None:
-        seen = pl.read_parquet(f"{WORK}/train.parquet", columns=["country"])["country"].unique()
-        unseen = s1.filter(~pl.col("country").is_in(seen.implode())).select("s1")
-        m = pl.concat([m.join(unseen, on="s1", how="anti"),
-                       assign(pairs, 0.0).join(unseen, on="s1").filter(pl.col("p") >= unseen_t)])
-        out = f"{run_dir}/output_unseen{unseen_t}"
-    os.makedirs(out, exist_ok=True)
-    write(s1.select("s1"), m, "matched_entity_ids", f"{out}/matching_results.tsv")
-    write(s1.select("s1"), pairs, "candidate_entity_ids", f"{out}/candidate_pairs.tsv")
+    os.makedirs(f"{run_dir}/output", exist_ok=True)
+    write(s1.select("s1"), m, "matched_entity_ids", f"{run_dir}/output/matching_results.tsv")
+    write(s1.select("s1"), pairs, "candidate_entity_ids", f"{run_dir}/output/candidate_pairs.tsv")
     per = lambda df, name: df.group_by("s1").len(name)
     by_country = (s1.join(per(pairs, "cands"), on="s1", how="left").join(per(m, "matches"), on="s1", how="left")
                   .fill_null(0).group_by("country").agg(
                       n_s1=pl.len(), avg_candidates=pl.col("cands").mean(), avg_matches=pl.col("matches").mean(),
                       pct_empty=(pl.col("matches") == 0).mean() * 100).sort("country"))
-    metrics["test" if unseen_t is None else f"test_unseen{unseen_t}"] = {"n_s1": len(s1), "n_matches": len(m), "avg_candidates_per_s1": len(pairs) / len(s1),
+    metrics["test"] = {"n_s1": len(s1), "n_matches": len(m), "avg_candidates_per_s1": len(pairs) / len(s1),
                        "by_country": by_country.to_dicts()}
     json.dump(metrics, open(f"{run_dir}/metrics.json", "w"), indent=2)
     print(by_country)
@@ -192,5 +182,4 @@ if __name__ == "__main__":
     if sys.argv[1] == "fit":
         fit(sys.argv[2], pseudo="--pseudo" in sys.argv)
     else:
-        t = sys.argv[sys.argv.index("--unseen-t") + 1] if "--unseen-t" in sys.argv else None
-        predict(sys.argv[2], None if t is None else float(t))
+        predict(sys.argv[2])

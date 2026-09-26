@@ -117,30 +117,6 @@ def decoy_feats(c, rec, dec):
             .with_columns(s_num_in_q=(pl.col("s_num_mindiff") == 0).cast(pl.Int8)))
 
 
-def ambiguity_feats(c, rec):
-    """Can the pair be told apart from look-alikes? Records with no address or a made-up trade name
-    ("Umbraveramira" at the S1's exact address) are only safe when no other S1 shares the name/address."""
-    s1 = rec.filter(pl.col("src") == 1)
-    same_nm = s1.group_by("country", "nm").len("n")
-    same_ad = s1.filter(pl.col("ad") != "").group_by("country", "ad").len("n")
-    vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
-             .group_by("country", "tok").len("df").filter(pl.col("df") >= 2).select("country", "tok"))
-    q = rec.filter(pl.col("src") != 1).select(q="entity_id", country="country", q_nm="nm")
-    known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
-             .join(vocab.with_columns(k=pl.lit(1)), on=["country", "tok"], how="left")
-             .group_by("q").agg(q_known_frac=pl.col("k").fill_null(0).mean()))
-    s = s1.select(s1="entity_id", country="country", s_nm="nm", s_ad="ad")
-    d = (c.select("q", "s1").join(q, on="q").join(s.drop("country"), on="s1")
-         .join(same_nm.rename({"nm": "s_nm", "n": "amb_s_name"}), on=["country", "s_nm"], how="left")
-         .join(same_nm.rename({"nm": "q_nm", "n": "amb_q_name"}), on=["country", "q_nm"], how="left")
-         .join(same_ad.rename({"ad": "s_ad", "n": "amb_s_addr"}), on=["country", "s_ad"], how="left")
-         .with_columns(name_eq=(pl.col("q_nm") == pl.col("s_nm")).cast(pl.Int8)))
-    return (d.with_columns(q_name_ties=pl.col("name_eq").sum().over("q"))
-            .join(known, on="q", how="left")
-            .select("q", "s1", "amb_s_name", pl.col("amb_q_name").fill_null(0), "amb_s_addr", "name_eq", "q_name_ties",
-                    "q_known_frac"))
-
-
 def build(split):
     rec = pl.read_parquet(f"{WORK}/{split}.parquet").select(
         "entity_id", "src", "country", "nm", "ad", "business_name",
@@ -161,7 +137,7 @@ def build(split):
         s1_n0=(pl.col("rank") == 0).sum().over("s1"),
         s1_rank=pl.col("score").rank("ordinal", descending=True).over("s1"),
     ).with_columns(gap=pl.col("top1") - pl.col("score"), margin=pl.col("top1") - pl.col("top2"))
-    c = c.join(decoy_feats(c, rec, dec), on=["q", "s1"], how="left").join(ambiguity_feats(c, rec), on=["q", "s1"], how="left")
+    c = c.join(decoy_feats(c, rec, dec), on=["q", "s1"], how="left")
     q = rec.filter(pl.col("src") != 1).select(q="entity_id", src="src", nm_q="nm", ad_q="ad", translit="translit")
     s = rec.filter(pl.col("src") == 1).select(s1="entity_id", nm_s="nm", ad_s="ad")
     out = []

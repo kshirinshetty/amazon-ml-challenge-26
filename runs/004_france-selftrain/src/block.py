@@ -20,14 +20,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sparse_dot_topn import sp_matmul_topn
 
 WORK = "work"
-K = 10  # retrieval depth; prune keeps what earns its place (4.5% of true pairs sat at rank 4+ with K=3)
+K = 3
 W_NAME = 0.6  # combined score = W_NAME * name_cos + (1 - W_NAME) * addr_cos
 CHUNK = 250_000
 THREADS = int(os.environ.get("OMP_NUM_THREADS") or os.cpu_count())  # Modal sets this from the cpu request
 MAX_DF = 0.005  # drop n-grams in >0.5% of S1 docs: long posting lists dominate matmul cost
-REL = 0.8  # keep rank>0 pairs with score >= REL * the record's best score (K=10: recall 0.9582 at 7.3/S1 on train)
+REL = 0.7  # keep rank>0 pairs with score >= REL * the record's best score (train: -0.26pt recall, -55% size)
 CAP = 30  # max candidates per S1, best scores first (true matches per S1 <= 11)
-RMAX = 10  # keep ranks < RMAX
 
 
 def rowdot(A, B):
@@ -62,8 +61,8 @@ def block_country(s1, q):
     return pl.concat(out)
 
 
-def prune(c, rel=REL, cap=CAP, rmax=RMAX):
-    return (c.filter((pl.col("rank") == 0) | ((pl.col("rank") < rmax) & (pl.col("score") >= rel * pl.col("score").max().over("q"))))
+def prune(c, rel=REL, cap=CAP):
+    return (c.filter((pl.col("rank") == 0) | (pl.col("score") >= rel * pl.col("score").max().over("q")))
             .filter(pl.col("score").rank("ordinal", descending=True).over("s1") <= cap))
 
 
@@ -84,14 +83,13 @@ if __name__ == "__main__":
     if split == "train":
         gt = pl.read_parquet(f"{WORK}/train_gt.parquet")
         lab = full.join(gt.with_columns(y=pl.lit(1, pl.Int8)), on=["q", "s1"], how="left").fill_null(0)
-        print(f"{'rmax':>5} {'rel':>5} {'cap':>6} {'recall':>7} {'cands/S1':>9}")
-        for rmax in (3, 5, 10):
-            for rel in (0.7, 0.8, 0.85, 0.9):
-                for cap in (30, 20):
-                    p = prune(lab, rel, cap, rmax)
-                    print(f"{rmax:>5} {rel:>5} {cap:>6} {p['y'].sum() / len(gt):>7.4f} {len(p) / n_s1:>9.2f}", flush=True)
+        print(f"{'rel':>5} {'cap':>6} {'recall':>7} {'cands/S1':>9}")
+        for rel in (0.0, 0.5, 0.6, 0.7, 0.8, 0.9, 1.01):
+            for cap in (10**9, 50, 30, 20):
+                p = prune(lab, rel, cap)
+                print(f"{rel:>5} {cap if cap < 10**9 else 'inf':>6} {p['y'].sum() / len(gt):>7.4f} {len(p) / n_s1:>9.2f}", flush=True)
     cands = prune(full)
     cands.write_parquet(f"{WORK}/{split}_cands.parquet")
     per = cands.group_by("s1").len()["len"]
-    print(f"RMAX={RMAX} REL={REL} CAP={CAP}: pairs={len(cands)}  candidates per S1: avg {len(cands) / n_s1:.2f}, "
+    print(f"REL={REL} CAP={CAP}: pairs={len(cands)}  candidates per S1: avg {len(cands) / n_s1:.2f}, "
           f"median {per.median()}, p99 {per.quantile(0.99)}, max {per.max()}")

@@ -15,7 +15,9 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 | [000](runs/000_blocking-char3-v0/) | blocking v0: char-3gram name + address-word TF-IDF, `max_df=0.002` | 0.851 (train) | — | — | — |
 | [001](runs/001_tfidf-lgbm-baseline/) | **baseline**: char-4gram name + address uni/bigram TF-IDF blocking, LightGBM on 29 features | 0.953 | 17.3 | 0.949 | **0.933** |
 | [002](runs/002_learned-cleaning/) | learned spelling maps + alias/filler removal, prune (rel 0.7, cap 30), +4 features, 80% train, expected-F0.5 per-S1 decisions | 0.952 | **7.8** | **0.957** | **0.945** |
-| [003](runs/003_decoy-features/) | label-free decoy features: full-name extra words + decoy-word score, S1 house number in record, sibling-record agreement | 0.952 | **7.8** | **0.971** | _pending_ |
+| [003](runs/003_decoy-features/) | label-free decoy features: full-name extra words + decoy-word score, S1 house number in record, sibling-record agreement | 0.952 | **7.8** | **0.971** | **0.957** |
+| [004](runs/004_france-selftrain/) | 003 + self-training on confident France test pairs | 0.952 | 7.8 | 0.970 | not submitted (France unchanged) |
+| [005](runs/005_deeper-retrieval/) | 003 + top-10 retrieval, prune REL 0.8 / cap 30 | 0.958 | 9.4 | 0.971 | not submitted (no val gain) |
 
 Every `runs/<NNN_name>/` holds a `README.md` (architecture, hyperparameters, results, notes), the
 `src/` snapshot that produced it, `model.txt`, `metrics.json` (validation curve, feature gains,

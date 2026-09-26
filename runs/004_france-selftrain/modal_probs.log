@@ -1,0 +1,12 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-yhylfrNJ44sB9BXsbY9bip
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/tools/test_probs.py
+runs/003_decoy-features: 13469326 test pairs scored; p>=0.97: 5078728, p<=0.03: 7274112
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-yhylfrNJ44sB9BXsbY9bip

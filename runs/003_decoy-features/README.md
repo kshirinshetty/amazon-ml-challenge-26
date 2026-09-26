@@ -42,7 +42,7 @@ Learned decoy words (test, no labels): France `holding participations distributi
 | Blocking recall (validation) / oracle F0.5 | 0.9524 / 0.9834 | same |
 | Test candidates / S1 | 7.8 | 7.8 |
 | Test matches / S1, % empty | France 3.24/5.8%, India 3.18/5.9%, US 3.28/5.6% | France 3.11/6.9%, India 3.19/6.6%, US 3.27/6.0% |
-| Leaderboard | 0.945 | _pending_ |
+| **Leaderboard (public)** | 0.945 | **0.957** (2026-09-26 23:59 IST) |
 
 Top features by gain: `num_jac` 38.1%, **`dec_max` 13.8%**, `a_tset` 10.4%, `len_nq` 7.0%, `top2` 5.1%,
 `rank` 3.6%, **`g_same_num_frac` 3.4%**, `s1_rank` 2.8%, `s1_n` 2.7%. LightGBM stopped at 245 trees.

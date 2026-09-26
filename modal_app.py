@@ -35,7 +35,8 @@ def step(args: list[str]):
 
 
 @app.local_entrypoint()
-def main(run: str = "", start: str = "download", stop: str = "predict", script: str = "", pseudo: bool = False):
+def main(run: str = "", start: str = "download", stop: str = "predict", script: str = "", pseudo: bool = False,
+         unseen_t: float = -1.0):
     if script:  # analysis on the full data without touching the laptop's RAM: --script tools/x.py
         return step.remote([script])
     run_dir = f"runs/{run}"
@@ -49,15 +50,19 @@ def main(run: str = "", start: str = "download", stop: str = "predict", script: 
             py, extra = ("block.py", ["--prune"]) if stage == "prune" else (f"{stage}.py", [])
             list(step.map([[py, split, *extra] for split in ("train", "test")]))
         else:  # --pseudo: self-train on the previous run's confident predictions for unseen countries
-            step.remote(["match.py", stage, run_dir] + (["--pseudo"] if pseudo and stage == "fit" else []))
+            extra = (["--pseudo"] if pseudo and stage == "fit" else []) + (
+                ["--unseen-t", str(unseen_t)] if unseen_t >= 0 and stage == "predict" else [])
+            step.remote(["match.py", stage, run_dir] + extra)
     if STAGES.index(stop) >= STAGES.index("fit"):
         get = lambda src, dst: subprocess.run(["modal", "volume", "get", "--force", "amazon-ml", src, dst], check=True)
         get(run_dir, "runs/")
         # directory downloads have twice left NUL-filled blocks in the big TSVs: re-fetch each alone and check
-        for name in ("matching_results.tsv", "candidate_pairs.tsv"):
-            path = f"{run_dir}/output/{name}"
-            if os.path.exists(path):
-                get(path, f"{run_dir}/output/")
+        for out in [d for d in os.listdir(run_dir) if d.startswith("output")]:
+            for name in ("matching_results.tsv", "candidate_pairs.tsv"):
+                path = f"{run_dir}/{out}/{name}"
+                if not os.path.exists(path):
+                    continue
+                get(path, f"{run_dir}/{out}/")
                 with open(path, "rb") as fh:
                     assert all(b"\0" not in b for b in iter(lambda: fh.read(1 << 24), b"")), f"corrupted: {path}"
 

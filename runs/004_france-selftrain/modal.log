@@ -1,0 +1,53 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-eko1dXCH9R6fNFFpWUDyIL
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/004_france-selftrain --pseudo
+pseudo-labels: 1932866 pairs, 0.379 positive
+Training until validation scores don't improve for 30 rounds
+[50]    valid_0's binary_logloss: 0.0411287
+[100]   valid_0's binary_logloss: 0.0335769
+[150]   valid_0's binary_logloss: 0.0341441
+Early stopping, best iteration is:
+[123]   valid_0's binary_logloss: 0.0325616
+trained on 13004782 pairs in 54s, best iter 123
+  t=0.10  F0.5=0.9614
+  t=0.15  F0.5=0.9637
+  t=0.20  F0.5=0.9651
+  t=0.25  F0.5=0.9663
+  t=0.30  F0.5=0.9673
+  t=0.35  F0.5=0.9681
+  t=0.40  F0.5=0.9688
+  t=0.45  F0.5=0.9693
+  t=0.50  F0.5=0.9697
+  t=0.55  F0.5=0.9700
+  t=0.60  F0.5=0.9702
+  t=0.65  F0.5=0.9704
+  t=0.70  F0.5=0.9704
+  t=0.75  F0.5=0.9703
+  t=0.80  F0.5=0.9699
+  t=0.85  F0.5=0.9690
+  t=0.90  F0.5=0.9667
+  t=0.95  F0.5=0.9595
+blocking recall=0.9524  oracle F0.5=0.9834  best t=0.70  F0.5=0.9704  expected-F rule F0.5=0.9704  -> threshold
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/004_france-selftrain
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 8.276275       ┆ 3.116021    ┆ 6.849051  │
+│ India   ┆ 809986 ┆ 7.780453       ┆ 3.189164    ┆ 6.665671  │
+│ US      ┆ 663106 ┆ 7.570391       ┆ 3.258373    ┆ 6.034028  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+Runner terminated (SIGTERM), exit code: 143.
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-eko1dXCH9R6fNFFpWUDyIL
