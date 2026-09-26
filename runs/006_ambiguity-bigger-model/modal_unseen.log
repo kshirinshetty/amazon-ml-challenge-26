@@ -1,0 +1,26 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-4RAADRQPPdo285O8BX7YX7
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/006_ambiguity-bigger-model --unseen-t 0.5
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 11.437029      ┆ 3.233315    ┆ 6.213095  │
+│ India   ┆ 809986 ┆ 9.452783       ┆ 3.220884    ┆ 6.524063  │
+│ US      ┆ 663106 ┆ 8.489507       ┆ 3.281436    ┆ 6.043227  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-4RAADRQPPdo285O8BX7YX7

@@ -4,6 +4,6 @@ __pycache__/
 work/
 output/
 logs/
-runs/*/output/
+runs/*/output*/
 submission/
 .agents/

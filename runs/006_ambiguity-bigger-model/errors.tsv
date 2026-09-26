@@ -1,0 +1,601 @@
+kind	p	s1	s1_name	s1_addr	q	q_name	q_addr
+false_merge	0.8561857447005454	S1-10124869	North Advanced States	775 100, Unit 513, Salt Lake City, UT	S2-38046326	North Advanced  Center	
+false_merge	0.996716085235805	S1-742449691	PR India Private Limited	A/3, Anagha, Dr. Sarojini Naidu Road, Mulund West, Mumbai, Mumbai City, Maharashtra	S3-817347446	PR (india) Private Limited	A/4, Anagha, Dr. Sarojini Naidu Road, Mulund West, Bombay, MH
+false_merge	0.7065791267890995	S1-585529260	LEI Classes Associates	S N 137/4, Narayan Nagar, Nr Kadam Police, Pune, Maharashtra	S2-575763446	LEI Classes Assloiteas	
+false_merge	0.6569654536504044	S1-779639572	East Third, LLC	421 Congress Avenue, City Of Havre De Grace, MD	S2-208197692	East Third Llc Llc	
+false_merge	0.8099533045442983	S1-697089368	Ziranth Farmer Private Limited	L3 / 24 Kashish Park, Nr Mulund Check Naka, Lbs Marg, Thane West, Thane, Maharashtra	S2-574455375	Zirranth Fármer-Private Limited	PLOT 436 L3 / 33 KASHISH PARK, NR MULUND CHECK NAKA, LBS MARG, THANE WEST, Maharashtra
+false_merge	0.8129162873972327	S1-552719517	Ivenus Innovations PLLC	117 Water Tank Road, Unit B, Statesville, NC	S2-801286099	Ivenusa Innovations PLLC	#117 WATER TANK RD, PO BOX 5606, STATESVILLEC DP, NC
+false_merge	0.7334035276104602	S1-462640493	Chennai Infratech Group	Mahatma Gandhi Salai Nungambakkam, Chennai, Tamil Nadu	S3-563958594	Chennai Group Partners	
+false_merge	0.9393772230518516	S1-789589364	Gold Universal Healthcare Private Limited	No 107/93D/11K/3, Rajagopalnagar 4Thst East, Thoothukkudi, Tuticorin, Tamil Nadu	S2-594603609	Gold Universal Healthcare Limited	NO 107/93D/11K/4, RAJAGOPALNAGAR 4THST EAST, THOOTHUKKUDI, Tamil Nadu
+false_merge	0.92682310645987	S1-408808273	Sirsa Services Pvt Ltd	Shop No 126, Behind Lic Building, Sirsa, Haryana	S2-525020418	kokocollege.com	हरियाणा, BOOTH NOD/126, BEHIND LIC BUILDING, SIRSA
+false_merge	0.8411395057311697	S1-304671904	Glyphova Pipeline LLC	110 Applewood Drive, German Flatts, NY	S3-251759924	Glyphora Pipeline	German Flatts, New York, 10 Applewood Dr
+false_merge	0.9563984895989951	S1-265943838	Novan Spring, LLC	2216 Agate Road, Shelton, WA	S3-910464618	LLC Novana Spring,	Shelton, 2216 Agate Rd, Washington
+false_merge	0.6502246645401919	S1-341179437	Jarlify Pembina LP	1733 Lakota Lane, Leander, TX	S2-968297588	Jarlifyyn Pembina	TX, 1733 1/2 LAKOTA LANE, LEANDER
+false_merge	0.8548829036465849	S1-668526465	Tiruppur Marketing Private Limited	Anjal Nagar, 1St Street, Postal Colony, Tamil Nadu, Coimbatore, Tiruppur, D.No. 8/2	S3-174317010	Tiruppur Marketing Limited	H.no 8/4, Western Region Coimbatore, Tiruppur, TN
+false_merge	0.6688477831306515	S1-215820405	Rohanda Industries Private Limited	S/O Md Israr Ahamed, Rajbati Majher Para Deara, Rohanda, North 24 Parganas, West Bengal	S2-841955271	Rohanda Industries  Limited	NO 96 S/O MD ISRAR AHAMED, RAJBATI MAJHER PARA DEARA, ROHANDA, পশ্চিমবঙ্গ
+false_merge	0.9870284613883245	S1-844581201	Lumova Ridge Group	1056 Blackbird Trail, Hutchinson, MN	S2-143747677	Lummova Ridge Group	106 BLACKBIRD TRL, PO BOX 3107, HUTCHINSON, MN
+false_merge	0.9452787361558371	S1-32598930	Indian Business Private Limited	Flat No.503 B Wing Centre, Point Chs Near Tmc Bldg, Thane, Maharashtra	S2-373358181	इंडियन बिजनेस प्राइवेट लिमिटेड	15/B/503, Maharashtra, MUMBAI CITY
+false_merge	0.7007762552195851	S1-765838654	Cruz, Jeanine, DMD	281 Mann Lane, Goldsboro, NC	S2-219236598	CRUZ, JEANINE, DCMD	281 MANN LANE, GOLDSBORO, NC
+false_merge	0.6867770384606892	S1-827957069	Krittech Coir Pvt. Ltd.	Ke-23, Uttar Pradesh, Ghaziabad	S2-283066605	CRITTECH COIR-PVT.	KE-23, GHAZIABAD, Uttar Pradesh
+false_merge	0.7156966787486483	S1-234937548	Ganga Lifesciences Private Limited	F-29/30, Gokhle Market, Delhi	S2-507347570	Ganga Liesciencs (Limited)	F-29/3, GOKHLE MARKET, Delhi
+false_merge	0.9599497809241689	S1-745629955	Gangraj Sales Ltd	C/O Surendra Ojha, Vill &, Tola Khabra Urf Kiratpur, Mushahari, Muzaffarpur, Bihar	S3-763431307	Ganngraj Ssai Ltd	C/o Surendra Ojha, Muzaffarpur, Mushahari, BR
+false_merge	0.8199071037758155	S1-198101753	Lyrify Crumrine LLC	300 Water Street, Unit 311, Mobile, AL	S3-173747575	LLC Lyrrify Crumrine	03 Water St, # 311, Mobile, Alabama
+false_merge	0.9479880247918926	S1-877622544	Victoria Constructions LLP	N-001, Site 5, Kasna Ind Area, Dadri, Gautam Buddha Nagar, Uttar Pradesh	S2-619351679	Victoria Services  LLP	N-2, SITE 5, KASNA IND AREA, DADRI, Uttar Pradesh
+false_merge	0.9389786631294559	S1-392964451	Sirius Apartment, Inc	KY, Harold, 12658 Us 23	S3-721271854	Ltd Sirius Apartment,	12663- Us 23, Haroold, Kentucky
+false_merge	0.6959454942783185	S1-125761019	New Delhi Infratech Public Limited	South Delhi, Delhi, 121, Tribhuvan Complex, First Floor, Ishwar Nagar Mathura Road, New Delhi	S3-344263377	New Delhi Public Limited  Partners	
+false_merge	0.9374913616907925	S1-731874289	Total Automotive LLC	2 Revere Court, Unit APARTMENT A, Parkville, MD	S3-54637030	Sbeuilai, LLC	2 Sklyark Court, Unit Apartment A, Parkville, Maryland
+false_merge	0.840981944886625	S1-725419179	Lyrance Trailblazer Inc	910 Fourth Street, Goldsboro, NC	S3-384913446	Lyranco Trailblazer INC	North Carolina, 910- Fourth Street, Goldsboro
+false_merge	0.9525104479128803	S1-651547717	Taran Global Private Limited	509 Bldg No 8 Ankita Nagar Lokhandwala C Akurli Raod Kandivili East, Mumbai, Mumbai City, Maharashtra	S3-541635322	Aaa Alrvbdissr	509 Bldg No 8 Ankita Nagar Lokhandwala C Akurli Raod Kandivili East, Mumbai, Mumbai City, महाराष्ट्र
+false_merge	0.9251689031863022	S1-932113041	Ravin Estates Private Limited	H-502, Plot No 4, Sfc 6, Kaveri Cooperative Ghs, Dwarka Sec 6, New Delhi, South West Delhi, Delhi	S3-759669381	Ravun Estates Private Limited	H-502, Plot No 4, Sfc 6, Kaveri Cooperative Ghs, Dwarka Sec 6, New Delhi, <NULL>, DL
+false_merge	0.7841500007670971	S1-752844270	Secure Equity Networks L.L.C.	Austin, TX, 4517 Berkman Drive	S2-324450247	Llc Secure Equity Networks	4518 BERKMAN DR, AUSTIN, TX
+false_merge	0.7963692960410951	S1-147553418	Clyara Music Corp	1405 Walters Drive, Morristown, TN	S3-350559129	Klyara  Music Corp	Morristown, 1405 Walters Drive, Tennessee
+false_merge	0.6870429793157219	S1-349382822	Golden Biocng Pvt. Ltd.	C/O Dinesh Kumar Shukla, 1St Floor Agra Mohalla, Panna, Madhya Pradesh	S2-51695163	Golden Biocng Pvt-Ltd	
+false_merge	0.9669418926656453	S1-107585328	Simba International Ltd	New Delhi, B-4/13, 2Nd Floor, Main Wali Nagar, Paschim Vihar, H.No., Delhi, West Delhi	S2-474103230	Simba International	
+false_merge	0.6551427039045956	S1-955896530	Ppg Staff Pvt. Ltd.	H No. C-98/20, Meerut, Uttar Pradesh	S3-524211063	Ppg Stáff Pvt. Ltd.	
+false_merge	0.8937814879778367	S1-708022000	Frontier Resources L.L.C.	403395 2300 Road, Washington County, OK	S3-480809911	Fluxnyla	2300 Rd, NULL, Washington County, Oklahoma
+false_merge	0.7169761581023476	S1-23014685	Brown Services (India) Private Limited	Plot No-482, Bidyadharpur Cuttack, Cuttack, Orissa	S2-569922818	Brown Private Limited Services	
+false_merge	0.9483794089118495	S1-545317415	Drayara Fisheries, LLC	14418 Prickly Pear Court, Houston, TX	S3-997989206	Drayaoro Fisheries,  LLC	14418 1/2 Prickly Pear Ct, Houston, Texas
+false_merge	0.9996420434929236	S1-91954375	Monton Thunder Associates	8335 Wesson Road, Arlington, TX	S2-553861350	Thunder Monnton Associates	TX, ARLINGTON, 8335 WESSON ROAD
+false_merge	0.9781039625973169	S1-671226031	Trusted Materials Advisors Inc	210 E Esplanade Ave, Louisville, KY	S2-166160270	Trusted Materials Advisors Partners Inc	210 EAST ESPLANADE AVE, LOUISVILLE CDDP, KY
+false_merge	0.9853873647814977	S1-817214501	Olanova Tech, Inc	811 Hartsville Pike, Gallatin, TN	S3-741799208	Olanoari Tech,  Inc	811-813 Hartsville Pike, Gallatin, Tennessee
+false_merge	0.9196629542755602	S1-67997108	RT Reliable Strategies LLC	105 Jeannes Way, Bristol, VT	S3-698773933	RFT Retlbale Strategies LLC	0105 Jeannes Way, Bristol Ccity, Vermont
+false_merge	0.8762139260036889	S1-141484853	GSS India LLP	Arazi No. 41/2 New Colony, Soyepur Belwa Baba, Varanasi, Uttar Pradesh	S3-619521672	GS Ingia LLP	Arazi No. 7-41/15 New Colony, Varanasi, UP
+false_merge	0.7060495484998673	S1-793883079	Greenko & Sons Private Limited	Office No 25, Third Floor, International Market, Siliguri, Darjiling, Darjeeling, West Bengal	S2-47597791	Greenko & Sons Private Límited	
+false_merge	0.7744197165294088	S1-839185524	Sarasam Adventures Private Limited	Rohan Nilay Building A, F.No. 1001, Survey No. 11/3A, Aundh Spicer, Aundh, Pune, Maharashtra	S2-812843116	Sarasim Adventures Private Limited	#12 ROHAN NILAY BUILDING A, F.NO. 1001, SURVEY NO. 11/3A, AUNDH SPICER, AUNDH, PUNE, Maharashtra
+false_merge	0.89096263877992	S1-516503263	Equinox Industries	3718 B Towne Point Road, Portsmouth City, VA	S3-703571034	Equinox LLC Industries	
+false_merge	0.9996682631357963	S1-917191758	Indraya Biotech Pvt. Ltd.	Jaipur, Rajasthan, Above Rajendar Electronics C/O Moral Gr, Purana Delhi Road, Jaipur	S2-320573399	Inndraya Bíotech Pvt. Ltd.	PURANA DELHI ROAD, ABOVE RAJENDAR ELECTRONICS C/O MORAL GR, JAIPUR, Rajasthan
+false_merge	0.9195801878493428	S1-746976674	Hyderabad Science Private Limited	Plot No Sfgh-3 Apiic Colony Sub Station Jeedimetla, Hyderabad, Rangareddy, Telangana	S2-535700579	Hyderabad Science	
+false_merge	0.7220354466828527	S1-924001961	Kolkata Media LLP	Howrah, Plot Nos.11 & 12, S.D. Park, Narendrapur, Kolkata, Kolkata, Chandrani, West Bengal	S2-56060243	Kolkata Media Limited	H.NO G-69 CHANDRANI, PLOT NOS.11 & 12, S.D. PARK, NARENDRAPUR, KOLKATA, KOLKATA, West Bengal
+false_merge	0.9692796181502108	S1-325901135	Olanium Capital PLLC	Santa Barbara, CA, 1775 Jelinda Drive	S2-164018031	Olaniuma Capital P.L.L.C.	1775 JELINDA DR, MONTECITO, CA
+false_merge	0.9607725686550753	S1-574693712	Consultancy Super Holdings	Cbip Building, Ground Floor, Plot No. 4 Institutional Area, Malcha Marg, Chankya, Puri, New Delhi, South Delhi, Delhi	S3-27840871	Consultancy Super Holdings Limited	No 58 Cbip Building, New Delhi, South Delhi, दिल्ली
+false_merge	0.9442461065013952	S1-97233236	Smart International Pvt Ltd	Omaxe World Street, Sales Office, Sector 79, Faridabad, Haryana	S3-331512393	Smartinternational.Com	Omaxe World Street, Divreportingcircle, HR
+false_merge	0.9675748224159868	S1-138599179	Praniya Face Private Limited	17-1-383/Ip/42/1 42/2 43/1, Flat No.104 Indraprasta Town Ship, Phase-1, Saidabad, Hyderabad, Telangana	S2-357244337	Prraniya  Face Private Limited	17-1-383/IP/42/ 42/2 43/1, FLAT NO.104 INDRAPRASTA TOWN SHIP, PHASE-1, SAIDABAD, HYDERABAD, Telangana
+false_merge	0.9094960734894659	S1-914457568	Special Trading Private Limited	B-1003, Sharan Circle, Near Zundal Circle, Gandhinagar, Gandhi Nagar, Gujarat	S2-599536152	Sri Special Trading Limited	B-005, SHARAN CIRCLE, NEAR ZUNDAL CIRCLE, GANDHINAGAR, Gujarat
+false_merge	0.8383649712624647	S1-661700676	Halcial Biracilik Inc	Reedsville, WV, 507 Breeze View Drive	S2-187360736	Inc Halciant Biracilik	20 BREEZE VIEW DRIVE, REEDSVILLE, WV
+false_merge	0.9711804947245609	S1-945250767	Birch Networks LLC	1602 10th Street, Fargo, ND	S2-520748318	Birch Nétworks LLC	
+false_merge	0.8164321942259261	S1-325475855	Kestis Interactive LLC	3992 Clearview Avenue, Columbus, OH	S3-41815194	Llc Kestisa Interactive	3992 Clearview Avenue, Columbus, Ohio
+false_merge	0.9992412385982279	S1-481786239	Novyn White LLC	675 Mud Lick Road, Avawam, KY	S2-749447166	Novvyn White	75 MUD LICK RD, AVAWAM, KY
+false_merge	0.9312219757838684	S1-46481751	Fitech Inc.	431 Fourth Street, Henderson, TN	S3-287706421	Fitech Inc	434 Fourth St, Henderson, Tennessee
+false_merge	0.9964919629215511	S1-160325680	Verrial Portfolio PLLC	1080 Cr 121, Hondo, TX	S2-136427065	P.L.L.C. Verrrial Portfolio	HONDO, 108 CR 121, TX
+false_merge	0.9736456899806499	S1-974279853	Agro Brothers Ltd	215Empire Plaza Mehrauli Gurgaon Road Sultanpur, New Delhi, South Delhi, Delhi	S3-758436250	Rizaveo	215Empire Plaza Mehrauli Gurgaon Road Sultanpur, New Delhi, South Delhi, Delhi
+false_merge	0.6703777322635514	S1-611655527	Sequoia Enterprises, LLC	700 7th Avenue, Galva, IL	S2-301113733	Sequoia Corp Enterprises	
+false_merge	0.7004175158601404	S1-703051254	City Global Private Limited	24, Joshi Colony, Indore, Madhya Pradesh	S3-845265101	Smt City Global Limited	D/26, Joshi Colony, Indore, MP
+false_merge	0.9289190256159464	S1-363923359	ZU Colonial Aegon LLC	120 Murrah Street, Point Comfort, TX	S2-548116805	ZLU Colonial	120 MURRAH ST, POINT COMFORT, TX
+false_merge	0.9995609221032925	S1-558840244	FFM Farms Co	19 Guru Nanak Market Lajpat Nagar 4, New Delhi, South Delhi, Delhi	S2-584353448	FM Farms Co.	19  GURU NANAK MARKET LAJPAT NAGAR 4, NEW DELHI, Delhi
+false_merge	0.9192782586212336	S1-812531585	Meeniya Mantra Private Limited	Bambilo, Duburi Kuhika, Sukinda, Jajpur, Orissa	S3-939822909	Meenniya Mantra Limited Partners	H.no 42 Bambilo, Jajpur, OD
+false_merge	0.8783335662092431	S1-897534645	Vantance Ventures Co	1608 52nd Terrace, Kansas City, KS	S3-198591114	Vantanova Ventures Co	1608- 52nd Terrace, Kansas City, Kansas
+false_merge	0.9031718052525013	S1-936766782	Aqua Services Limited	Anil Kumar Jaiswal S/O Sri Laal Jeet Jaiswal Banda Bilsanda Road Banda, Shahjahanpur, Uttar Pradesh	S3-623044503	Aqua Services	
+false_merge	0.651268110085862	S1-834131188	Hitech Tech Private Limited	Plot No: 60 & 61, Ground Floor, Shiri Park View Apartment, Opp: Yen Yes Super Market, Ram, Nagar, Anantapur, Andhra Pradesh	S3-269286361	Hitech Hitech Tech Limited	Plot No: 60 & 66, Nagar, Anantapur, AP
+false_merge	0.9954712006085273	S1-582183685	Jarlora Hamilton LP	1659 Collins Hollow Road, Lewisburg, TN	S2-773108420	JARRLORA HAMILTON	1659 COLLINS HOLLOW RD, LEWISBURG, TN
+false_merge	0.7911556907508873	S1-271703207	KMV Rituals Private Limited	Jagdishpur, C/O- Syed Shah Ali Sajjad. Shah Market, Khalifabagh, District- Bhagalpur, Bihar, Bhagalpur	S2-566404809	Kmsv Rituals Private Limited	C/O- SYED SHAH ALI SAJJAD. SHAH MARKET, KHALIFABAGH, DISTRICT- BHAGALPUR, JAGDISHPUR, Bihar
+false_merge	0.774437924609822	S1-483515893	Solic Commerce-Bowling Green	1020 Mourning Dove Lane, Bowling Green, OH	S3-253537465	Solik Green Services	1020 Mourning Dve Lane, Bowling Green, Ohio
+false_merge	0.9871956413183832	S1-75873072	Oliver Animal Hospital	5529 Coral Tide Avenue, Wilmington, NC	S2-411439584	Oliver Animal Hóspital	
+false_merge	0.992791891478748	S1-778693606	Jay It Private Limited	Telangana, Hyderabad, 202, Sukasa Castle, Road No.30 Panchavati Colony, Manikonda, Hyderabad, Flat No 201, Hyderabad	S3-682565846	Mr Jay It Private  Ltd	Flat No - 201, Hyderabad, తెలంగాణ
+false_merge	0.7491662403328772	S1-974490950	Spot & Brothers Private Limited	H.No.797, Dabhipada, Devgaon, Dahanu, Thane, Maharashtra	S2-798991398	SPOT & BRISMTHERS PRIVATE (LIMITED)	
+false_merge	0.9819797347171996	S1-532620293	Novio Lifesciences LLC	PA, Pottstown Borough, 258 Maplewood Drive	S3-742876072	Novvio Lifescianecs LLC	258 Maplewood Drive, Pottstown, Pennsylvania
+false_merge	0.7754138760800761	S1-957735130	Clyari Pennymac Inc.	523 Commons Vista Drive, Huffman, TX	S3-615310257	Clyaru Pennymac Inc	523 Commons Vista Drive, Huuffman, Texas
+false_merge	0.6962694965196493	S1-674701873	Holliday Holdings Group LLC	2112 Garret Lane, Lincoln, NE	S3-788818068	Holliday Holdings Group Holdings	115 Garret Lane, Lncoln, Nebraska
+false_merge	0.778672141345859	S1-586016810	Suryaya Trading	Eastern Bl, Fl No- 7Ea, Manikaran Buiding 3B Ram Mohan Mullick Garden Lane, Kolkata, Kolkata, Howrah, West Bengal	S2-525159505	SURYAEON  TRADING	EASTERN BL, FL NO- 7EA, MANIKARAN BUIDING 3B RAM MOHAN MULLICK GARDEN LANE, KOLKATA, KOLKATA, West Bengal
+false_merge	0.7438941111102864	S1-72084475	XD Fab Private Limited	Bombay Poona Road, Dapodi, Poona, Maharashtra	S3-717271714	LXD Fab Private [Limited]	Bombay Poona Road, Dapodi, Bhosari, MH
+false_merge	0.9392548940832678	S1-669224701	Vision Bay Group	1990 8, Ghent, MN	S3-504628964	*** Vision Bay Group	991 8, Ghent, Minnesota
+false_merge	0.8553735999038068	S1-921251708	Choice United, LLC	73 Florence Street, Unit 3, Worcester, MA	S2-659607748	Evoumbraveo	73 FLORENCE ST, WORCESTER, MA
+false_merge	0.8499110525105169	S1-177823671	Aarvora Commodities Private Limited	Bhagwati Chambers, R. No.203 2Nd Floor, 3 Princep Lane, Kolkata, Howrah, West Bengal	S2-645841685	Aarvori Commodities Private Limited	NO #29 BHAGWATI CHAMBERS, R. NO.203 2ND FLOR, 3 PRINCEP LANE, KOLKATA, পশ্চিমবঙ্গ
+false_merge	0.7785932405369708	S1-127734622	Urban Marketing Pvt Ltd	First Floor, Tc 37/295, East Fort, Thiruvananthapuram, Thiruvananthapuram, Trivandrum, Kerala	S3-665495420	Ariazeph	KL, Tc 37/295, East Fort, Thiruvananthapuram, Thiruvananthapuram, Trivandrum, Third Floor
+false_merge	0.7076898557181653	S1-715385434	Hogue Sprott	Unit 108, 105 Sunrise Circle, TN, Franklin	S3-862434469	Hogue Center	
+false_merge	0.9186312701819044	S1-948423322	Burnside Rivernorth LLC	211 Lafayette Road, Unit Apartment 317, Syracuse, NY	S2-686941137	Burns Rivernorth LLC	22 LAFAYETTE ROAD, SYRACUSE, NY
+false_merge	0.8380145608492773	S1-389672292	Luman Boutique	188 Prospect Place, Islip, NY	S2-707788845	Lumana Boutique	NY, 18 PROSPECT PLACE, BAY SHORE
+false_merge	0.691072222327317	S1-663432030	Global Foundation Private Limited	Kasargod, Kerala, Room No:Kbp W 8/593, Koliyar, Kodom Beloor Grama Panchayath Attanganam P.O	S2-100100205	ഗ്ലോബൽ ഫൗണ്ടേഷൻ ലിമിറ്റഡ്	ROOM NO:KBP W 008/600, KODOM BELOOR GRAMA PANCHAYATH ATTANGANAM P.O, KOLIYAR, CHULLIKKARA, Kerala
+false_merge	0.7397561225669669	S1-164356905	Dm & Associates	Vijayawada (Urban), Andhra Pradesh, Krishna, Geetha Apartments, Flat No. 5C, Auto Nagar, D.No 59A-21/6-7/1	S2-456081760	Shri Dm & Associates Limited	D.NO 59A-21/6-7/3, GEETHA APARTMENTS, FLAT NO. 5C, AUTO NAGAR, VIJAYAWADA (URBAN), Andhra Pradesh
+false_merge	0.8751019905418704	S1-29797118	Regino, Cinnamon, DO	34 Herman Avenue, Babylon, NY	S2-122149316	Cinnamon, Regino, TO	34 HERMAN AVE, NORTH BABYLON, NY
+false_merge	0.6511096420915654	S1-804330116	Red Foods Private Limited	4, Inside Ajmeri Gate, Beawar, Ajmer, Rajasthan	S2-577859024	Halobelo	BEAWAR, AJMER, राजस्थान, <NULL>, #4 INSMDE AJMERI GATE
+false_merge	0.8256108020757512	S1-378962993	Ee Consultancy	J-02/4:16 Spaghetti Sector-15 Kharghar, Navi Mumbai, Raigarh, Maharashtra	S3-205235160	econsultants.com	2, Mumbai, Mumbai City, MH
+false_merge	0.9253003109517068	S1-46807249	Real Constructions Private Limited	Uttar Pradesh, 123/782, Premnagar, Kanpur Nagar, Fazalganj	S2-618450294	ZEPHCIRA	123/782, PREMNAGAR, KANPUR NAGAR, Uttar Pradesh
+false_merge	0.6552518006209389	S1-197809545	Kritita Contractors LLP	4B Peevees Triton Apartmentsmarine Drive Shanmugham Road Cochin, Ernakulam, Kerala	S3-774279433	Krititayn Cóntractors LLP	04B Peevees Triton Apartmentsmarine Drive Shanmugham Road Cochin, Ernakulam, KL
+false_merge	0.7112282325824274	S1-330487686	Msm Works Private Limited	Flat No 205 A Wing, Shivam Chs Pl- 5A Sect-06, Rabale, Thane, Maharashtra	S2-676728060	M/s Msm Works Limited	FLAT NO 00206 A WING, SHIVAM CHS PL- 5A SECT-06, RABALE, Maharashtra
+false_merge	0.8295965200190145	S1-167136313	Fortune Media Private Limited	A-113, Firstfloor, Boomerang, Chandivalifarmroad, Andheri(East), Maharashtra, Mumbai City, Mumbai	S2-699098353	फॉर्च्यून मीडिया प्राइवेट लिमिटेड	1 FLOOR, MUMBAI CITY, MUMBAI, Maharashtra
+false_merge	0.7485983396044389	S1-153046040	Alli E. Bentley, DMD	159 Ridge Road, Fairdale, WV	S3-925608039	Alli E. Béntley, Béntley, SDMD	16 Ridge Road, Fairdale, West Virginia
+false_merge	0.9838459871231486	S1-541958224	Orbis Ventures	OH, Proctorville, 89 Twp Rd 1234	S2-542639313	ORBIZ VENTURES	89 TWP RD 1234, PROCTORVILLE, OH
+false_merge	0.7425531363276794	S1-249004996	VMF Construction Private Limited	No.1623, Eblockaecslayout, Kundalahalli, Bangalore, Karnataka	S3-348992070	VMF Construction Limited	Door No 164, Bangalore, KA
+false_merge	0.8156349830429362	S1-345280466	Roopavi Constructions	Tantigeria, V.U. Road, P.O. - Vidyasagar University, Medinipur, West Bengal	S3-800250066	Roopaell (Center)	Plot 0662 Tantigeria, V.u. Road, P.o. - Vidyasagar University, Medinipur, WB
+false_merge	0.7238737077264099	S1-387425821	HK Ganga Private Limited	No 4 Plot No 364 Ambethkar Street Sheik Aadbulla Nagar Main Road Virugamba, Kkam, Chennai, Tamil Nadu	S2-256130003	HK GANGA PRIVATE [LTD] | www.hkgangap.com	
+false_merge	0.6614953044588732	S1-47261996	Williams's Couriers	110 Greenway Village Place, Fl 0, Glen Burnie, MD	S3-720897709	Monhollen Coriers	110 Greenway Village Place, Fl. 0, Glen Burnie, Maryland
+false_merge	0.6666967780706146	S1-253260636	Pediatric Dentistry Desert Care	15 Coast Guard Path, Truro, MA	S2-206691516	PEDIATRIC DENTISTRY DENTISTRY	
+false_merge	0.9726000290015718	S1-649143095	Montgomery Value Alpine, LLC	2045 20th Avenue, City Of Oshkosh, WI	S2-890058182	Xyloiri	2045 PACKRE AVENUE, OSHKOSH, WI
+false_merge	0.768056769513243	S1-158872912	Devbhumi Promoters Private Limited	166Telephonenagar Infront, Sherringwood World School, Indore, Madhya Pradesh	S3-687480221	Devbhumi Private Limited Partners	
+false_merge	0.9918647278598576	S1-300585636	Aditva India Corp	Plot No. 48-B, 8-3-677/24/5, Navodaya Colony, Yellareddy Guda, Khairatabad, Hyderabad, Telangana	S2-596505977	Additva Índia Corp	NO 48-B , 8-3-677/24/5, NAVODAYA COLONY, YELLAREDDY GUDA, KHAIRATABAD, Telangana
+false_merge	0.6822995820774201	S1-884570686	Barreto Term	32615 N Valley Parkway, Phoenix, AZ, Unit 152	S2-504412445	Arctavo	32615  NORTH VALLEY PARKWAY, null, PHOENIX, AZ
+false_merge	0.6640110713717694	S1-75448479	Services Grace Infratech Private Limited	Pocket C, Block-2, Flat No.77, First Floor, Sector-16, Rohini, New Delhi, Delhi	S2-242236889	SERVICES GRACE LIMITED PRIVATE KNIT	दिल्ली, DOOR NO 94 POCKET C, BLOCK-2, FLAT NO.77, FIRST FLOOR, SECTOR-16, ROHINI
+false_merge	0.879791907097956	S1-993134253	Raviam Technologies Pvt. Ltd.	13/2 House No 519Shitole Nagar Sangavi, Maharashtra, Pune	S2-491143046	Pvt. Ravviam Technologies Ltd.	DOOR NO 13/5 HOUSE NO 519SHITOLE NAGAR SANGAVI, PUNE, Maharashtra
+false_merge	0.7219717988222274	S1-775567824	Tejansh Realtors Pvt Ltd	625/11, Haryana, Arjun Pura, Ambala	S3-966902363	Tejanshyn Ltd Pvt Realtors Realtors	Ambala, 114 625/14, HR, Arjun Pura
+false_merge	0.9425535469201803	S1-743676529	Keystone Textile Industries Inc.	18019 12th Place, Bellevue, WA	S3-35999876	Inc Keystone Textile Industries	Bellevue, 18032 Twelfth Pl, Washington
+false_merge	0.6504712557565505	S1-570665869	May's Coastal Chemical LP	1369 12 Second Street, IN, Seymour	S3-48466416	May's  Inc Chemical Coastal	1369 15 2nd St, Seymour, Indiana
+false_merge	0.7188045944585838	S1-497250866	Soleus Telecommunication LLC	7210 Surreywood Way, Sacramento, CA	S3-457285251	Solell  Telecommunication	7210 Surreywood Way, Sacramento, California
+false_merge	0.6772477750173059	S1-902535862	Malappuram Commerce Private Limited	C/O:Raicemon George, Anikkal House, Malappuram, Perinthalmanna, Malappuram, Malapuram, Kerala	S2-122337730	Malappuram Commerce Limited	#22 C/O:RAICEMON GEORGE, ANIKKAL HOUSE, MALAPPURAM, PERINTHALMANNA, MALAPPURAM, കേരളം
+false_merge	0.9238213647850577	S1-885109169	Glypheon Services PC	518 Jackson Street, Rock Hill, SC	S3-653520636	Glypheora  Services	South Carolina, Rock Hill, 518 Jackson St
+false_merge	0.6709165195379329	S1-583793240	Urgent Care Medicine	4050 Boxelder, Gillette, WY	S2-392523059	Zephnex	#405 BOXELDER, GILLETTE, WY
+false_merge	0.7799117399178719	S1-348001368	PNT Developers Private Limited	G G Ashirwad, 1St Floor, No 29, 18Th Main, 4Th T Block, Jayanagara, Bangalore, Karnataka	S3-997187154	PXT Developers  Private Limited	G G Ashirwad, 1St Floor, No 29, 18Th Main, 4Th T Block, Jayanagara, Bangalore, KA
+false_merge	0.9401643304472064	S1-299384223	Melany Kerrigan, DMD	693 Steubenville Pike, Hanover Township, PA	S2-932640644	Melany Kerrigan, DAMD LP	693D STEUBENVILLE PIKE, HANOVER TOWNSHIP, PA
+false_merge	0.9900606307093652	S1-567173792	Kritan Technoplast Private Limited	Datta Chawk, Yavatmal, Yeotamal, Maharashtra	S2-95771483	KRITANT TECHNOPLAST PRIVATE	DATTA CHAWK, YAVATMAL, महाराष्ट्र
+false_merge	0.6796219131096164	S1-240978443	Akshay (i) (India) Private Limited	A 29 Scott Villa Ramanis Mayuri Layout Thudiyalur Road Saravanampatti, Coimbatore, Tamil Nadu	S3-660942444	Akshay (i)  (India) Private Limited	
+false_merge	0.9797030242385261	S1-541824369	Industries Sonal Buildcare Pvt Ltd	Kolkata, West Bengal, 3Rd-Fr, Howrah, Fl-B, 0 598-2 609 Jessore Road, Lp-122/10/1, Kolkata	S2-916486505	Industries Sonal-Buildcare Limited	West Bengal, 3RD-FR, FL-B, 0 598-2 609 JESSORE ROAD, LP-122/10/1, KOLKATA, KOLKATA
+false_merge	0.6642787061557092	S1-526179084	Studio Infrastructure Private Limited	Plot No. 759/1 A Ward, Juni More Colony, Near Mhasoba Mandir, Sambhaji Nagar Stan, D, Kolhapur, Maharashtra	S3-447884415	Smt Studio Limited Infrastructure	#59/6 A Ward, महाराष्ट्र, Kolhapur
+false_merge	0.9563293519590897	S1-945746391	Vaayuendra Global Partners	Haryana, Red Square Market, Sco 57, Hisar	S3-990690007	Vaayuendova Glóbal Partners	HR, Hisar, Sco C-57, Red Square Market, Hisar
+false_merge	0.9924432390595651	S1-129477179	Bharat Great Consultancy Private Limited	House No. 202, Ground Floor Tibetian Camp, Majnu Ka Tila, Delhi, North Delhi, Delhi	S3-381132730	Bharat Great Consultancy Limited	House No. 2-205, Ground Floor Tibetian Camp, Majnu Ka Tila, Divreportingcircle, Delhi, दिल्ली
+false_merge	0.9876448308100976	S1-463864485	Johnson & Glover LLC	2105 Milburn Avenue, Hempstead, NY	S3-370351390	Johnson, Glover and	
+false_merge	0.9181049102053854	S1-370462645	Eye Group	300 Campbell Street, Gore, OK	S3-192474458	Eye Group	301-303 Campbell Street, Oklahoma, Gore
+false_merge	0.9923304918199387	S1-224693954	Compass Enterprises, LLC	4964 Kessler Drive, Frisco, TX	S2-706275698	Compass Llc Enterprises	
+false_merge	0.8979657516969226	S1-570914955	Burlison and Khan Ishares P.C.	Oak Ridge, 121 Beverly Circle, TN	S2-397903306	BURLISON ÁND KHAN	
+false_merge	0.9995465414024796	S1-27659293	Indraya Trucking Private Limited	Plot No:22, H.No.6-6-22, Near Ganesh Temple, Hayathnagar, Hyderabad, Telangana	S2-441265451	INNDRAYA TRUCKING PRIVATE	PLOT NO:22, H.NO.6-6-22, NEAR GANESH TEMPLE, HAYATHNAGAR, Telangana
+false_merge	0.8391166822765168	S1-843133511	Stone Ginning Private Limited	Tamil Nadu, No.377/1, Manaveli Main Road, Vanur, Villupuram	S3-880216002	Stone Ginning Limited	Door No 377/4, Villupuram, TN
+false_merge	0.9146080742769016	S1-330712771	Innovative Ace Software Private Limited	Transcon Triumph, Cts No. 704, Veera Desai Road, Oshiwara Village, Andh, Eri (W), Mumbai, Mumbai City, Maharashtra	S3-293386770	इनोवेटिव एस सॉफ्टवेयर लिमिटेड	H.no 15 Transcon Triumph, Cts No. 704, Veera Desai Road, Oshiwara Village, Andh, Eri (W), Bombay, Mumbai City, MH
+false_merge	0.9735683251023799	S1-111891750	Aarvtech Balaji LLP	Flat No: 308, Ganapathi Homes Phanigiri Colony, New Maruthi Nagar, Chaitanya Puri, Telangana	S2-553126215	Aarvtekh Balaji  LLP	NO 153 FLAT NO: 308, GANAPATHI HOMES PHANIGIRI COLONY, NEW MARUTHI NAGAR, Andhra Pradesh
+false_merge	0.8449313622142883	S1-238284814	Angels Traders Private Limited	Vadodara, Gujarat, A-100 G/F, F/F Pranav Soc, Lalbag Makarpura Road Vad	S3-494781172	Angels Traders Limited	A-1-03 G/f, Vadodara, GJ
+false_merge	0.674717683548647	S1-533077862	Mcgaha Charter School PC	444 Avenida De La Plata, Brownsville, TX	S2-541692175	mcgaha charter school co	44 Avenida De La Plata, BROWNSVILLE, TX
+false_merge	0.868955091281872	S1-320732858	Gainwell Water Private Limited	E - 1/3A Vasant Vihar, New Delhi, South West, Delhi	S2-11695128	Gainwe1l Wáter Limited	E - 1/12A VASANT VIHAR, NEW DELHI, Delhi
+false_merge	0.884410342534256	S1-13865303	Pranva Exports	C/O Zed Lane Computer Plot No.-6 Holding No.-189/16, Near Darbar Cinema, M, Ain Road, Siwan, Bihar	S3-59866724	Pranoro  Exports Ltd	C/o Zed Lane Computer Plot No.-6 Holding No.-189/16, Near Darbar Cinema, M, Siwan, BR, Ain Road
+false_merge	0.714466122506916	S1-113637362	Clifford Summit Perimeter Inc.	4 Lilac Road, Billerica, MA	S3-142391101	Clifford Summit Perimeter  (Inc)	6-10 Lilac Road, Massachusetts, Bilerica
+false_merge	0.9256171336977822	S1-832403862	Pillai Traders Private Limited	Delhi, Ramgarh, Delhi, A89 1St Floor Middle Side, North West Delhi	S2-750091572	Pillai Traders Limited	AC-89 22ST FLOOR MIDDLE SIDE, RAMGARH, DELHI, Delhi
+false_merge	0.9095009706815768	S1-883388841	BM Empire Vornado	1531 Denton Road, Essex, MD	S3-709570536	BFM  Empire Vornado	1531 Denton Rd, Essex, Maryland
+false_merge	0.9615249231031244	S1-756448137	Zephyx Skin Care LLC	1184 Colt Creek Court, Alvin, TX	S2-321429498	Zophyx Skin LLC Partners	1184 CLOT CREEK CT, ALVIN, TX
+false_merge	0.9995192162581255	S1-106989535	Raviya Money Ltd	Pune, Fl No. B2, 407, Satyam Shivam, S No. 16 B 2, Pashan Someshwarwadi, Pashan, Maharashtra, Pune	S2-481183168	Ravviya Ltd Money	FL NO. B3, 407, SATYAM SHIVAM, S NO. 16 B 2, PASHAN SOMESHWARWADI, PASHAN, PUNE, महाराष्ट्र
+false_merge	0.8169258003603556	S1-549050359	Gulf Liberty, LLC	545 Lowell Avenue, Haverhill, MA	S2-886205893	GULF CORPORATION (LIBERTY)	
+false_merge	0.8638551035565787	S1-139912569	Latur Industries Private Limited	R-4/6, Osmanpura, Latur, Maharashtra	S2-368270234	Latur Industries Limited	R-4/27, OSMANPURA, LATUR, Maharashtra
+false_merge	0.967812071782466	S1-110046649	Smith Freight Center	7 Douglass Road, Montgomery Township, PA	S3-864248518	Smith Freight LLC Center	
+false_merge	0.7725802766395778	S1-699033806	Innovative Agro Private Limited	Bangalore, Gar, Jenukal Park Ridge Apartment, Karnataka Layout 1St Stage, Kurabarahalli, Vivekna, No.25, Karnataka	S2-671931789	ಇನೋವೇಟಿವ್ ಅಗ್ರೋ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್	NO 1/A, BANGALORE, ಕರ್ನಾಟಕ
+false_merge	0.6957264622995174	S1-797304159	Krishi Seva Samiti	Flno 3C/17, Garden City, Ph I/A, Sr 109 Nr Shantiniketan Society, Warje, Pune, Maharashtra	S2-219803006	Krishi Seva  Samiti	
+false_merge	0.6737393446164134	S1-526413790	Davis, Guendolen K., CPA	Wilmette, 3112 Temple Lane, IL	S3-666205032	Davis, Ghenleon K., CPÁ	
+false_merge	0.9993671621943021	S1-362760710	Nagin Institute	Shop No-1, Koyna Chs, Sector -15, Sanpada, Navi Mumbai, Thane, Maharashtra	S3-176813316	Naggin Institute Ltd	Shop No-1/2, Koyna Chs, Sector -15, Sanpada, Navi Mumbai, Thane, MH
+false_merge	0.9758086306103115	S1-918181356	Vantyx Lending LLC	14706 Corner Post Place, Prince William County, VA	S2-221631849	Vantyks Lending  LLC	0014706 CORNER POST PL, HAYMARKET, VA
+false_merge	0.9005207070746741	S1-761279110	Colonial Delta Grupo	528 E Iowa Ave, Iowa City, IA	S2-582637835	Lyraverapyra	E IOWA AVE, IOWA CITY, IA
+false_merge	0.9973006736568713	S1-829168763	Vijayawada (Urban) Pee Private Limited	Rs Towers, Door No40-25-80, Kurra Satyanarayana Str., Vijayawada (Urban), Krishna, Andhra Pradesh	S3-965435880	@Vijayawadaurban	Rs Towers, Door No40-25-80, Kurra Satyanarayana Str., Vijayawada (Urban), Krishna, AP
+false_merge	0.6621620285044536	S1-613311355	Gurgaon Mills Private Limited	212-B Satguru Apartment, Sector 52, Gurgaon, Haryana	S2-85065184	gurgaon mills private limited | www.gurgaonmi.com	
+false_merge	0.9644694661120972	S1-323808646	Senais	300 1 Shady Lane, Rush Twp, PA	S2-760833295	Senais Inc	300 2 SHADY LN, PHILIPSURG, PA
+false_merge	0.9951287771253472	S1-685342491	Orthopedic Blue Associates LLC	1303 Logan Drive, Leander, TX	S2-216286703	Ectojax	1303 LOGAN DRIVE, LEANDER, TX
+false_merge	0.9358990502113798	S1-887459456	Dynamic Wholesale Innovations Inc.	104 West Street, Lenox, MA	S3-800878107	Dynamic Wmhdtrolesle Innovations Inc	105 West Street, Lenox, Massachusetts
+false_merge	0.6768210382314233	S1-356595616	Reliable Industrial Holdings	15 Glynn Street, Albany, NY	S3-926404048	Reliable  Industrial	
+false_merge	0.916251670796482	S1-12090832	Digital Seed Private Limited	# 9/2, 2Nd Floor, Above Big Bazaar, Sarjapur Road, Bangalore, Karnataka	S2-843680393	digital seed limited	D/9/11 , 2ND FLOOR, ABOVE BIG BAZAAR, SARJAPUR ROAD, BANGALORE, Karnataka
+false_merge	0.6502524607654617	S1-283006585	Aspen Public School	P.N.-28, Pratap Vihar Near Kardhani-D, Jaipur, Rajasthan	S3-973315228	Aspen Public School	
+false_merge	0.6720603112161961	S1-870978262	Indian Infra Private Limited	B-1/1666 Vasant Kunj, New Delhi, North Delhi, Delhi	S3-29286421	Indian  Infra Limited	B-1/1668 Vasant Kunj, North Delhi, New Delhi, DL
+false_merge	0.8051607131772797	S1-346297491	4681 Second Way Owners Corp	11906 Hayes Station Way, Prince William County, VA	S2-545955891	4681 WAY SECOND OWNERS CORP CORP	11908-A HAYES STATION WAY, PRINCE WILLIAM COUNTY, VA
+false_merge	0.8853996893676545	S1-777770413	Laxmi Infra Private Limited	West Bengal, 7Th Floor, Marshal House, 33/1, Netaji Subhas Road, Kolkata, Howrah, Kolkata, Room No.734	S2-291224264	FLUXEVO	ROOM NO.734, KOLKATA, HOWRAH, West Bengal, 7TH FLOOR, MARSHAL HOUSE, 33/1, NETAJI SUBHAS ROAD, KOLKATA
+false_merge	0.7473034680753233	S1-100788312	Nashik Event Private Limited	Nashik, Maharashtra, Pl 13, Dnyaneshwar Soc., Adgaon, Nashik	S3-249073639	Nashik  Everest Private Limited	
+false_merge	0.8843828006734444	S1-611655527	Sequoia Enterprises, LLC	700 7th Avenue, Galva, IL	S3-440249097	Sequoia Incorporated Enterprises	
+false_merge	0.8830397233483589	S1-617267592	Bhandupwest Exim	545, 545/1 And 2 547 Lodha Imperia Tank Road, Bhandupwest, Maharashtra, Flat No. 402 Cts No. 445/A, Mumbai City	S3-803830810	Bhandupwest Services [Company]	9-411 Cts No. 445/A, Bhandupwest, Mumbai City, MH
+false_merge	0.7902438318988929	S1-504682558	Kaverva Tex Ltd	9Th Floor Plot No 78 To 80 Sai Vihar Chs, Sector - 15, Cbd Belapur, Navimumbai, Thane, B-95, Maharashtra	S2-692825262	KAVERVI TEX LTD	B-95, 9TH FLOOR PLOT NO 78 TO 80 SAI VIHAR CHS, SECTOR - 15, CBD BELAPUR, NAVIMUMBAI, Maharashtra
+false_merge	0.7693734566149996	S1-286719327	Red Ventures Private Limited	Chennai, Tamil Nadu, Chennai 35, 50 1St Main Roadcit Nagar Chennai 35	S3-849921080	Red-Ventures Limited	#63 1St Main Roadcit Nagar Chennai 35, Chennai 35, Chennai, TN
+false_merge	0.6715502618286583	S1-792386526	Kestyn Axiom	3130 33rd Street, Cleveland, OH	S2-347689980	Kesteon Axiom Axiom	3130. 33RD ST, CLEVELAND, OH
+false_merge	0.806402992010555	S1-48341090	Orbio Irenic	947 23000 Road, Parsons, KS	S2-956529126	The Orbia Irenic	94 23000 RD, PARSONS, KS, N/A
+false_merge	0.999114518829636	S1-154033164	Lyran Real	1906 Cadbury Avenue, Unit #212, Hillsboro, OR	S2-246404594	Lyrran Real LLC	001906 CADBURY AVE, HILLSBORO, OR
+false_merge	0.8108850328651864	S1-125877773	Aarvavi Skill	27-4/335, Appannapalem, Vepagunta, Pendurthi, Visakhapatnam, Vishakhapatnam, Andhra Pradesh	S3-293411811	Aarvavia [Skill]	C-27-4/335, Visakhapatnam, Vishakhapatnam, ఆంధ్రప్రదేశ్
+false_merge	0.9941836817875837	S1-299775913	Tirupati Sangh	Flat No 204, Achraj Aristo, Nagpur, Maharashtra	S3-510349687	tirupati sangh	
+false_merge	0.8843465090542713	S1-388323228	Liberty Heritage Inc	8 Bill Brown Way, Bakersville, NC	S3-275105024	Liberty Heritage	
+false_merge	0.970157731325589	S1-811025742	Best Cloud Partners Inc.	N104W6333 Brenton Lane, City Of Cedarburg, WI	S3-347317165	Best Cloud Partners Inc	N104w6340 Brenton Ln, null, Cedarburg, Wisconsin
+false_merge	0.6820438974803474	S1-257816509	Surgical Care Associates of Dallas LLC	7026 S Ridge Drive, Dallas, TX	S2-454612580	SURGICAL CARE ASSHCIAAETS OF DALLAS	6807 RICHWOOD DR, DALLAS, TX
+false_merge	0.9969403837191297	S1-501220961	Chandranth Gmbh Limited	C/O Mohd Taquiuddin Gali, No 16, Irrigation Colony, Nanded, Maharashtra	S2-382981598	(Limited) Khandranth Gmbh	C/O MOHD TAQUIUDDIN GALI, NANDED, Maharashtra
+false_merge	0.9615185007898811	S1-904897003	Great Universal Management Private Limited	Indore, Milinda'S Manor 2, R.N.T. Marg, 116-117, Madhya Pradesh	S3-208134480	Great Universal Services Private Límited	116-126, R.n.t. Marg, Indore, MP
+false_merge	0.9436536690898587	S1-954835995	Oliver, Malorie, DO, PC	1507 Willey Street, Unit 318, Morgantown, WV	S2-866281615	PC Malorie, HO, Oliver,	##1507 WILLEY ST, MORGANTOWN, WV
+false_merge	0.9835176074057216	S1-221631136	Taraita Agrotech Private Limited	1/560-C Old No 1/560, Mansarover Park, Shahdara, Delhi	S2-599855610	Private Tarraita Limited Agrotech	1/561-C- OLD NO 1/560, MANSAROVER PARK, SHAHDARA, Delhi
+false_merge	0.9423373778990065	S1-775139743	Taraora Circle Company	Fn. 603 Dwarka Wing, Shankar Heights P-4, Ambarnath, Thane, Maharashtra	S3-354084959	Circle Taraoro Company	Fn. 603 Dawrka Wing, Thane, Ambarnath, महाराष्ट्र
+false_merge	0.9047599799978836	S1-949588403	Ujjain Global Limited	Bangalore South, Bangalore, Floor 1, Desk No127A, 27 Main, 13 Cross, Sec 1, Karnataka, 677	S2-491191006	Ujjjain Global Limited	78, FLOOR 1, DESK NO127A, 27 MAIN, 13 CROSS, SEC 1, BANGALORE SOUTH, Karnataka
+false_merge	0.6540486998121153	S1-296528481	Secure Horizon	115 6th Avenue, Maricopa County, AZ	S2-987389491	Secure Hórizon	
+false_merge	0.8956175953316647	S1-126791005	Lumyx Rothschild Care	5946 Treasure Cove, Highland, UT	S2-159477070	LUMYKS ROTHSCHILD CARE	5948 TREASURE CVOE, AMERICAN FORK, UT
+false_merge	0.9252811539995102	S1-948128690	Halcon Biotechnologies, Inc	6023 State Street, Chicago, IL	S3-614407626	Halcan Biotechnologies, Inc	6023 State St, Chicago, Illinois
+false_merge	0.9934888713784589	S1-558541293	Regional Services Inc	83 White Street, Unit Apartment 1, Saratoga Springs, NY	S2-914207167	REGIONAL	SARATOGA SPRINGS, NY, TYLER DR
+false_merge	0.6825418116097849	S1-262364125	Therine Ortiz Rmg	331 Fallbrook Circle, Manchester, NY	S2-725636539	Therine Ortiz Rmg Co	652 FALLBROOK CIR, CLIFTON SPRINGS, NY
+false_merge	0.9994095104467091	S1-225092369	Novora Cion LLC	Rondo, 11714 Highway 121, AR	S3-329312797	Novvora Cion Llc	1714 Highway 121, Rondo, Arkansas
+false_merge	0.8409538286771296	S1-141557162	Axis Care	Ii Floor, 533/3, Balaji Nagar, Alampatti Post, Kovilpatti, Thoothukudi, Tamil Nadu	S3-97536657	Sri Axis Care LLP	Dtor No 23 Ii Floor, 533/3, Balaji Nagar, Alampatti Post, Kovilpatti, Thoothukudi, TN
+false_merge	0.9733322246870465	S1-180196003	Lyrola Community LLC	TN, 834 Waterwoods Trail, Sevierville	S2-691443878	Lyroyx LLC Community	834 WATERWOODS TRAIL, PO BOX 3603, SEVIERVILLE, TN
+false_merge	0.9929162128613389	S1-541080218	Lumeon Sunstone LLC	309 A Massie Lane, York County, VA	S3-993610330	Lummeon Sunstone	##309 A Massie Ln, York County, Virginia
+false_merge	0.8898597553756888	S1-957617959	Karad It Private Limited	1121, A/P. Wing, Karad, Satara, Maharashtra	S2-552481768	Karad Center	G-1121, A/P. WINS, KARAD, Maharashtra
+false_merge	0.9469618257425191	S1-903683454	Rapid Coastal	1142 2700, Unit M99, Salt Lake City, UT	S2-867545865	Rapid Coastal	
+false_merge	0.6943607322274393	S1-665881402	Delhi Ram Pvt Ltd	D-41 G/F Saket New Delhi, Delhi, South Delhi, Delhi	S3-884389248	Delhi Ram Infratech  Pvt Limited - 2790417120	D-41 G/f Saket New Delhi, Delhi, South Delhi, DL
+false_merge	0.9959327214591647	S1-861259376	Auriq York Inc	TX, Pearsall, 1401 Haynes Avenue	S3-964212031	Aurriq Yórk Inc	141 Haynes Ave, Pearsall, Texas
+false_merge	0.7115851382362133	S1-132521951	Yes Infra Private Limited	Dx 177/51 Gurugram, Gurugram, Gurgaon, Haryana	S2-490487233	Infra Yes Limited	DX 177/53 GURUGRAM, GURUGRAM, GURGAON, Haryana
+false_merge	0.800168045004106	S1-124698024	Creative Aerospace Partners	235 La Fonda Drive, Houston, TX	S2-41553470	CREATIVE AEROSPACE INC. PARTNERS	
+false_merge	0.963761693115133	S1-737541268	Anilika Golf LLP	Fl No F-901 Belmac, Residences Sno-38A/2, Pune City, Pune, Maharashtra	S2-489274902	Aniliki Golf LLP	FL NO F-901 BELMAC, RESIDENCES SNO-38A/2, PUNE CITY, Maharashtra
+false_merge	0.969492801786458	S1-118621457	Apex & Sons Private Limited	Shop No S101, Phase 3, Spencer Plaza, Chennai, Tamil Nadu	S2-966562664	M/s APEX & SONS [LIMITED]	SHOP NO S02, PHASE 3, SPENCER PLAZA, CHENNAI, Tamil Nadu
+false_merge	0.8783021830486338	S1-533552710	Urology Associates Inc.	9305 Seabrook Drive, Albuquerque, NM	S3-75839556	Urology Associates Inc	9307 Seabrook Drive, Albuquerque, New Mexico
+false_merge	0.8711551455074985	S1-481149609	Producer Cmj Navnirman Private Limited	C/O Ch.Venkata Subbaiah, 3-447 Mitta Street, Chennur-2, Gudur, Tippavarapadu, Nellore, Andhra Pradesh	S2-54510957	Producer Cmj Navnirman Limited	A-27 C/O CH.VENKATA SUBBAIAH, 3-447 MITTA STREET, CHENNUR-2, GUDUR, TIPPAVARAPADU, NELLORE, Andhra Pradesh
+false_merge	0.6841389049896478	S1-310085201	Harrietta Golec Premier Purecycle	501 Burnsville Parkway, Unit Unit 206, Burnsville, MN	S3-254181022	Harrietta Golec Prémier Purecycle	
+false_merge	0.7161983415232558	S1-22865762	Sapphire	7323 Kumfer Avenue, Fort Wayne, IN	S3-661701907	Veoflux	7323 Kumfer Ave, Wayne, Indiana
+false_merge	0.6686121829939751	S1-265491751	Sadashiv Peth Fintech Private Limited	Maharashtra, Sadashiv Peth, Pune, Bajirao Road, 1928, 1 Balaji House	S2-177351669	Sadashiv Peth Fintech (Limited)	6 BALAJI HOUSE, BAJIRAO ROAD, 1928, SADASHIV PETH, महाराष्ट्र
+false_merge	0.8203112747240705	S1-949689070	XG Rapid Portfolio LLC	Avon, 7164 Sycamore Drive, IN	S2-970709115	XKG Rapid Portfolio LLC	AVON, 7164 SYCAMORE DR, IN
+false_merge	0.9362960114521942	S1-891694325	PQ Pantages	3201 River Place Drive, Belton, TX	S3-863550255	PQ Partners	
+false_merge	0.7195482176401453	S1-915554646	Tech Trading Private Limited	3, Empire Shopping Arcade Lokhandwala Complex, Andheri West, Mumbai, Mumbai City, Maharashtra	S3-207300858	Privaet Tech Trading Limited	C-108 Golden Chariot Lokhandwala Complex Andheri West, Mumbai, Mumbai City, MH
+false_merge	0.7312078537101769	S1-170941262	Halcio Micro LLC	N11875 P, Town Of Harrison, WI	S2-594226537	Halcioa Mminho (LLC)	IOLA, WI, N11875 P
+false_merge	0.9923557539121554	S1-298384039	Nertie K. Hatten, DDS	837 162nd Street, South Holland, IL	S3-538444820	Nertie  Hatten, K. DCDS	837 162nd Strert, South Holland, Illinois
+false_merge	0.7974935708482315	S1-836186695	Moon Industries Group	No.170, 2Nd Floor, 2Nd Cross, 1St Block Koramangala, Bengaluru, Bangalore, Karnataka	S3-906967566	Moon  Industries Group Industries	No.172, 2Nd Floor, 2Nd Cross, 1St Block Koramangala, Bengaluru, Bangalore, KA
+false_merge	0.8760897661001231	S1-85659340	Star Foundation Private Limited	Pathanamthitta, 8/272A, Vadasseriy Ethu H, Vadasseriathu Hill Pk, Vayalathala, Pathanamthitta, C/O Geevarghese George, Kerala	S3-353219534	സ്റ്റാർ ഫൗണ്ടേഷൻ സ്റ്റീൽ പ്രൈവറ്റ് ലിമിറ്റഡ്	No 43 C/o Geevarghese George, 8/272A, Vadasseriy Ethu H, Vadasseriathu Hill Pk, Vayalathala, Pathanamthitta, കേരളം
+false_merge	0.9954619135901646	S1-278945093	Indrora Communications Corporation	Ground Floor, 6- Sagar Deep 4 Th Mamlatdarwadi, Malad West, Mumbai, Maharashtra	S2-252163627	Inndrora Communications  Corporation	महाराष्ट्र, 3 GROUND FLOOR, 6- SAGAR DEEP 4 TH MAMLATDARWADI, MALAD WEST
+false_merge	0.843861016927906	S1-654492660	QY Outsourcingprivate Private Limited	Plot No. B-28, B 29, 7Th Cross Street Sipcot It Park, Navalur Post, Siruseri, Chennai, Tamil Nadu	S3-33833352	FY Outsourcingprivate Pivrict Limited	Plot No. B-#28, B 29, 7Th Cross Street Sipcot It Park, Navalur Post, Siruseri, Chennai, தமிழ்நாடு
+false_merge	0.7014947901977713	S1-126156130	Gilberta's Networks	254 Marvis Drive, Brownsville, TX	S2-925050886	Gilberta's Ntogs	
+false_merge	0.964737609063442	S1-217816454	Tejam Marketing Private Limited	Da/7C, Dda Flats, Munrila, New Delhi, Delhi	S2-585181503	TEJJAM MARKETING PRIVATE LIMITED	DOOR NO 379 DA/28C, DDA FLATS, MUNRILA, Delhi
+false_merge	0.8609908407887645	S1-35086208	Brightyx Infrastructure Associates	13754 Camino Cinco, Victorville, CA	S3-446320551	Brightyxa Infrastructure	California, Victorville, 13754 Camino Cinco
+false_merge	0.858321162996163	S1-515822367	Drayent Solana Inc.	TX, 2505 Bridle Path, Austin	S3-515502763	Drrayent Solana Inc	2506 Bridle Path, Austin, Texas
+false_merge	0.6686707909022421	S1-819904901	Regional Learning Dynamics	162 Hawk Hill Road, NC, Canton	S3-800063532	Regional Regional Learning Dynamics L.L.C.	North Carolina, Canton, 16 Hawk Hill Road
+false_merge	0.8141388649014158	S1-652348522	Behavioral Health Vanguard Associates Inc.	2550 Pioneer Drive, Fl 0, Saint Louis, MO	S3-101488787	Behavioral Health Vanguard Associates Inc	Fl 0, Saint Louis, 2561 Pioneer Dr, Missouri
+false_merge	0.6900809479767287	S1-945202838	Datar Medical Centre	10, Dhanalakshmi Nagar, Alapakkam, Melamaiyur, Chengalpattu, Kanchipuram, Tamil Nadu	S2-23335558	Datar Medical  Centre	
+false_merge	0.99936921303514	S1-138901255	Ivenon Annaly	NY, Rome, 753 Erie Boulevard	S2-981246145	Ivvenon Annaly	753 1/2 ERIE BOULEVARD, ROME, NY
+false_merge	0.7763338702615011	S1-865777138	J X Relyea Diagnostics Inc.	123 Herb Road, Kempner, TX	S2-452786452	J  X Relyea Diagnostics Inc	124 HERB RD, KEMPNER, TX
+false_merge	0.964694504178694	S1-865768045	Ziraendra Automation Public Limited	C2-103, Shree Vardhman Gardenia, Sector 12, Fazilpur, Sonipat, Haryana	S2-26074953	Ziraendri Automation Limited Public	C7-2-103, SHREE VARDHMAN GARDENIA, SECTOR 12, FAZILPUR, SONIPAT, Haryana
+false_merge	0.8066410953318952	S1-538932995	Total Transit Ventures PLLC	4721 Boiling Brook Parkway, Rockville, MD	S3-208314175	Total Transit Ventures Llc	
+false_merge	0.9978800842364691	S1-621804794	Novyx Purecycle of Montville	245 Maple Avenue, Montville, CT	S3-97042532	Novyks Púrecycle of Montville	245 Maple Ave, Oxoboxo River, Connecticut
+false_merge	0.998899217593974	S1-742084234	Lumora Columbus LLC	103 Auburn Lane, Troutdale Town, VA	S2-723388612	Lummora LLC Columbus | www.lummorall.com	VA, TROUTDALE CDP, 103 Auburn Ln
+false_merge	0.7961487039053154	S1-212516079	BJA Total Stonebridge	17 Ellington Street, Magazine, AR	S3-178622973	BJA Total Stonebridge Corp	50 Ellington Street, Mgazine, Arkansas
+false_merge	0.9997559503177584	S1-575249899	Ivenent Mckinley Care	Forestburgh, NY, 12 Joseph Road	S2-618493078	Ivvenent Mckinley Care	12A JOSEPH RD, NY, FORESTBURGH
+false_merge	0.7286737041976521	S1-734110472	Wow Nursing Home	302, Shivpriya Apartment Jagdamba Path, North S.K.Puri, Patna, Bihar	S2-912517639	Wow Nursing Home Limited	23, SHIVPRIYA APARTMENT JAGDAMBA PATH, NORTH S.K.PURI, PATNA, बिहार
+false_merge	0.9799650788918473	S1-322870263	Montus Atlas L.L.C.	145 Plaza Boulevard, Madison, AL	S3-682161839	Montus Atlas L.L.C.	66 Plaza Blvd, Madison, Alabama
+false_merge	0.7228041146487694	S1-81392273	Hrd India Private Limited	No.314, Sidhartha Naturo, Bhel Nagar, Vadakkupattu Main Road, Medavakkam, Chennai, Tamil Nadu	S3-849505979	Hrd Índia Private Limited	
+false_merge	0.7710595295057627	S1-200560192	ANB Startup Ltd	Jodhpur, 10Th E Road Sardarpura, Jodhpur, Alarca House, Rajasthan	S2-454949076	Atnb Startup Ltd	#A-573 ALARCA HOUSE, 10TH E ROAD SARDARPURA, JODHPUR, Rajasthan
+false_merge	0.7102436497473615	S1-985956677	Gangika Security Private Limited	Unit No.1106, 11Th Floor, Imperial Tower, Cp67 Mall, S.A.S.Nagar (Mohali), Rupnagar, Punjab	S3-827269969	GANGICA SECURITY PRIVATE LIMITED	Unit No.1106, 11Th Floor, Imperial Tower, Cp67 Mall, Mohali, Rupnagar, PB
+false_merge	0.9268496661543648	S1-861749814	Shree International Private Limited	Karnataka, Bangalore - 8., Bangalore, 169/B, I Floor, 13Th Main, Hal Ii Stage, Indiranagar	S3-467373275	Shree International Ltd	No.8, Bangalore North, KA, Bangalore
+false_merge	0.9685041776118773	S1-212875415	Green, Danny, MD	350 Country Club Road, Deming, NM	S3-361379682	Green, Danny, MN	350 Country Club Road, PO Box 2498, Deming, New Mexico
+false_merge	0.919351378455263	S1-837767517	Tarai Banquets Private Limited	40Th Floor, 4007, The Park Residences, Sr No 41 Pt, Off Link Road Oshiwara, Opp Samarth Garden, Mumbai, Maharashtra	S3-747035198	Tarai Banquets Limited	Mumbai, महाराष्ट्र, Mumbai, #42Th Floor, 4007, The Park Residences, Sr No 41 Pt, Off Link Road Oshiwara, Opp Samarth Garden
+false_merge	0.912879535500149	S1-119696529	Ujjaraj Projects	Plot No.2, River Bank Colony 3 Navi Ullah Road, Lucknow, Uttar Pradesh	S3-407202972	Ujjjaraj Projects Córp	#11, River Bank Colony 3 Navi Ullah Road, Lucknow, Aminabad, UP
+false_merge	0.8146797105656021	S1-567320376	Varshavi Infra Private Limited	D-380, Ground Floor J.J.Colony, Khyala, Near Pipal Wali Gali, New Delhi, West Delhi, Delhi	S3-971330347	Varshavu Infra Private Ltd	D-380, Ground Floor J.j.colony, Khyala, Near Pipal Wali Gali, New Delhi, West Delhi, दिल्ली
+false_merge	0.999657283842941	S1-79296198	Ravita Suits Corp	Office No. 303, 3Rd Floor, Sai Plaza Building, Sant Nagar, East Of Kailash, New Delhi, South Delhi, Delhi	S2-488455407	Ravvita Suits	OFFICE NO. 303 , 3RD FLOOR, SAI PLAZA BUILDING, SANT NAGAR, EAST OF KAILASH, NEW DELHI, Delhi
+false_merge	0.8296553490672632	S1-940003197	Delta Continental Lion Inc.	96 Central Street, Gardiner, ME	S3-480591992	Delta-Contirnental Lion Inc	97 Central Saint, Grdiner, Maine
+false_merge	0.6503340860261424	S1-822288082	Alpha Trading	Office No. 2108, D-Wing, Bima Complex, Plot No. 119, Iron & Steel Market, Kalamboli, Navi Mumbai, Raigarh, Maharashtra	S3-464266067	अल्फा ट्रेडिंग	119, Andheri (W), Mumbai, महाराष्ट्र
+false_merge	0.9577906566057989	S1-466389787	Ear Nose & Throat Health	4336 26th Street, Arlington County, VA	S2-89831033	earnose.com	26TH STREET, NORFOLK, VA
+false_merge	0.6781401627911808	S1-712423874	Gold Impex	Forest Trails Pebbles A, Flat No.A-1008, Sr.No.16, Mulshi, Pune, Maharashtra	S3-378103822	गोल्ड इम्पेक्स लिमिटेड	No 11 Forest Trails Pebbles A, Flat No.a-1008, Sr.no.16, Pune, Mulshi, महाराष्ट्र
+false_merge	0.7519215549188044	S1-625795985	Life Impex Pvt Ltd	D-1004 First Floor, New Friends Olony, New Delhi, Delhi	S3-580985893	Life Impex-Ltd	Ground Floor, New Delhi, South Delhi, DL
+false_merge	0.8930194052814475	S1-70743740	Gold Infra Private Limited	Hisar, Booth No 209B Nai Anaj Mandi, Hissar, Haryana	S3-169492210	Arcjax	Booth No 209B Nai Anaj Mandi, Hissar, Hisar, HR
+false_merge	0.6991251380795301	S1-651886556	Vimal (India) Office Private Limited	House No.D-10/1, Ground Floor, Block-D Om Nagar, Mithapur Extn, Badarpur, East Delhi, Delhi	S3-538982099	Sri Vimal (Indleia Office Private [Limited]	
+false_merge	0.8171465444095136	S1-347871921	Zorana Averill, DDS, PC	2131 Capitol Avenue, Sacramento, CA	S2-356061146	zorana averill, ddl, pc	2131 CAPITOL AVENUE, SACRAMENTO, CA
+false_merge	0.9825850754319434	S1-207305309	Vantyn Osprey	352 Schenley Avenue, Youngstown, OH	S2-312375319	Vanntyn Osprey Ltd	352 SCHENLEY AVE, YOUNSTOWN, OH
+false_merge	0.7633853019461989	S1-743591198	Sweety Ventures	House No 125, K No. 1191/296/125, Sy No. 59, Sannidhi Homes, Near Hcl Gate No. 2, Bandenallsandra Village, Anekal, Bangalore, Karnataka	S2-223734444	SWEETY  VEUORES LIMITED	HOUSE NO 126., K NO. 1191/296/125, SY NO. 59, SANNIDHI HOMES, NEAR HCL GATE NO. 2, BANDENALLSANDRA VILLAGE, ANEKAL, Karnataka
+false_merge	0.7538563783506093	S1-828971762	Pranan Services Ltd	401/402/403, Eco House, Vishweswar Nagar Off Aarey Road, Goregaon East, Mumbai, Mumbai City, Maharashtra	S2-672848972	Pranana Sérvices Ltd.	401/402/403 , ECO HOUSE, VISHWESWAR NAGAR OFF AAREY ROAD, GOREGAON EAST, MUMBAI, Maharashtra
+false_merge	0.7535734493988188	S1-360226964	XM Centre Public Limited	B-120 Third Floor Kh No, 393/264, New Ashok Nagar, East Delhi, Delhi	S3-608384408	Fxm Centre Públic Limited	B-120 Third Floor Kh No, Mumbai, East Delhi, DL
+false_merge	0.998215012293822	S1-13032342	Orbify Spacsphere Care	4472 Davis Street, Emporia City, VA	S2-644576112	ORBIX SPACSPHERE CÁRE	4472 DAVIS ST, EMPORIA CITY, VA
+false_merge	0.8846713589625549	S1-523757786	Reliable Property Alliance Inc.	1141 Cedar Ridge Lane, Unit APARTMENT A, Park Hills, KY	S2-765365057	Umbrayuma	PARK HILLS, KY, 1141  CEDAR RIDGE LN
+false_merge	0.7794852537006284	S1-464259408	Starling Enterprises Private Limited	5&6 Fancy Lane 6Th Floor, Kolkata, Calcutta, West Bengal	S3-867697966	Starling Enterprises Enterprises [Limited]	5&6 Fancy Lane 17Th Floor, Kolkata, Calcutta, WB
+false_merge	0.696364995644105	S1-986446492	Soldier Trade Limited	C/O Gita Chanda, Vill+Po-Bakhrabad, Belda, West Midnapore, West Bengal	S2-186293830	Soldier Trade Limited	
+false_merge	0.7398330934681933	S1-385712823	Ivenium Partners Inc	935 Colleen Avenue, Evansdale, IA	S3-114108021	Ivenium Partners	
+false_merge	0.9920182626706442	S1-299086395	Prairie Cross Inc.	372 Saddlebred Drive, Lockhart, TX	S3-170402612	Prairie Cróss Inc | www.prairiecr.com	93 Saddlebred Drive, Loockhart, Texas
+false_merge	0.7397036506953927	S1-591419217	Family Partners LLC	9707 230th Place, Kent, WA	S3-29723663	Family Partners Ptrnefsr	9709 230th Pl, Kent, Washington
+false_merge	0.981342065866855	S1-379544939	YFF Health Private Limited	C/O Ashroba R Ghatul, H.No, 00, At Post Hattkarwadi, Manwath, Parbhani, Maharashtra	S3-168732094	YF Health Private Limited	No 96 C/o Ashroba R Ghatul, H.no, 00, At Post Hattkarwadi, Manwath, Parbhani, MH
+false_merge	0.8147677024290838	S1-833531401	Aurio Bdc LLC	1000 New Jersey Avenue, Unit 905, Washington, DC	S2-189086035	LLC Aurieon Bdc	1000 NEW JERSEY AVE, WASHINGTON, DC
+false_merge	0.6886041821603041	S1-266572415	Unity Academy	C/O Amir Ranjan, Sai Iti, Buscuit Factory, Nasriganj, Dinapur-Cum-Khagaul, Patna, Bihar	S3-713683274	Shri Unity Ácademy	
+false_merge	0.9798091237184708	S1-224674282	Chandrtech People Private Limited	Madhya Pradesh, Indore, 224-B, Sanwer Road Industrial Road, 225-A, Sector-F	S2-134730244	KHANDRTECH KHANDRTECH PEOPLE PRIVATE LIMITED	BLOCK G-56 224-B, 225-A, SECTOR-F, SANWER ROAD INDUSTRIAL ROAD, Madhya Pradesh
+false_merge	0.7091891278457461	S1-965563393	Time Foods Private Limited	H No 11 12 388/1/1 Plot No 279 S R K Puram, Road No 6, Saroornagar, Rangareddy, Telangana	S3-794592684	Time Foods Limited Private	
+false_merge	0.9807873966450935	S1-741591125	Starco Enterprises Private Limited	Martin Burn Business Park, Plot 3, Block Bp, Sec V, Saltlake, North 24 Parganas, West Bengal	S3-920859690	Mr Starco Enterprises Limited	No 95 Martin Burn Business Park, Plot 3, Block Bp, Sec V, Saltlake, No Block, পশ্চিমবঙ্গ
+false_merge	0.6632958483791657	S1-265029021	Golden Printing Brands LLC	28579 263rd Street, Town Of Lake Holcombe, WI	S2-534441414	Golden Prínting Brands LLC	
+false_merge	0.9366586817208608	S1-121059322	Ziravi Diamonds Private Limited	C/O Jayaraj Sabarad 4 Amarjyothi Layout C.N Halli, Bangalore, Karnataka	S2-85450056	ZIRAVIA DIAMONDS PRIVATE LIMITED	C/O JAYARAJ SABARAD 4 AMARJYOTHI LAYOUT C.N HALLI, BANGALORE, ಕರ್ನಾಟಕ
+false_merge	0.9964249442099635	S1-450434587	Verryn Adr	130 Wyckoff Street, Brooklyn, NY	S3-138300114	Verrix Adr	130 Wyckoff Saint, Brooklyn, New York
+false_merge	0.9946561119274097	S1-840985760	C-Scheme (india) Private Limited	4, Vivekanand Marg, C-Scheme, Jaipur, Rajasthan	S2-24639787	LIMITED C-SCHEME PRIVATE CENTER	Rajasthan, C-SCHEME, JAIPUR, 307
+false_merge	0.9228188092281752	S1-405046602	Services Sa Life Private Limited	Filmlab, 27, Walbhat Road, Goregaon (East), Mumbai, Maharashtra	S2-709631522	Services Sa Life  Limited	#31 FILMLAB, 27, WALBHAT ROAD, GOREGAON (EAST), Maharashtra
+false_merge	0.9773656080204103	S1-626694631	Electra Rockwell Championsgate Inc	130 Roosevelt Street, Marion, KS	S3-397488848	Electra Rockwell	
+false_merge	0.8208460990305504	S1-286562044	Olivia Papas, MD	1627 Massachusetts Avenue, Unit 304, Washington, DC	S2-848456913	The Olivia Papas, ML	1627 MASSACHUSETTS AVENUE, WASHINGTON, DC
+false_merge	0.6899753619590389	S1-478204438	Verrial Block	2501 Fair Meadows Drive, Unit 181, Springfield, OH	S2-442060171	Verrrial Block LP	SPRINGFIELD, 2514 FAIR MEADOWS DR, OH
+false_merge	0.6916954329184541	S1-452586726	Jarleus Doubleline	5117 15th Avenue, Port Arthur, TX	S3-546932843	Jarleuz Doubleline	Texas, Port Arthur, NULL, 5117 15nd Avenue
+false_merge	0.7951710775969453	S1-964657699	Global Ses Inc.	495 La Jolla Lane, Paulden, AZ	S3-487688016	Global Ses Inc	497 La Jolla Ln, PO Box 4247, Paulden, Arizona
+false_merge	0.9570809663261104	S1-41805186	Aarvva Agro Pvt Ltd	Awfis, 01St Floor, Parinee Cresenzo, C-38-39, G Block, Bandra Kurla Complex, Bandra East Bkc Mumbai, Mumbai, Maharashtra	S2-971767284	Aarrvva Agrro Pvt (Ltd)	#51- AWFIS, 01ST FLOOR, PARINEE CRESENZO, C-38-39, G BLOCK, BANDRA KURLA COMPLEX, BANDRA EAST BKC MUMBAI, MUMBAI, Maharashtra
+false_merge	0.7908739144470974	S1-667710272	Sweet Hair Studio	1452 Mertensia Road, Farmington, NY	S2-222843225	ECTOKORBRIX	MERTENSIA RD, NY, FARMINGTON
+false_merge	0.7581416984858494	S1-518271744	South Logistics Private Limited	C-6/4, Basement, Krishna Nagar, Delhi, New Delhi, Delhi	S3-446133772	साउथ लॉजिस्टिक्स लिमिटेड	UP, Gautam Buddha Nagar, No 6-4
+false_merge	0.9995419427617677	S1-853161173	Vaayuita Forging Pvt Ltd	514, Dalamal Towers, 211, F P J Marg, Nariman Point, Mumbai, Maharashtra	S3-189745182	Vaayuitta Forging Pvt Ltd.	514, Nariman Point, Mumbai, महाराष्ट्र
+false_merge	0.8956568184582255	S1-766135058	Raviam Technologies Pvt. Ltd.	F203 Veracious Sonesta 2Nd Main 5Th Crs Kr Garden Murgeshpalya, Off Airport Road, Bangalore, Karnataka	S3-71991432	Ravviam Technologies Pvt  Ltd	F203- Veracious Sonesta 2Nd Main 14Th Crs Kr Garden Murgeshpalya, Off Airport Road, Bengaluru, Bangalore, ಕರ್ನಾಟಕ
+false_merge	0.9804819076613494	S1-656988487	Zephis Fox	212 Quincy Street, Albuquerque, NM	S2-163742174	ZEFIS FOX	212 QUINCY ST, ALBUQUERQUE, NM
+false_merge	0.8054065222140537	S1-108925881	Halcic Beauty LLC	2131 Indian Creek Road, Unit APT 206, Brownwood, TX	S2-373007356	halctis beauty llc	TX, 131 INDIAN CREEK RD, BROWNWOOD
+false_merge	0.7283465648159596	S1-265715466	Apoorva Buildtech (India) Private Limited	15/79, Civil Lines, Kanpur, Kanpur Dehat, Uttar Pradesh	S3-303857349	Apoorva-Buildtech (Iida) Limited	15/82, Kanpur Dehat, UP
+false_merge	0.8723349417345931	S1-606700068	Axis Services LLP	E-066, Greater Noida, Uttar Pradesh, Epip, Upsidc Site-5, Kasna, Gautam Buddha Nagar	S2-124163149	Axis Company (Services)	
+false_merge	0.7989830314848244	S1-807387830	Vaayuita Partners	Plot No.10 Jda Se No11 Near Ukhri Tiraha Vivekanand Ward, Jabalpur, Madhya Pradesh	S2-756154488	VAAYUITTA [PARTNERS]	PLOT NO.11 JDA SE NO11 NEAR UKHRI TIRAHA VIVEKANAND WARD, JABALPUR, Madhya Pradesh
+false_merge	0.8731407473906997	S1-813233488	Chandrva Rice Private Limited	3, Elangovadigal St., Postal Audit Colony Saligramam, Chennai, Tamil Nadu	S2-725579394	KHANDRVA LIMITED PRIVATE (RICE)	3, ELANGOVADIGAL ST., POSTAL AUDIT COLONY SALIGRAMAM, CHENNAI, Tamil Nadu
+false_merge	0.7677480804201302	S1-162277903	Taraesh Rich	No.134/1, Thilagar Street Saligramam, Chennai, Tamil Nadu	S3-105608033	Taraesha [Rich] [Rich]	#134/8, Thilagar Street Saligramam, TN, Chennai
+false_merge	0.7180979742631481	S1-744002212	Bk Rocks (India) Private Limited	Surey No 535/1, Plo No 40-46/4, Mangalam Residency Airport Ring Road, Near Nagor Road, Bhuj, Kachchh, Gujarat	S3-792958047	Bk Rocks (India)  Limited	Surey No 535/8, Bhuj, Kachchh, GJ
+false_merge	0.7954971627446656	S1-630014509	Kritva Development Private Limited	Rohtak, 42P, Sector-5, Haryana, 3Rd Floor, Rohtak	S3-623108622	Critva Development Private	42P, Sector-5, HR, No C-7rd Floor, Rohtak
+false_merge	0.9945509132927921	S1-927534261	Safe Agricultural Advisors Inc.	1641 Karen Drive, Fl 1, Chandler, AZ	S3-430067991	Safe Aghiclultfral Advisors Inc	1642b Karen Dr, Floor 1, Chandler, Arizona
+false_merge	0.791242183497144	S1-552472286	NEB Conclave Private Limited	Coimbatore South, Coimbatore, Kesariya Complex, Avinashi Road, Tamil Nadu, 914/7	S2-822136937	LNEB CONCLAVE LIMITED PARTNERS	00914/7, KESARIYA COMPLEX, AVINASHI ROAD, COIMBATORE SOUTH, தமிழ்நாடு
+false_merge	0.8101205550853541	S1-189854800	Montova Spark	17 Faxon Drive, Wells, ME	S3-942780892	Montovi Spark	##17 Faxon Drive, Wells, Maine
+false_merge	0.9832189322183086	S1-179502814	Oncology Partners	404 Lake Mcdonald Lodge Loop, West Glacier, MT	S2-877303589	Oncology Partners Inc	09 LAKE MCDONALD LODGE LOOP, WEST GLACIER, MT
+false_merge	0.8705197874627054	S1-673276668	Treat Works	Visakhapatnam, Plot No.2, Sector 3, Visakhapatnam (Urban), Vishakhapatnam, Andhra Pradesh, Dno.1-83-13-Df122/123A/1	S3-892378660	Dr Treat Works Limited	Vishakhapatnam, #1-83-13-Df122/123A/4, AP, Visakhapatnam
+false_merge	0.9283247377106933	S1-295147100	Integrated Mfa	22435 Unicorns Horn Lane, TX, Katy	S3-627996524	Integrated Inc Mfa	2440 Unicorns Horn Ln, Katy, Texas
+false_merge	0.9949241470935816	S1-534350188	Cabridyne Choice Pet Care Inc	41090 Big Bear Boulevard, Big Bear Lake, CA	S2-55084148	Corp Cabridyne Choice Pet Care	41090 BIG BEAR BLVD, BIG BEAR LAKE, CA
+false_merge	0.9998755184361509	S1-901093752	Ferrora Biosciences LLC	579 River Road, Gnadenhutten, OH	S3-822869483	Biosciences Ferrrora LLC	579 River Rd, Gnadenhutten, Ohio
+false_merge	0.6945785277501685	S1-451130495	Mayur Memorial Trust	502, I Floor, I Main Road, Moodanapalya, Vijayanagar Bangalore-72, Bangalore, Karnataka	S3-635295524	Mayur Memorial Memorial [Trust]	
+false_merge	0.9728444790906878	S1-522178055	Behavioral Health Partners	5303 31st Avenue, Spokane, WA	S2-292672796	Vioveraecto	5303  31ND AVE, SPOKANE, WA
+false_merge	0.9015431181977595	S1-47507830	MT Technologies Private Limited	Vill: Chariswar, P.O - Paikan, P.S-Klc, West Bengal, Bhangar - Ii, South 24 Parganas	S2-734849892	MT Téchnologies Limited	NO 8. VILL: CHARISWAR, P.O - PAIKAN, P.S-KLC, BHANGAR - II, West Bengal
+false_merge	0.9285856434177813	S1-485178284	Jaipur Enterprises Private Limited	Rajasthan, Jaipur, Krishna Vihar A, Opp. Saint Anslme'S School New Sanganer Road, Jaipur, Pn.3	S3-364424358	Jaipur Enterprises	#3, Jaipur, RJ
+false_merge	0.9287304329615779	S1-354309984	Nagaya Science Pvt. Ltd.	Upvan Society, Kansa, Visnagar, Mahesana, 60, Gujarat, Mahesana	S3-170012784	Nagayaer Scíence Pvt. (Ltd.) #50198	60, Upvan Society, Kansa, Visnagar, Mahesana, GJ
+false_merge	0.7975625062090201	S1-848674111	Kolkata Associates Private Limited	C/O. Heena Devi Seth, 4, Khairu Palace, Dharmatala, Kolkata, Kolkata, Howrah, West Bengal	S2-804497217	Kolkata Associates Limited	NO 1-18 C/O. HEENA DEVI SETH, 4, KHAIRU PALACE, DHARMATALA, KOLKATA, KOLKATA, West Bengal
+false_merge	0.9909766004788046	S1-314684918	East Delhi Marketing Private Limited	2Nd Floor, Vardhman Sunrize Plaza, East Delhi, Delhi, East Delhi, Unit No 229	S2-267607609	#eastdelhi	UNIT NO.240, 2ND FLOOR, VARDHMAN SUNRIZE PLAZA, EAST DELHI, दिल्ली
+false_merge	0.8322952796244503	S1-799695580	Kandula Brothers LLP	Kalbadevi Road, 404, Mumbai, Maharashtra	S3-136119812	Nexbrix	##404, Mumbai, Mumbai City, MH
+miss:not_in_candidates		S1-276948215	De Realty Ltd	2/27, Ganesh Nagar, Firozabad, Uttar Pradesh	S2-372362570	Smt De Ltd Service	##2/27, GANESH NAGAR, FIROZABAD, Uttar Pradesh
+miss:not_in_candidates		S1-112416859	Yi Therapeutics LLC	8505 Topping Road, Pikesville, MD	S3-859283639	Onyxumbra	8520 Topping Rd, Pikesville CITY, Maryland
+miss:not_in_candidates		S1-271284123	Manik Vincom Pvt. Ltd.	No.10, Pipeline Road, Mallasandra, Bangalore, Karnataka	S3-153697794	Manik Pvt. Ltd. Center	KA, No.10, Bangalore
+miss:not_in_candidates		S1-703207524	United Group	147/70, Marapettai, Pollachi, Coimbatore, Tamil Nadu	S3-638961715	Sri #united	147/70, Marapettai, Pollachi, Coimbatore, TN
+miss:not_selected	0.5169994702006832	S1-965192464	Mona International Corporation	333, 3Rd Floor, Gundecha Industrial Complex, Akruli Road, Kandivali (East), Mumbai, Maharashtra	S2-352377642	Mona Corporation International	
+miss:not_in_candidates		S1-198250213	Sree Consultants Limited	X-135/1, Ground Floor, X-Block, Street No. 11, Brahampuri, North East, Delhi	S2-520842130	Sree Limited Services	Delhi, X-135/1, GROUND FLOOR, X-BLOCK, STREET NO. 11, BRAHAMPURI
+miss:not_in_candidates		S1-725740056	Maa Projects Private Limited	S. No. 268, Ngm, Karnal, Haryana	S2-481029022	मां प्रोजेक्ट्स प्राइवेट लिमिटेड	हरियाणा, S. NO. 8-268, KARNAL, NGM, KARNAL
+miss:assigned_elsewhere	0.000013334864525780017	S1-934571744	East Sree Products Pvt Ltd	Telangana, Flat No 501, Dsr Avenue, Plot No 232, Sy No 11/8, 1/9 And 11/10 Road No 13, Hyderabad, Shaikpet	S2-323954842	ఈస్ట్ శ్రీ ప్రొడక్ట్స్ ప్రైవేట్ లిమిటెడ్	HYDERABAD CITY REGION, DSR AVENUE, PLOT NO 232, SY NO 11/8, 1/9 AND 11/10 ROAD NO 13, HYDERABAD, NO 501, Telangana
+miss:not_selected	0.11275644388339535	S1-768667056	Br India Private Limited	5214 F, Aadheswar Villa, 11Th Street Ram Nagar North Extn, Madipakkam, Chennai, Tamil Nadu	S3-682564017	Dr Br India Private	214 F, Chennai, தமிழ்நாடு
+miss:not_in_candidates		S1-798199528	Rapid Sui	577 Orange Street, Chillicothe, OH	S2-936239135	Rapid Center	
+miss:not_selected	0.30915539596368774	S1-309458540	Regency Holdings	406, Corporate Avenue Wing - A Sonawala Road, Nr Udyog Bhuvan, Goregaon, East, Mumbai, Mumbai City, Maharashtra	S3-935681115	Regency [Holdings]	MH, 40, Mumbai City, Bombay
+miss:not_in_candidates		S1-193493813	Sree Solutions	52/70/01, Zonasha Estate Projects, Harlur, Varthur, Bangalore South, Bangalore, Karnataka	S2-695570607	ಶ್ರೀ ಸೊಲ್ಯೂಷನ್ಸ್	52/70/01, BANGALORE, AGARA, ಕರ್ನಾಟಕ
+miss:not_in_candidates		S1-966040380	All International	Ganesh Layout, Nallampalayam, Coimbatore, Tamil Nadu, 40, Coimbatore North	S3-775788640	All Center	40, Ganesh Layout, Nallampalayam, Coimbatore, TN
+miss:not_in_candidates		S1-769160298	Boon Bancorporation	7326 Latcha Road, Perrysburg, OH	S2-179965953	Boon Báncorporation	
+miss:not_in_candidates		S1-749842192	One Management Private Limited	Sr No. 05, Plot No. 2, Vijay Alankar Socy Dhankawadi, Pune, Maharashtra	S3-479617156	Kelokelo	Sr No. 05, Plot No. 2, Vijay Alankar Socy Dhankawadi, Pune, Maharashtra
+miss:not_in_candidates		S1-74637790	Slate, LLC	11000 University Boulevard, Unit UNIT 422, Prince William County, VA	S3-453492646	Sate LLC	11000 Univlrsity Blvd, Prince William County, Virginia
+miss:not_in_candidates		S1-521980324	Niketan Chemicals Corp	13/193A, Ground Floor, Kp Mall Manjeri Road, Mankada, Malappuram, Malappuram, Malapuram, Kerala	S3-363418249	Niketan Chemicals Corporation	
+miss:not_in_candidates		S1-231158042	Paul & Co	# 53, Ground Floor, 1St Main Road Ngef Layout, Sanjay Nagar, Bangalore, Karnataka	S2-964600820	Co + Pmael	# 053, BANGALORE, BAGALUR, Karnataka
+miss:not_in_candidates		S1-412969699	Star Projects Private Limited	Neem Chowk, Sanwaliyaji, Near Sri Sanwariya Temple, Bhadesar, Chittorgarh, Rajasthan	S3-284875125	Star Prójects Private Limited Limited	
+miss:not_in_candidates		S1-154439658	Sree Academy	3Rd Cross, Beml Layout 5Th Stage, Karnataka, No.1043, Raja Rajeswari Nagar, Bengaluru	S3-835297143	SA	Karnataka, Bengaluru, Raja Rajeswari Nagar, 3Rd Cross, Beml Layout 5Th Stage, No.1043
+miss:not_selected	0.4401372064441953	S1-83746365	Paramount Traders	Flat No. 302, 3Rd Floor, Minerva Complex, Sd Road, Secunderabad, Hyderabad, Telangana	S3-15713079	Paramount [Tracmers]	
+miss:not_in_candidates		S1-691108337	VS Solutions Private Limited	Andhra Pradesh, Survey No.18, Chittoor, Renigunta, Industrial Development Area (Ida)	S2-90865230	VS Private Limited Center	DOOR NO 19 , INDUSTRIAL DEVELOPMENT AREA (IDA), RENIGUNTA, Andhra Pradesh
+miss:not_in_candidates		S1-873783728	Alloys & Co Pvt. Ltd.	Madhya Pradesh, 47-B, Indore, Ranibagh, Khandwa Road	S3-434744416	Anlys and Co Pvt. (Ltd.)	Hn 674 47-B, Ranibagh, Khandwa Road, Indore, मध्य प्रदेश
+miss:not_in_candidates		S1-76197302	Unified Chemical Union LLC	4229 Richardson Street, Fort Worth, TX	S2-144825070	Unified Chemical Enterprises	
+miss:not_in_candidates		S1-523187510	City Automation Private Limited	35/2, Block - 35 Third Floor, Ashok Nagar, Delhi, New Delhi	S2-276866530	City Private Limited Center	#35/2, BLOCK - 35 THIRD FLOOR, ASHOK NAGAR, NEW DSLHI, दिल्ली
+miss:not_selected	0.6286494093878545	S1-128957802	Snow Modern Cea LLC	2318 Barnes Avenue, Bronx, NY	S2-159190972	Snow Modern Cea  LLC	
+miss:not_selected	0.648279833464564	S1-665493662	PT Highland Wheeler	351 11th Street, Kansas City, KS	S3-375877424	PT Highland  Wheeler Ltd	335 11th St, Kansas, Kansas City
+miss:not_selected	0.6088689714918035	S1-82177122	National Retail Enterprises Inc	5322 Clark Avenue, Cleveland, OH	S3-115549603	National-Retail Enterprises Inc	
+miss:not_in_candidates		S1-733453196	Future Investments Private Limited	Shop No.14/1, Zam Zam Shopping Centre Mohammedpura, Bharuch, Gujarat	S3-868227409	Future Investments Private	
+miss:not_in_candidates		S1-59578094	Creative Marketing Limited	Adayar Gate Hotel Ltd, Mowbrays Road Mambalam, Chennai, Tamil Nadu	S2-868625335	Center Creative Limited	ADAYAR GATE HOTEL LTD, MOWBRAYS ROAD MAMBALAM, CHENNAI, ALWARPET, Tamil Nadu
+miss:assigned_elsewhere	0.00028670429940997005	S1-65356888	Anand Trading Pvt Ltd	H. No. A-47 East Krishna Nagar, Delhi, East Delhi, Delhi	S3-359653238	आनंद ट्रेडिंग प्रा. लि.	H. No. A-047 East Krishna Nagar, NULL, Delhi, East Delhi, दिल्ली
+miss:not_in_candidates		S1-929056073	Lakshmi Developers Private Limited	D-1002, Sy.No.12/13, Aparna Sarover, Kanchagachibowli Gopanpally Post, Hcu, Serilingampally, Hyderabad, Rangareddy, Telangana	S2-307565623	లక్ష్మీ డెవలపర్స్ ప్రైవేట్ లిమిటెడ్	RANGAREDDY, Andhra Pradesh, D-1002, HYDERABAD, SY.NO.12/13, APARNA SAROVER, KANCHAGACHIBOWLI GOPANPALLY POST, HCU, SERILINGAMPALLY
+miss:not_in_candidates		S1-726494011	Dravidian Digital LLP	Maharashtra, Mumbai, Andheri (E), F-403 Prabhat Kiran Hsg Society Manish Park Pump House	S3-145136829	ddigital.com	F-03 Prabhat Kiran Hsg Society Manish Park Pump House, Mumbai, Andheri (E), महाराष्ट्र
+miss:assigned_elsewhere	0.6342455485350588	S1-314149080	Molina All	3 Fessenden Hill Road, Townsend, MA	S2-929566713	Molina All	
+miss:not_selected	0.6371441157796903	S1-799456746	Cypress Acres	1819 101st Avenue, Unit #201, Hillsboro, OR	S2-257677375	Cypress Acres (Co)	1819 101TH AVE, PO BOX 6776, HILLSBORO, OR
+miss:not_selected	0.5811245342042827	S1-482547823	Sam Agro Limited	Bvm 43, Bougainvilla Marg Dlf Phase - Ii, Gurgaon, Haryana	S2-280290097	Sri SAM  AGRO	
+miss:not_in_candidates		S1-380974261	Mountain Society	Sheldon, VT, 615 Crowe Hill Road	S3-606039099	Mountain Services	615 Crowe Hill Rd, Sheldon, Vermont
+miss:not_in_candidates		S1-233909912	Laxmi Solutions Limited	1-1-4/2, Plot No.2, Road No 1, Near Life Line Hospitals, Daba Gardens, Kapra, Hyderabad, Telangana	S3-219449710	లక్ష్మి సొల్యూషన్స్ లిమిటెడ్	Hyderabad, TG, 1-1-4
+miss:not_in_candidates		S1-945964905	Keystone Chase LLC	1243 Wilkes Circle, Unit 113, Atlanta, GA	S2-774709525	Keystone LLC  Services	1243 WILKES CIR, PMB 4038, ATLANTA, GA
+miss:not_selected	0.5635116084317566	S1-45234270	Global Natural Technologies Corp	Gokak Mill Compound, Opposite Roshni Hotel Jetalpur Road, Vadodara, Gujarat	S2-878378517	Global Natural Technologies	
+miss:not_in_candidates		S1-988437099	Smart Systems Pvt Ltd	Flat No. A1-1406, A1 Block, Sy.No.78/A, 79/A, Ameerpet, Hyderabad, Telangana	S3-592955499	Smart Pvt Ltd Center	Hn 7-909 Flat No. A1-1406, A1 Block, Sy.no.78/a, 79/A, Hyderabad, Ameerpet, Andhra Pradesh
+miss:not_selected	0.5353884733062946	S1-200402126	Surat Realtors Pvt Ltd	Surat, Apex Commercial Centre, Near Yash Plaza, Gitanjali, Varachha Road, Gujarat, B 206	S3-895003007	Surat Ltd Pvt Realtors	
+miss:not_selected	0.6042136504036141	S1-297645019	Hart, Shelagh H., L.C.S.W.	WA, 808 13th Street, Unit #Q, Puyallup	S2-1702951	shh.com	808 THIRTEENTH ST, PUYALLUP, WA
+miss:not_selected	0.11752024996895705	S1-656296914	Lohia Consultancy Co	Flat No.2, Anugriha Apartment, Old No.15, New No. 20, Balaraman Road, Adyar, Chennai, Tamil Nadu	S3-77636290	Lohia Cosultancy Co	Madras, Chennai, TN, H.no 5
+miss:not_in_candidates		S1-380159404	High My Infotech Pvt Ltd	6 Kohinoor Apts 1St Floorplot No 479 24Th Rd Khar (W), Mumbai, Mumbai City, Maharashtra	S2-653971326	हाई माय इंफोटेक प्रा. लि.	DOOR NO 6 KOHINOOR APTS 1ST FLOORPLOT NO 479 24TH RD KHAR (W), RAIGAD, MUMBAI CITY, Maharashtra
+miss:not_selected	0.5976964052636449	S1-264681277	QL Agrotech Public Limited	Rajasthan, Opp. State Bank Of India, Krishi Mandi Road, C/O Ishwar Singh S/O Jai Singh, Bhinmal, Jalor	S2-112310617	QL AGOMEH PUBLIC LIMITED	752 C/O ISHWAR SINGH S/O JAI SINGH, OPP. STATE BANK OF INDIA, KRISHI MANDI ROAD, JALOR, राजस्थान
+miss:not_in_candidates		S1-233490081	Capital Highland Gold Inc.	Logan City, Unit B110, UT, 480 1400	S3-160057538	Capital Highland Inc.  Center	
+miss:not_in_candidates		S1-319290832	Bright Deli Partners	224 Mountain Lane, Alpine, TN	S2-156283542	Bright Deli Service	
+miss:not_in_candidates		S1-800612841	Innovative Lifestyle LLC	1071 High Grove Lane, Bedford County, VA	S3-285884800	Innovative LLC Services	High Grove Lane, Forest, Virginia
+miss:not_in_candidates		S1-265203231	Dev Trust	Tmk Complex Near Ica School, Vattampadam, Kallur Pos, Room No452/12, Thrissur, Kerala, T	S3-443106787	Dev Tfrslt	
+miss:not_in_candidates		S1-239268818	Reify Santander	21830 Byron Circle, Greenwood, MN	S3-587819803	Reify Services	21830- Byron Cir, NULL, Excelsior, Minnesota
+miss:not_in_candidates		S1-786385378	City Energy Private Limited	C/O Ramrao M.Dhawangale, Asoli Tah-Mouda, Kamptee, Nagpur, Maharashtra	S3-176903905	City Energy Private-Limited Private-Limited	
+miss:not_in_candidates		S1-152929419	Innovative Stonebridge, LLC	5519 Alexandria Drive, Lake In The Hills, IL	S3-18034853	Innovative Stonebridge,	
+miss:not_in_candidates		S1-544986084	Delhi Glass LLP	3293/6, F/F Peepal Mahadev Hauz Qazi, Delhi, Central Delhi, Delhi	S3-855450116	Delhi LLP Services & Co	
+miss:not_in_candidates		S1-799238105	Rev It Up Diner PLLC	536 Roundhouse Street, Shakopee, MN	S2-261069526	riup.com	536 Roundhouse Street, SHAKOPEE, MN
+miss:not_in_candidates		S1-702756095	Dental Associates	3700 Eagle Nest Drive, Unit 301, Crete, IL	S3-998841045	Dental Associates Industries	
+miss:not_in_candidates		S1-308807062	Cardiology Direct Clinic, Inc	TX, 3816 Alta Vista Lane, Dallas	S3-670420438	Cardiology Clinic, Inc Service	Alta Vista Ln, Dallas, Texas
+miss:not_in_candidates		S1-745527034	Perfect Products Private Limited	Shop 4, New Karnavatinagar, Jogeshwari Rd, Hatkeshwar, Ahmadabad City, Ahmedabad, Gujarat	S2-165466886	પરફેક્ટ પ્રોડક્ટ્સ પ્રાઇવેટ લિમિટેડ	SHOP 9, AHMEDABAD, AHMADABAD CITY, Gujarat
+miss:not_in_candidates		S1-758346529	Lakshmi Services Private Limited	Sr No.2, Plot No. 190, Near Samata Nagar Pati, Buldana, Buldhana, Maharashtra	S2-235625145	लक्ष्मी सर्विसेज प्राइवेट लिमिटेड	SR NO.2, BULDHANA, BULDANA, Maharashtra
+miss:not_in_candidates		S1-581426900	Tera Advisors Co	K Rahejamindspace, Surveyno.64, Building No.9, Telangana, Wework, Shaikpet, Hyderabad	S2-989486898	TERA ADVISORS	
+miss:not_in_candidates		S1-769251169	Urgent Care Associates Inc	117 Central Avenue, Carmen, OK	S3-611376762	Urgent Care Ássociates Inc	
+miss:not_selected	0.03829676224745387	S1-661538279	Polaris	8738 Cottage Road, Dayton, NY	S2-743517773	P0laris Ltd	873 COTTAGE RD, S DAYTON, NY
+miss:not_in_candidates		S1-735927732	Real Media Pvt Ltd	Sf.No. 66/9C2B1A, Saradha College Main Road, Alagapuram, Salem, Tamil Nadu	S2-168632897	Real Pvt Ltd Center	SF.NO. 66/9C2B1A, SARADHA COLLEGE MAIN ROAD, ALAGAPURAM, SALEM, Tamil Nadu
+miss:not_in_candidates		S1-123777624	Surgical Physicians LLC	Durham, 715 Jonquil Street, NC	S2-224717974	Surgical LLC Center	715 1/2 JONQUIL ST, DURHAM, NC
+miss:not_in_candidates		S1-717054219	Natraj Enterprises Private Limited	H.No.3-6-35/B Plot No.447, Vivekananda Nagar Colony, Balanagar, Hyderabad, Telangana	S2-246390320	Mr Belosol	#3-6-35/B PLOT NO.447, HYDERABAD, BALANAGAR, Telangana
+miss:not_in_candidates		S1-773032521	Gh Textile Co	Plot No-43 Satya Nagar, Bhubaneswar, Orissa, Khordha	S3-858503108	Gh Gh Textile	
+miss:not_in_candidates		S1-765004833	Urgent Care Health LLC	1833 16th Street, Clarksburg, WV	S2-37624692	Urgent Health Care LLC	
+miss:not_in_candidates		S1-140278062	Shiv Logistics LLP	Shop No. S-120, First Floor, Building No. S, Kud Business Avenue, Parasnath Complex, Bhiwandi, Thane, Maharashtra	S3-646718131	Smt Fayemirapyra	Shop No. S-9-120, Thane, महाराष्ट्र
+miss:not_selected	0.28047079994755075	S1-390389418	Clean Staffing Union LLC	447 Heritage Village, Unit Unit B, Southbury, CT	S3-627054189	Clean Staffing Union LLC	
+miss:not_selected	0.49832834189148434	S1-631559583	Desert Heartland Ford LLC	8653 Bent Arrow Court, Fairfax County, VA	S3-984240096	Desert Heart1and Heartland Ford LLC	
+miss:assigned_elsewhere	0.0010563383039773019	S1-151354400	Cascade Ventures	1512 Gould Avenue, Fort Worth, TX	S3-125585649	Cascade Center	#1512 Gould Ave, Ft Worth, Texas
+miss:not_in_candidates		S1-391665542	Tri-State Learning Center, Inc	166 Capps Bridge Road, Goldsboro, NC	S3-657507586	Tri-State Center, Learning Inc	
+miss:assigned_elsewhere	0.0025272795110588163	S1-739125046	Pediatric Partners Inc	8134 1911, Alto, TX	S2-281816432	Pediatric-Inc Center	8134. 1911, ALTO, TX
+miss:not_in_candidates		S1-769772896	Katerina Mabe Photonics	306 Western Ave, Fergus Falls, MN	S3-952634392	Katerina Mabe  Photonics	
+miss:not_in_candidates		S1-80085899	Ho Estate LLP	270, Dda Sfs Flats, Pocket-1, Sector-22, Dwarka, New Delhi, South West Delhi, Delhi	S3-360156455	M/s H0 LLP Estate	270, South West Delhi, New Delhi, DL
+miss:not_in_candidates		S1-651312009	Commission on Motor Vehicles	121 Prairiesmoke Circle, Whitefish, MT	S2-234674434	Commission on Motor Vehicles [LLC] Enterprises	
+miss:not_in_candidates		S1-765142236	My Construction Private Limited	J-22, Midc, Hingna Road, Nagpur (Urban), Nagpur, Maharashtra	S2-708918589	माय कंस्ट्रक्शन प्राइवेट लिमिटेड	J-22, NAGPUR (URBAN), NAGPUR, Maharashtra
+miss:assigned_elsewhere	0.034762243436179396	S1-711478092	Sky Brothers Private Limited	Rajasthan, 9, Alwar, Manu Marg	S3-327985347	Private Sky Bortbrs Limited	9, Manu Marg, Alwar, RJ
+miss:not_selected	0.5842417497935657	S1-755554111	Zephyr Redwood	141 Port-au-prince Court, Montgomery, TX	S2-742007171	Zephyr Redwood Corp	
+miss:not_in_candidates		S1-974429357	My Healthcare Limited	Sf-232, 2Nd Floor, Gaur City Center, Sector-4, Greater Noida West, Bishrakh, Gautam Buddha Nagar, Uttar Pradesh	S3-78466527	माय हेल्थकेयर लिमिटेड	Sf-232, 2Nd Floor, Gaur City Center, Sector-4, Greater Noida West, Bishrakh, Gautam Buddha Nagar, उत्तर प्रदेश
+miss:not_selected	0.6220412409168806	S1-154262913	Mccarthy Mid Inc	2184 Highway 68, Niota, TN	S3-864476682	Mccarthy Mid-Inc	
+miss:not_in_candidates		S1-702699212	Universal Products Pvt Ltd	Flat No. 204, Building No. 4C, Nirvana Residency, Gut No. 31/1 & 94/1, Vichumbe, Panvel, Raigarh, Maharashtra	S3-148103225	Uproducts.Com	Flat No. 204, Panvel, Raigarh, MH
+miss:not_in_candidates		S1-586536792	Downtown Pub	39 D Wythe Creek Road, Hampton City, VA	S3-706796980	Downtown Pub Enterprises	
+miss:not_in_candidates		S1-557979602	First Foods Private Limited	B - 5, Popyular Estat, Vill: Aslali, Tal: Daskro, Daskroi, Ahmedabad, Gujarat	S2-549114213	privatefoodsfirst.com	B - 5, DASKROI, AHMEDABAD, Gujarat
+miss:not_in_candidates		S1-997681259	Southern Partners LLC	3450 Olde Oak Lane, Gastonia, NC	S3-279513991	Southern Partners Enterprises	
+miss:not_in_candidates		S1-811735172	Nagpur Infrabuild Private Limited	68, Dattatraya Nagar, Nagpur, Maharashtra	S3-638422090	Nagpur Private Limited Services	68, Nagpur, MH
+miss:not_in_candidates		S1-194876316	Riix Inc	9826 Baluchi Drive, TX, Spring	S2-128035750	Riix  Inc	
+miss:not_in_candidates		S1-319868525	Sm Residency	C/O Wave Industries Pvt. Ltd. Amroha Road Malasiatehsil Dhanaura, Dhanaura, Jyotiba Phule Nagar, Uttar Pradesh	S3-69480984	Sm (Services)	C/o Wae Industries Pvt. Ltd. Amroha Road Malasiatehsil Dhanaura, Jyotiba Phoole Nagar, Dhanaura, UP
+miss:assigned_elsewhere	0.6812012131006454	S1-799336158	Urja (India) Multiprojects Private Limited	'Mount Casablanca', 3Rd Floor, New No.260 Old No.701&702, Anna Salai, Chennai-600 006, Chennai, Tamil Nadu	S2-662924359	Urja Multiprojects Private Limited Services	
+miss:not_in_candidates		S1-734326418	Star Trading Limited	C-19, Second Floor, Office No. 2, Sector-13 Vasundhara Hatt Complex, Vasundhara, Ghaziabad, Uttar Pradesh	S3-765960278	Star Trading Ltd	
+miss:not_in_candidates		S1-140733698	Star Industrial Solutions Inc	613 Terrace Drive, Winamac, IN	S2-905748735	STAR INDUSTRIAL  SOLUTIONS INC	
+miss:not_selected	0.10636491913886849	S1-323144686	Family Quality Care Associates Inc	Cincinnati, 5550 Little Flower Avenue, OH	S3-63044791	Family Quality Care Care Associates Inc Board	
+miss:not_in_candidates		S1-243431579	Smith Development Corp	3030 Wolf Pond Road, Talladega, AL	S2-727479566	Smith Corp Service	3030 WOLF POND RD, TALLADEGA, AL
+miss:not_in_candidates		S1-624504409	My Investment Private Limited	Office No. 501, 5Th Floor, Shrikant Chamber, V. N. Purav Marg, Chembur, Mumbai, Mumbai City, Maharashtra	S3-202490831	माय इन्वेस्टमेंट प्राइवेट लिमिटेड	Office No. G-501, 5Th Floor, Shrikant Chamber, V. N. Purav Marg, Chembur, Mumbai, Mumbai City, MH
+miss:not_in_candidates		S1-757332135	Bay Committee LLC	335 Vista Villa Court, Waseca, MN	S2-301263002	Bay Committee Llc (ID: 16341)	
+miss:not_in_candidates		S1-844273808	Digital Tech Private Limited	701, 7Th Floor, Regent Chambers Above Status Restaurant, Nariman Point, Mumbai, Maharashtra	S3-864064790	डिजिटल टेक प्राइवेट लिमिटेड	Greater Mumbai, MH, 70
+miss:not_in_candidates		S1-19491884	Aditya Business Ltd	Maharashtra, Flat No D/1001, Sai Raj Bldg-3, Sector: Ii, Chikhal, Dongare, Virar:West, Palghar, Thane	S2-252977802	ADITYA BUSINESS	
+miss:not_in_candidates		S1-364697289	Life Solutions Private Limited	Flat No-A/202, Rashmi Vihar Apartments, Bhubaneswar, Khordha, Orissa	S3-852146707	Life Solutions Private	Flat No-a/c-202, Bhubaneswar, Khordha, Orissa
+miss:not_in_candidates		S1-899250106	Skk Educational Society	Dindigul, Tamil Nadu, No. 1A, Sri Ram Building, R.F.Road, Palani	S3-393659654	Skk	No. 1A, Sri Ram Building, R.F.Road, Palani, Dindigul, Tamil Nadu
+miss:not_in_candidates		S1-837121579	Gujarat Tech Private Limited	Survey No. 79P3, Gujarat, Plot No. 3, Maliya Road, Chanchavadarda, Morvi, Rajkot	S2-414602344	techprivate.com	79P3, MORVI, RAJKOT, ગુજરાત
+miss:not_selected	0.10377193374332852	S1-450111973	Z Z Mathew Nexpoint Corporation	1533 Missouri Avenue, Unit 15, Phoenix, AZ	S2-119418753	Z Z Mathew Nexpoint Corp	533 MISSOURI AVE, PHOENIX, AZ
+miss:not_selected	0.48533916547984796	S1-140626407	Perez Capital Third LLC	NY, Yorktown, 2265 Edward Lane	S2-298886446	PEREZ CAPITAL THIRD LLC	
+miss:assigned_elsewhere	0.007279189071202787	S1-556349237	Imr Sadashiv Clinic	3226/31, Office No.-303, Third Floor Beadonpura, Saraswati Marg, Karol Bagh, New Delhi, Central Delhi, Delhi	S3-501914699	Imr Clinic Service	
+miss:not_selected	0.24278705988965452	S1-707804629	Active Holdings LLP	Salarpuria Windsor, 4Th Floor, No. 3, Ulsoor Road, Bangalore, Karnataka	S3-940075446	M/s Active Hóldings Llp	
+miss:not_in_candidates		S1-618261011	Samraat & Partners	Flat-1001, Tower-7, Elm, Orchard, Residency, 146-Lbs Marg, Ghatkopar (W), Mumbai, Mumbai City, Maharashtra	S2-400511275	Samraat &  Partners	
+miss:not_in_candidates		S1-224300508	Commission on Veterans Affairs	89 Pinewood Drive, Brookhaven, NY	S2-438830785	Commission on Veterans Affairs Corporation	
+miss:not_in_candidates		S1-976703773	Engineering Priya Agri LLP	Bangalore, 'A' 4Th Phase, Peenya Industrial Area, Karnataka, Bangalore, Plot No.477	S2-643781701	Engineering Pisry Agri  LLP	
+miss:not_selected	0.5563819266228228	S1-548670886	Seaton Federal Two LLC	221 Heather Lane, Tuttle, OK	S2-13981321	Seaton Foederal Two LLC	
+miss:assigned_elsewhere	0.17376862990036512	S1-578283522	Baker Health Center Inc	461 Wisconsin Dells Parkway, Fl 4th, Village Of Lake Delton, WI	S2-439806421	Baker Health Center Incorporated	
+miss:not_in_candidates		S1-848435437	Bangalore Con Private Limited	113, Radiant Lotus Apartment, 2Nd Main Road, Kodichikanahalli, Bangalore, Karnataka	S3-726030582	Bangalore Private  Limited Center	Radiant Lotus Apartment, 2Nd Main Road, Kodichikanahalli, 113, Bangalore, KA, Bengaluru
+miss:not_in_candidates		S1-217019618	Green Investments Limited	A403, Yamuna, Vasant Sagar, Thakur Village, Kandivali, Kandivali East, Mumbai, Maharashtra	S3-841773499	Green Límited Partners	A403, Kandivali East, MH
+miss:not_selected	0.5783097409319284	S1-47114047	V/I Churchill LLC	2029 Aquarius Drive, Shakopee, MN	S2-181446240	V/I V/I LLC Churchill	MN, 2035 AQARIUS DRIVE, SHAKOPEE
+miss:not_in_candidates		S1-335595936	Seven Investments Limited	587, 10Th Cross, 5Th Main J P Nagar Iii Phase, Bangalore, Karnataka	S2-645424851	Services Seven Limited	HN 500- 587, 10TH CROSS, BENGALURU HQ REGION, BANGALORE, Karnataka
+miss:assigned_elsewhere	0.4846845337410152	S1-25787486	Best Leapfrog	17241 68th Court, Tinley Park, IL	S3-216099777	Best Leapafog	
+miss:not_in_candidates		S1-215894517	Red Ice Cream	10629 Strawberry Hill, Midwest City, OK	S3-840269553	Red  Ice Ventures	
+miss:not_in_candidates		S1-801192612	South Consulting LLP	A- 43, Ug Floor, Meera Bagh, Paschim Vihar, New Delhi, West Delhi, Delhi	S3-569928352	South  Consu1ting LLP	
+miss:not_selected	0.18709349078183282	S1-512830384	Krishna Institute of Technology Private Limited	F/10, Sugam Apts, Sarkhej Road Nr Vasna Terminus, Vasana, Ahmedabad, Gujarat	S3-140267894	Krishna  Institute of Technology Private	
+miss:not_in_candidates		S1-880015641	My Construction Private Limited	Thane, Maharashtra, Kudus, Wada, Po. Dinkarpada Post- Kondivle	S2-106871675	माय कंस्ट्रक्शन प्राइवेट लिमिटेड	PO. DINKARPADA POST- KONDIVLE, WADA, THANE, Maharashtra
+miss:not_selected	0.48304569318557344	S1-589770654	Goldi Flicker, D.O.	1381 Oakwood Trail, Painesville City, OH	S2-141364536	GOLDI F, D.O.	381 OAKWOOD TRAIL, PAINESVILLE, OH
+miss:not_in_candidates		S1-796277501	Anant (India) Association Pvt Ltd	83/2/1 Topsia Road (S) Ground Floor, Kolkata, Howrah, West Bengal	S3-924746242	Anant (India) Pvt Ltd Partners	
+miss:not_in_candidates		S1-959880733	Ram Infrastructure Private Limited	Office No 67, Ground Floor, Sai Chamber Plot No 44, Sector 11, Cbd Belapur, Navi Mumbai, Thane, Maharashtra	S3-536536982	Ram Private Limited Center	Office No C-67, Ground Floor, Sai Chamber Plot No 44, Sector 11, Cbd Belapur, Navi Mumbai, Thane, MH
+miss:not_in_candidates		S1-348006145	Tierra Realtors LLP	Shop No.130, Raj Talkiescomplex, 1St Floor, Sanyogitaganj, E, Indore, Madhya Pradesh	S3-645912049	TR	Shop No.130, Raj Talkiescomplex, 1St Floor, Sanyogitaganj, E, Indore, Madhya Pradesh
+miss:not_in_candidates		S1-358185898	Wildlife Fund	848 Main Street, Unit Ste 18, Billings, MT	S3-86225789	Wildlife Fund Ltd	
+miss:not_in_candidates		S1-963091418	Timber Inc	9083 900, Losantville, IN	S3-567445933	Timber Inc Services	
+miss:not_in_candidates		S1-579947688	Anand Developers Private Limited	Hadapsar, Shop No.1, Pune, Maharashtra, Heart Beats Building S.No.160, H.No.11A11B11C	S2-450594044	आनंद डेवलपर्स प्राइवेट लिमिटेड	SHOP NO.1, HEART BEATS BUILDING S.NO.160, H.NO.11A11B11C, HADAPSAR, SASANE NAGAR, Maharashtra
+miss:not_selected	0.3411275793140207	S1-932046068	Yashwant Guest Private Limited	Village And Post Tejgaon, Raebareli, Rae Bareli, Raibareilly, Uttar Pradesh	S2-56548897	Yashwant 6uest Prívate Limited	NO. 282 VILLAGE AND POST TEJGAON, RAEBARELI, RAE BARELI, उत्तर प्रदेश
+miss:not_in_candidates		S1-100802524	Sun Investment Pvt Ltd	No44/2 14Th Bcrs Sarakki, J P Nagar 1St Phase Nr Jp Nagar Metro Station, Bangalore, Karnataka	S3-479643663	Sun Pvt Ltd Center	H.no 44/2 14Th Bcrs Sarakki, Bangalore, ಕರ್ನಾಟಕ
+miss:not_in_candidates		S1-680703154	Dental Group	50 Merrick Avenue, Unit Unit 122, Hempstead, NY	S2-647011207	DENTALGROUP.COM	50 MERRICK AVE, HEMPSTEAD, NY
+miss:not_in_candidates		S1-368986855	BHC Polymers Ltd	Shop.3, Pooja Residency, B/H Bopal Nagarpalika, Daskroi, Ahmedabad, Gujarat	S3-473418312	BP	Shop.3, Pooja Residency, B/H Bopal Nagarpalika, Daskroi, Ahmedabad, Gujarat
+miss:not_in_candidates		S1-133273259	Family Center of Columbus LLC	191 King Avenue, Unit F, Columbus, OH	S3-279823857	Family Center of	91 King Ave, Unit F, Columbus, Ohio
+miss:not_in_candidates		S1-152649702	Innovative Media Limited	Humpipe Factory Compound, Lakhibag Post Buniyadganj, Gaya, Bihar	S3-237097205	Innovative Limited Center	Humpipe Factory Compound, Lakhibag Post Buniyadganj, Rampur, Gaya, बिहार
+miss:not_selected	0.45657028610698397	S1-635721825	Dulcine Berry, L.C.S.W., PC	4114 Petter Rainosek Loop, La Grange, TX	S3-777191590	Dulcine Berry, L.C.S.W., Inc	4114-4116 Petter Rainosek Loop, PMB 1562, LA Garnge CITY, Texas
+miss:not_in_candidates		S1-20308810	Empire Realty LLC	160 Crafts Ford Court, Franklin County, VA	S2-211095452	EMPIRE REALTY LLC	
+miss:assigned_elsewhere	0.000013376747566514655	S1-21441171	Pediatric Clinic PC	2929 Solano Drive, Phoenix, AZ	S2-441830764	pediatricclinic.com	2929-B SOLANO DR, PHOENIX, AZ
+miss:not_in_candidates		S1-864527000	Ss Power Pvt Ltd	C/O Rajesh Vikram Singh Madhaipur, Mankapur, Gonda, Uttar Pradesh	S3-326333442	Nylalum	C/O Rajesh Vikram Singh Madhaipur, Mankapur, Gonda, Uttar Pradesh
+miss:not_in_candidates		S1-710017575	Unique Management Private Limited	Plot No-4960, Jawahar Colony Nit, Faridabad, Haryana	S2-819838271	Unique-Management Private	
+miss:not_in_candidates		S1-817898491	Real Energy Pvt Ltd	First Floor, Sco No 123, Sector-5, M.D.C, Panchkula, Panchkula, Haryana	S2-28664297	REAL ÉNERGY PVT LTD.	
+miss:not_in_candidates		S1-754074669	Sunrise Infotech Limited	378/6, Bharati Mangal, Karyalaya Dhamangaon Tal, Patoda, Beed, Maharashtra	S2-495558205	Sunrise  Infotech Ltd	
+miss:assigned_elsewhere	8.974358392937271e-6	S1-173935421	Apex Wholesale LLC	2209 Cruft Street, Terre Haute, IN	S2-217796563	Apex LLC Services	2209 Cruft Street, TERRE HAUTE, IN
+miss:not_in_candidates		S1-467968445	Caster Barclays PLLC	5745 70, Unit A, NC, Princeton	S2-497063146	Caster Babclatls PLLC	70, PRINCETON, NC
+miss:not_selected	0.3608988591660826	S1-590041123	Sg Homes Partners	1, Hospital Street, 2Nd Floor, Satyam Market, Opposite Hanuman Mandir, Po Princep Street, Ps - Bo, Wbazar, Kolkata, Kolkata, Howrah, West Bengal	S3-231180113	M/s Sg Homes Services	126 1, Kolkata, WB
+miss:not_in_candidates		S1-242225871	India Animated Marketing Private Limited	C-8/5, Govind Puram, Ghaziabad, Uttar Pradesh	S3-84084958	Ariabelo	UP, Ghaziabad, C-8, Ghaziabad
+miss:not_in_candidates		S1-278399777	Hotel Anand Projects Pvt Ltd	Mumbai, No C/449 St Leo Road Band, Maharashtra, 102 Cornelia Residency Ct	S2-193535984	होटल आनंद प्रोजेक्ट्स प्रा. लि.	102 CORNELIA RESIDENCY CT, NO C/449 ST LEO ROAD BAND, MUMBAI, Maharashtra
+miss:not_in_candidates		S1-680148977	East Exports Private Limited	B - 1503, Riviera, Siddheshwar Gardens, Kolshet Road, Thane (West), Thane, Maharashtra	S2-158231189	ईस्ट एक्सपोर्ट्स प्राइवेट लिमिटेड	B - 503, THANE, महाराष्ट्र
+miss:assigned_elsewhere	0.000060839097521009786	S1-473813816	Suryam International Group	10, 11, 11A, J C Industrial Layout Bangalore, Bangalore, Karnataka	S3-928929522	Suryam Group  International	10, Bangalore, J C Industrial Layout Bangalore, KA
+miss:not_in_candidates		S1-974732011	Shiva Ss Constructions Private Limited	18/18A, T. N. Chatterjee Street Near Ananya Cinema Hall, Kolkata, Howrah, West Bengal	S2-259241238	শিব এসএস কনস্ট্রাকশনস প্রাইভেট লিমিটেড	18/18A, T. N. CHATTERJEE STREET NEAR ANANYA CINEMA HALL, KOLKATA, HOWRAH, West Bengal
+miss:not_in_candidates		S1-793691167	Unique Hospitality LLP	Shp-A/04/1 Khatri House, Cr Foundry Behrambaug Rd, Jogeshwari Bhd Ja Meghani, Mumbai, Mumbai City, Maharashtra	S3-758744427	Unique Hosiptality LLP	
+miss:not_selected	0.48705481498227665	S1-331579987	Global Apparel Labs LLC	1310 Western Avenue, Hamilton, OH	S3-155957273	Global Apparel Lnhas LLC	
+miss:not_selected	0.5771136706242153	S1-898040367	Anchor Housing LLC	1814 Colony Creek Drive, Austin, TX	S2-529730930	Anchor Hóusing LLC	
+miss:not_in_candidates		S1-713580869	Classic Services Private Limited	2363, 2Nd Floor, 24Th Main, 1St Sector, Bangalore South, Bangalore, Karnataka	S2-101532519	ಕ್ಲಾಸಿಕ್ ಸರ್ವಿಸಸ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್	BANGALORE, 363, BANGALORE SOUTH, Karnataka
+miss:not_in_candidates		S1-134866387	Milzie's Motors	359 Snake Root Branch Road, Welch, WV	S2-631946053	Milzie's Motors	
+miss:not_in_candidates		S1-188408318	Rosa Prairie Braemar LLC	429 Cumberland Lane, Bolingbrook, IL	S2-416429019	The Rosa Prairie Bráemar Bráemar LLC	
+miss:not_in_candidates		S1-489980287	Sterling Cargo Labs	311 31, Macedon, NY	S2-621013047	Sterling Cargo Partners	MACEDDON, 31 31, NY
+miss:not_in_candidates		S1-737824446	Gems Seva Samiti Jabalpur	Nutrition Hub Shop No 12, Akhilalay Aparment 241, Jabalpur, Madhya Pradesh	S2-815068202	sevasamiti.com	JABALPUR, #226 NUTRITION HUB SHOP NO 12, मध्य प्रदेश
+miss:not_in_candidates		S1-5556983	Kasliwal & Co	Sur. No. 220/2/4, F.P.304/3, T.P. 50 Shilp House, Opp Rajpath Clubrajpath Rangoli Raod, Bo, Dakdev, Ahmedabad, Gujarat	S3-44906279	Kbaiemal & Co	Sur. No. 220/2/4, Ahmedabad, GJ
+miss:not_in_candidates		S1-875657988	Tech It Pvt Ltd	ÂShubh-Aishwaryâ, Sector 75/1, Chintamani Chowk, Chintamani Colony B4, Walhekarwadi, Chin, Chwad, Pune, Maharashtra	S3-283939599	Tech ít Pvt Ltd	
+miss:assigned_elsewhere	0.000010627384712710787	S1-871006942	Global Advertising LLC	3061 Misty Hill Lane, Morristown, TN	S2-250874736	GLOBAL LLC SERVICES	3061 MISTY HILL LN, MORRISTOWN, TN
+miss:not_in_candidates		S1-125733567	Deviya Benefit Private Limited	Orai, Shop No.2, Uttar Pradesh, Jalaun, 72/A New Patel Nagar, Near Sai Palace, By Pass	S2-170820036	Deviya Private Limited [Center]	
+miss:not_in_candidates		S1-120070321	Bavadyne Inc	1371 704a, Unit 4, Cleburne, TX	S3-69776889	Bbaadye Inc	1603d 704a, # 4, Cleburne, Texas
+miss:assigned_elsewhere	0.00011285399284021228	S1-324167072	Kritita Contractors Private Limited	Plot No.201, Kathwada Gidc, Kathwada, Dascroi, Ahmedabad, Gujarat	S3-107161499	Kritita Private Limited Center	
+miss:not_in_candidates		S1-686053669	Modern Investments Private Limited	Rnb Heights 2 Floor Opp Dominos, Idpl X Roads, Chintal Hyderab, Ad, Hyderabad, Telangana	S3-326998679	Sri Modern Private Limited Center	Rnb Heights 2 Floor Opp Dominos, Hyderabad, TG
+miss:not_selected	0.474219778430648	S1-776662807	Industrial Financial Digital LLC	1557 9 Avenue, Saint Cloud, MN	S3-276318533	Industrial  Financial Digital LLC	
+miss:not_in_candidates		S1-636855149	Shakti Technologies	Jaipur, Rajasthan, First Floor, 65/17 Rhb Pratap Nagar	S3-855065102	M/s Shakti Services	65/17 Rhb Pratap Nagar, Jaipur, First Floor, RJ, Jaipur
+miss:not_in_candidates		S1-471898844	Heritage Society	120 Elton Street, Brooklyn, NY	S2-893815070	Heritage Center	ELTON STREET, BROOKLYN, NY
+miss:not_selected	0.08578020241821042	S1-654453214	Bangalore Engineering Private Limited	Virginia Mall, 2Nd Floor, No.10, 11, 12, Ramagondanahalli Village, Varthur Hobli, Bangalore, Karnataka	S2-477552791	Bangalore Engineering Limited Services	
+miss:assigned_elsewhere	0.0017073680810008062	S1-900724011	Pediatric Specialists L.L.C.	1515 Howell Street, Fayetteville, NC	S3-299553608	Pediatric L.L.C. Cénter	1515 Howell Street, Fayetteeville, North Carolina
+miss:not_selected	0.22600559685773808	S1-15557565	Anchor Infrastructure International	14703 Echo Pines Court, Conroe, TX	S3-685812380	Anchor Infrastructure International Inc.	
+miss:assigned_elsewhere	0.17031790929969867	S1-743814531	Precision Anchor Seneca, Inc	840 400, Unit 27, St George City, UT	S3-872454533	Precision Anchor Seneca,	
+miss:not_selected	0.4607529101734186	S1-931819246	Johnson and Thorpe Ashford L.L.C.	2700 Appalachian Highway, Pineville, WV	S2-809813441	Lyracirariza	PINEVILLE, WV, 2700. APPALACHIAN HIGHWAY
+miss:not_in_candidates		S1-119822203	Grow & Co	3Rd Floor, Workshaala Neo, Building No. 17/R, 18Th Cross Rd. Sector 3, Hsr Layout, Bangalore South, Bangalore, Karnataka	S2-961769097	*** Grow Co  Partners	Karnataka, DOOR NO 3RD FLOOR, BANGALORE, BANGALORE SOUTH
+miss:not_in_candidates		S1-734172299	Gulf Program	OH, Andover, 376 Yellowstone Road	S2-629123473	Gulf Center	376 YELLOWSTONE RD, ANDOVER TWP, OH
+miss:not_in_candidates		S1-352548737	M & O Pharma	628 Piper Stream Circle, Cary, NC	S2-683480482	M-& O SERVICES	##628 PIPER STREAM CIRCLE, CARY, NC
+miss:not_in_candidates		S1-637960681	Perfect Enterprises Pvt Ltd	Sy.No. 1880, Nandigam Village Nandigam Mandal, Rangareddy, Hyderabad, Rangareddy, Telangana	S3-323147475	Perfect Enterprises ప్రైవేట్ లిమిటెడ్	
+miss:not_in_candidates		S1-983942964	Sun Agro Private Limited	1, Bharath Nagar Neelikonampalayam, Coimbatore, Tamil Nadu	S2-576685093	சன் அக்ரோ பிரைவேட் லிமிடெட்	1, COIMBATORE, Tamil Nadu
+miss:not_in_candidates		S1-353668219	Blue (India) Agronomy Limited	Office 1D S No. 365/1/16, J M Road, Shivaji Nagar, Pune City, Pune, Maharashtra	S3-545838696	Blue (India)	Office 1D S No. 365/1/16, Pune City, Pune, महाराष्ट्र
+miss:not_selected	0.3816485614449921	S1-668457299	Teamsters Local 109	8 Merchants Row, Unit 24, Plymouth, MA	S3-203236185	Teamsters Local 109 Inc.	8C Merchants Row, PO Box 4368, Plymouth, Massachusetts
+miss:not_selected	0.34415905664855856	S1-874072892	Sun Consultants Private Limited	Flat 402, Bldg 110, Aries Chsg Evershine Last, Vasai East, Thane, Maharashtra	S3-430531871	Sun  Consultants Private	MH, Fiat 02, Thane, Vasai East
+miss:assigned_elsewhere	2.726068254627658e-6	S1-369814215	Ssk Buildhome Private Limited	Shri Bhaban, Mangala Sahi Po-Sarbodayanagar, Near Muni Baba Matha, Plot No-183/541, Puri, Sidhamahavir Patna, Orissa	S3-416094385	Ssk Private Limited Center	Plot No-00183/541, Shri Bhaban, Mangala Sahi Po-sarbodayanagar, Near Muni Baba Matha, Sidhamahavir Patna, Puri, OD
+miss:not_in_candidates		S1-497825837	Green Pioneer Royal LLC	1519 Perkiomenville Road, Upper Frederick Township, PA	S2-209999974	Green Royal LLC Services	1519. PERKIOMENVILLE RD, PERKIOMENVILLE, PA
+miss:not_in_candidates		S1-1288873	Commission on Sanitation	319 Park Street, Gaston, OR	S2-714094249	Commission Commission on	319-323 PARK ST, GATSON CITY, OR
+miss:not_in_candidates		S1-852449375	Ad Seva Samiti	B-03 Samridhi Apartment Gh-09 Sector-21D, Faridabad, Haryana	S2-195944610	Ad Seva Samiti Corporation	
+miss:not_in_candidates		S1-596486741	Bright Construction Pvt Ltd	Sukhdham Apartment 2Nd Floor, Flat No E-3, 7/17/9- 10, Nawabganj, Kanpur Nagar, Uttar Pradesh	S3-809774179	Lumfaye+	Sukhdham Apartment 2Nd Floor, Flat No E-3, 7/17/9- 10, Nawabganj, Kanpur Nagar, Uttar Pradesh
+miss:not_in_candidates		S1-122154668	Prairie Fund	270 Davis Road, Bedford, MA	S2-415315543	Prairie [Services]	
+miss:not_in_candidates		S1-175022701	Ky Trading Private Limited	108, Second Floor, Sector-31, Dlf Qe, Gurgaon, Haryana	S2-991421380	Trading Ky Ky Private	108, DLF QE, हरियाणा
+miss:not_in_candidates		S1-581077378	Pediatric Dental Signature Physicians Inc	121-17 238 Street, Rosedale, NY	S3-424536725	Pediatric Dental Siagnture Physicians Inc	
+miss:assigned_elsewhere	0.01828151983984164	S1-410366512	Maid Barbershop!	55 Trent Road, Carroll County, VA	S2-701644360	Maid  Barbershop!	
+miss:not_in_candidates		S1-574347798	Care Public School Private Limited	H No 1376 Sambhaji Chowk Kagal Kagal, Kolhapur, Maharashtra	S3-988202128	Care Public School	
+miss:not_in_candidates		S1-722836577	Dynamic Investment Private Limited	S/O-Lt Brij Nandan Pd Singh, S.K Vihar Colony Road No 4/A Khagaul Patna, Patna, Bihar	S3-814314166	M/s Dynamic Investment	
+miss:not_in_candidates		S1-696404212	Sarasaksh Trading Limited	P No 532/8 Imt Manes, G31- Manesar, Gurugram, Gurugram, Gurgaon, Haryana	S2-190945470	VANTAGEVANTAGEPYRA	P NO 532/ IMT MAES, GURUGRAM, MANESAR, Haryana
+miss:not_in_candidates		S1-63457908	Allied Institute	4031 Cinnabar Avenue, Merced, CA	S3-233535241	Iallied.Com	4031-A Cinnabar Avenue, NULL, Merced, California
+miss:not_in_candidates		S1-236695385	P/A Trinity LLC	2955 Lavell Avenue, Wichita Falls, TX	S3-307386457	P/A LLC Services	Wichita Falls, 2955 Lavell Avenue, Texas
+miss:not_in_candidates		S1-416269875	Blue Book Store	2905 Red River Street, Victoria, Unit 21, TX	S3-64826956	Blue	2905 Red River Street, Unit 21, Victoria, TX
+miss:not_in_candidates		S1-106767871	Shakti International LLP	Plot Number 50, Moti Nagar Alamgirpur, Karanjalad, Washim, Maharashtra	S3-770656448	shaktiinternationalcom	Plot Number 50, Moti Nagar Alamgirpur, Washim, Karanjalad, महाराष्ट्र
+miss:not_in_candidates		S1-592448155	Oh Merger Inc	244 Lower Smithfield Road, Tellico Plains, TN	S2-118775970	OH INC-SERVICES	244 LOWER SMITHFIELD ROAD, TELLICO PLAINS, TN
+miss:assigned_elsewhere	0.5006335705974851	S1-668295820	Ritual Servicesprivate Private Limited	2 Bishu Babau Lane, Kolkata, Calcutta, West Bengal	S3-587368201	Dr Ritual Servicesprivate Limited Center	
+miss:not_in_candidates		S1-45065933	Upper Soren	Phoenix, 3013 27th Street, AZ	S2-436008421	Veradeltaev0	3013B 27TH ST, PHOENIX, AZ
+miss:not_in_candidates		S1-622327230	United Producer Private Limited	H.No. 10, G.F., Kh.No. 10/23 Main Shani Bazar Road, Johri Pur, Delhi, East Delhi, Delhi	S3-239526815	Private United Producer Ltd	H.no. 10, Delhi, East Delhi, DL
+miss:not_in_candidates		S1-465855942	Anand Solutions Private Limited	H. No.97/10, Gaothan, Pargaon, Junnar, Khed, Pune, Maharashtra	S2-411223650	आनंद सॉल्यूशंस प्राइवेट लिमिटेड	KHED, Maharashtra, PUNE, 97/10/3
+miss:not_in_candidates		S1-371419271	Vijay Producer Private Limited	Plot No-41, S/F(L-Type), Sec-A, Block-V Bhagwati Vihar, Near Bindapur Matiyala Rd, Uttam Nagar, South Delhi, Delhi	S3-633927559	Vijay Producer Private Limited Enterprises	
+miss:not_in_candidates		S1-155118338	Advanced Data Holdings Inc.	2696 18th Avenue, Albany, OR	S3-69337421	... Advanced Hóldings Inc. Center	2696 18rd Avenue, Albany, Oregon
+miss:not_in_candidates		S1-633352272	Golden Pizza	5813 Schafer Road, Fulton, IL	S2-127310319	Golden  Pizza	
+miss:not_in_candidates		S1-910254792	Laxmi Ventures Private Limited	T-635/D Punjabi Basti, Baljit Nagar, New Delhi, Central Delhi, Delhi	S2-996010631	LAXMI PRIVATE LIMITED-PARTNERS	Delhi, T-635/D PUNJABI BASTI, BALJIT NAGAR, NEW DELHI
+miss:not_selected	0.31519606746345136	S1-278957071	Vanguard Entertainment Inc	Ofallon, 8 Jaime Lane, IL	S3-156946656	Vanguard Entertainment	
+miss:not_in_candidates		S1-125418845	Krishna Constructions Pvt Ltd	401, 4Th Floor, Glenmorgan Above Icici Bank, Veer Savarkar Marg, Th, Ane (West), Thane, Maharashtra	S2-159061695	कृष्ण कंस्ट्रक्शंस प्रा. लि.	DOOR NO 901 401, THANE, Maharashtra
+miss:not_selected	0.3217146788990602	S1-615414732	Cooke Rockwool PC	130 Metoxit Road, Falmouth, MA	S2-896989230	COOKE ROCKWOOL	139 METOXIT RD, FALMOUTH, MA
+miss:not_in_candidates		S1-161819882	Shiv Agro Private Limited	Plot No-10, Ground Floor, Block-Ef, Inderpuri, New Delhi, Central Delhi, Delhi	S3-980307360	Dr Shiv Agro Private Private	Plot No-10, Central Delhi, New Delhi, DL
+miss:assigned_elsewhere	0.6762253864555846	S1-176529010	Lantern Orion LLC	6620 Carl Moren Road, Hensley, AR	S2-459225336	Lantern Órion LLC	
+miss:not_in_candidates		S1-268446095	Cardiology Platinum Center	6867 New Hampshire Avenue, Takoma Park, MD	S3-739394833	Cardiology Platinum	
+miss:assigned_elsewhere	0.000011421166463110345	S1-624280710	Super Global Private Limited	Nisarg Colony, Jawalkar Nagar, Pim-Gurav, Pune, Maharashtra, S.No.86/1/1, Haveli	S3-518631503	Super Private Limited Services	Nisarg Colony, Jawalkar Nagar, Pim-gurav, Haveli, Pune, MH, S.no.86/1/1
+miss:not_selected	0.21600775572057146	S1-757108594	Soque Family Office Inc	2228 Main Street, Fl 1, Ashland, OR	S3-835444345	Soque Famiily Office Inc	
+miss:not_in_candidates		S1-308287304	Meiners National Plum Inc.	13255 Exchange Avenue, Chicago, IL	S2-846000016	Meiners Inc. Plum National	
+miss:not_in_candidates		S1-867721174	Sree Foundation	Moonline Solution Pvt Ltd, Office No 312, 3Rd Floor, Rajpura, Mohali, Punjab	S2-484709684	Sree  Foundation Enterprises	
+miss:not_in_candidates		S1-870620634	Mumbai Technologies Private Limited	17Th Floor-2 Plot-154, Farkhuddinmanzil Alibhai Premji Marge, Apsara Cinema, Grant Road, Mumbai, Mumbai City, Maharashtra	S3-348286519	Mumbai Technologies Private Enterprises	
+miss:not_in_candidates		S1-837610139	Sree Infra Pvt Ltd	E-227A Ugf Rs Bs, E Block, Mansa Ram Park, New Delhi, West Delhi, Delhi	S2-860210200	श्री इंफ्रा प्रा. लि.	WEST DELHI, NEW DELHI, दिल्ली, E-227A UGF RS BS, E BLOCK, MANSA RAM PARK
+miss:not_in_candidates		S1-886838331	Meum Hotels L.L.C.	28 Allegheny Avenue, Unit SUITE 1702, Towson, MD	S2-985927649	Partners Meum L.L.C.	28C ALLEGHENY AVENUE, TOWSON, MD
+miss:not_selected	0.6314715530239592	S1-289022743	Lara Floating LLC	Battle Ground, WA, 16713 Lucia Falls Road	S3-273280333	Lara  Floating LLC	
+miss:not_selected	0.28334301020599323	S1-461724784	Oralee Horn National Hennessy Inc	1357 Edgehill Road, Unit 152, Columbus, OH	S3-507646368	Oralee Horn National Hennessy Inc.	1354 Edgehill Road, Unit 152, Columus, Ohio
+miss:not_selected	0.35148692902165324	S1-206291629	Integrated Supreme Green LLC	2761 Stockton Boulevard, Unit APT 134, Sacramento, CA	S2-916602403	Novivera	02761 STOCKTON BLVD, SACRAMENTO, CA
+miss:not_in_candidates		S1-435083422	Universal Aditya Food Private Limited	F.F. 104, Owais Avenue, Gulzar Park, Sarkhej Road, Ahmadabad City, Ahmedabad, Gujarat	S3-628493024	uafood.com	F.f. 104, Owais Avenue, Gulzar Park, Sarkhej Road, Ahmadabad City, Ahmedabad, GJ
+miss:not_in_candidates		S1-536978586	North Classic Algonquin Group	484 Court House Lane, Pascoag, RI	S3-256965517	North	484 Court House Lane, Pascoag, RI
+miss:not_in_candidates		S1-241313056	Galaxy Healthcare Limited	R-10 A&B, Sector-2 Vidhyadhar Nagar, Jaipur, Rajasthan	S2-575561680	Dr Galaxy Healthcare Ltd	
+miss:not_in_candidates		S1-105526003	Sai Foundation	Plot No. 304. Badli Road, Vil- Kheri Jat, Jhajjar, Jhajjar, Haryana	S3-204932965	Sai Foundation Corporation	
+miss:not_in_candidates		S1-158831865	Royal Services Pvt Ltd	Ambattur, Tamil Nadu, 12 Saraswathi Pandurangan St Cholapuram, Chennai	S3-294521705	Kelohalo	12 Saraswathi Pandurangan St Cholapuram, Ambattur, Chennai, Tamil Nadu
+miss:not_selected	0.17583527696693974	S1-774055048	Unified Transit Services Inc	1605 Bush Street, Harlingen, TX	S2-907618496	Unified Transit Services	
+miss:not_in_candidates		S1-934537418	Silver One Services Limited	P17, Bs2, Vignarajapuram, 3Rd Extn, Vengaivasal, Chennai, Kancheepuram, Tamil Nadu	S2-488282690	சில்வர் ஒன் சர்வீசஸ் லிமிடெட்	P17, BS2, VIGNARAJAPURAM, 3RD EXTN, VENGAIVASAL, KANCHEEPURAM, CHENNAI, Tamil Nadu
+miss:not_selected	0.003131710083805013	S1-840965837	Hari Investments Limited	#5, Dattasri, 4Th Cross Near Yeshwanthpur Rly Stn, Bangalore, Karnataka	S2-567335648	ಹರಿ ಇನ್ವೆಸ್ಟ್‌ಮೆಂಟ್ಸ್ ಲಿಮಿಟೆಡ್	H.NO G-5, BENGALURU, Karnataka
+miss:not_in_candidates		S1-402047638	Simmons, Luci, Ph.D.	5424 Hartford Avenue, Tulsa, OK	S2-607794370	SIMMONS, LUCI, PH.D.	
+miss:not_in_candidates		S1-733486747	Joycelin Kroger Signature Thunder LLC	3145 Stewart Road, Unit Unit 75, Vestal, NY	S2-974273128	Deltaonyxlum	3145 STEWART RD, VESTAL, NY
+miss:not_in_candidates		S1-889185791	Premier Cyber Inc	Millis, MA, 7 Southwoods Circle	S3-926274532	Premier Inc Center	#7 Southwoods Cir, Milils, Massachusetts
+miss:not_in_candidates		S1-919857315	My Technologies Private Limited	Shop No. B-708, Swati Trinity, Applewood Township, Sanathal, Sanand, Ahmadabad City, Ahmedabad, Gujarat	S2-179220856	માય ટેક્નોલોજીસ પ્રાઇવેટ લિમિટેડ	SHOP NO. B-708, SWATI TRINITY, APPLEWOOD TOWNSHIP, SANATHAL, SANAND, AHMEDABAD, AHMADABAD CITY, Gujarat
+miss:not_in_candidates		S1-756332112	Red Massage	IL, Springfield, 2100 5 Bradley Street	S3-638856060	Red Maslae	
+miss:not_in_candidates		S1-532738496	IAT Technologies Limited	West Bengal, 3 Princep Lane 301 Bhagwati Chambers, Kolkata, Calcutta	S2-684647196	itechnologies.com	NO 3 PRINCEP LANE 301 BHAGWATI CHAMBERS, KOLKATA, CALCUTTA, West Bengal
+miss:not_in_candidates		S1-406421569	Patna Plastic	H/O Debu Yadav, Chakaram Near Archana Medical Hall, Gpo, Patna, Bihar	S3-963193911	Patna Services	409. H/o Debu Yadav, Patna, बिहार
+miss:not_in_candidates		S1-703885816	Basil & Sons Limited	1St A Cross, 3Rd Stage, 4, Basaveshwaranaga, Bangalore North, Bangalore, Karnataka	S3-720181423	Basil &	Bangalore, KA, Bangalore North, 1St A Cross
+miss:not_selected	0.38010084977776043	S1-733539812	Brewer, Amie, L.C.S.W.	NC, Cary, 100 Glade Park Road	S3-290400083	Brewer, Amie, Center	
+miss:not_in_candidates		S1-502429731	Ks Gifts Pvt. Ltd.	14 Chauhan Apartmentsion Trombay Road Chembur, W E Dt 30-9-99 Mumbai, Mumbai, Maharashtra	S3-12839674	Ks  Gifts Pvt. Ltd.	
+miss:assigned_elsewhere	6.7791352961119805e-6	S1-924649179	Advanced Transit Corporation	426 87th Street, Kansas City, MO	S2-98237072	Zephnovi	426 87ST SAINT, KANSAS CITY, MO
+miss:not_in_candidates		S1-468249034	Al Investments LLP	Delhi, South West Delhi, New Delhi, Kh No.25/18, Ff, Block-B, Dabri Extn., East Near Gopal Mandir, H.No-25	S2-714509582	AL LLP CÉNTER	H.NO 195  H.NO-25, KH NO.25/18, FF, BLOCK-B, DABRI EXTN., EAST NEAR GOPAL MANDIR, NEW DELHI, Delhi
+miss:not_in_candidates		S1-959387448	Bhardwaj Tech Limited	936 Synagague Street, Opposite To Divine Terace, Pune City, Pune, Maharashtra	S2-114629718	Bhardwaj Limited Services	
+miss:not_in_candidates		S1-271712322	Jai Consultancy Pvt Ltd	Jmk House, A-278 Okhla Industrial Area, Phase-I, New Delhi, Delhi	S2-830309205	जय कंसल्टेंसी प्रा. लि.	JMK HOUSE, PHASE-I, NEW DELHI, दिल्ली
+miss:not_in_candidates		S1-807394704	Super Enterprises Pvt Ltd	Ayush Regecy Flat-205, Kamoth Panvel Raigad, Raigad, Maharashtra	S3-462597750	Super Enterprises Pvt Limited	
+miss:not_in_candidates		S1-636787858	KX Renewable Pvt Ltd	Flat No.403 Varsha Grand, Serenity Layout, Bangalore South, Bangalore, Karnataka	S3-331021113	KX Renewable	
+miss:not_in_candidates		S1-385938102	Community Trust	17373 Jessie Lane, Surprise, AZ	S3-94955229	COMMUNITY TRUST Enterprises	
+miss:not_in_candidates		S1-317434029	Modern Estate Pvt Ltd	No Vp 1/387 Pazhavila Veedukovalam Beach Kovalam P O, Trivandrum, Palakkad, Kerala	S2-746609575	മോഡേൺ എസ്റ്റേറ്റ് പ്രൈവറ്റ് ലിമിറ്റഡ്	DOOR NO 489 NO VP 1/387 PAZHAVILA VEEDUKOVALAM BEACH KOVALAM P O, PALAKKAD, TRIVANDRUM, കേരളം
+miss:not_selected	0.3136817943518306	S1-347237544	Mahon, Dietz & Ramirez Tge	TX, 803 Crockett Street, Fl 0, Beeville	S2-441287039	Mahon, Dietz & Ramirez Tge Corp	03 CROCKETT STREET, BEEVILLE, TX
+miss:not_in_candidates		S1-857188415	Indo Tech Private Limited	Gujarat, Ahmedabad, Anilkunj Centre, Besides Shefali Centre Paldi Char Rasta, Paldi, 215	S3-381123132	Indo Tech Limited Center	
+miss:not_in_candidates		S1-787214785	Valley Preparatory Academy	TX, Fort Worth, 3540 Baylor Street	S3-988149500	Valley Academy (Services)	3540-3544 Baylor St, Fort Worth, Texas
+miss:not_in_candidates		S1-458352103	Valley Holding Company Inc	140 700, Unit D3, Smithfield, UT	S3-736126800	Valley	140 700, Unit D3, Smithfield, UT
+miss:not_in_candidates		S1-999718700	Summit Federation	801 Belaire Drive, Granite Shoals, TX	S3-925800531	Summit Services	801B Belaire Drive, Granite Shoals, Texas
+miss:not_selected	0.5871747496708084	S1-942320109	Sonal Brothers Corp	B/15, Shubham Chs Ltd Plot No : 151, Gorai-2, Borivali (West), Mumbai, Mumbai City, Maharashtra	S3-269381527	Sonal Bróthers CORP	
+miss:assigned_elsewhere	0.44449055993636655	S1-202953242	Certified Defense Solutions LLC	Franklin, TN, 650 Edgewood Boulevard, Unit 35	S2-161010504	Certified Defense Solutions	
+miss:not_in_candidates		S1-18816760	Ceon Inc.	W3295 Badger Drive, Town Of Leon, WI	S3-822586971	Con Inc.	Wisconsin, Town Of Leon, W3295 Badger Drive
+miss:not_in_candidates		S1-969232035	Shree Anand Enterprises Private Limited	Plot No- 1669/254, Nilakantheswar Colony, Bhubaneswar, Khordha, Orissa	S3-52113858	ଶ୍ରୀ ଆନନ୍ଦ ଏଣ୍ଟରପ୍ରାଇଜେସ୍ ପ୍ରାଇଭେଟ୍ ଲିମିଟେଡ୍	Khordha, Plot No- 1669/254, Bhubaneswar, Nilakantheswar Colony, Orissa
+miss:not_in_candidates		S1-894403142	Jai Infra Private Limited	No 98, Gandhiji 5Th Street Kakkanji Nagar Vysarpadi, Chennai, Tamil Nadu	S3-941613427	Jai Private Limited  Services	
+miss:not_in_candidates		S1-610104162	Shivam Consulting Pvt Ltd	Prem Nath Motors Private Limited Sarraf M I Road, Jaipur, Rajasthan	S3-285550427	Shivam Consulting Pvt  Ltd Enterprises	
+miss:not_in_candidates		S1-932832887	Ram Estate Private Limited	Gujarat, Ahmedabad, Shripal Nagar Society Opp. Petrolpump Usmanpura, 3	S3-396269466	રામ એસ્ટેટ પ્રાઇવેટ લિમિટેડ	No 84 3, Ahmedabad, ગુજરાત
+miss:not_selected	0.6171433968135591	S1-745324924	Children's Committee III	4132 Windfall Dr NW, Cedar Rapids, IA	S3-50660702	Children's Committee III LLC	132 Windfall Dr Northwest, Cedar Rapids, Iowa
+miss:not_in_candidates		S1-697544932	Feia	257 Chesapeake Road, Cameron, NC	S2-734796277	Feia	
+miss:not_in_candidates		S1-438215088	Brisk Nidhi Pvt. Ltd.	New Delhi, Kh No-104/2/1, G/F, Block A Gali No-1, Rajapuri Uttam Nagar, Near A, Block, New Delhi, Delhi, Plot No- A7	S3-69602635	Brisk Pvt. Ltd. Service	Plot No- A7, New Delhi, दिल्ली
+miss:not_in_candidates		S1-988095453	Nkb & Brothers Pvt. Ltd.	Plot No.98, Sector - 8 Imt Manesar, Gurgaon, Haryana	S3-178985549	Orbijaxlum	No 98, Gurgaon, हरियाणा
+miss:not_in_candidates		S1-20057280	Nexify Inc	OH, Columbus Grove, 20261 Rd 18-S	S2-229703587	NGEXIYF  INC	20261. RD 18-S, COLUMBUS GROVE, OH
+miss:not_selected	0.6214305378894337	S1-887991412	Nelson Vornado	4820 Legacy Drive, High Point, NC	S3-705994647	Nelson  Vornado	
+miss:not_in_candidates		S1-67326655	Lakshmi Power Private Limited	#1-7-1/194, Near Sree Bakery, Srinivas Nagar Colony, Temple Alwal, Medchal Malkajgiri, Tirumalagiri, Hyderabad, Telangana	S2-479621615	లక్ష్మి పవర్ ప్రైవేట్ లిమిటెడ్	#1-7-1/194, RANGAREDDY, HYDERABAD, తెలంగాణ
+miss:not_in_candidates		S1-311474808	Sree Infrastructure Pvt Ltd	Ii Floor, Sainik Nagar, Ward No. 40, Gangapurcity, Sawai Madhopur, Rajasthan	S2-660685508	श्री इंफ्रास्ट्रक्चर प्रा. लि.	II FLOOR, SAINIK NAGAR, WARD NO. 40, GANGAPURCITY, SAWAI MADHOPUR, राजस्थान
+miss:not_in_candidates		S1-549204505	Southern Workshop	10389 6900, Highland, UT	S3-491003086	Southern Services	10389 6900, <NULL>, American Fork, Utah
+miss:not_selected	0.500490701521909	S1-581815796	New Delhi Distributions Pvt Ltd	B - 40/1, Iind Floor, Mayapuri Industrial Area, Phase - I, New Delhi, West Delhi, Delhi	S3-614615792	New Dci Distributions Pvt Ltd	
+miss:not_selected	0.6446341834596726	S1-82488044	Dedie Mangum Galaxy, Inc	7030 950, Elizabethtown, IN	S2-532318267	Dedie-Mangum	
+miss:not_in_candidates		S1-551204094	Madurai Chemico Limited	Tamil Nadu, Madurai, No.9/1 ( New No.18) Chetty Gurunathan Kovil Street, Madurai	S2-718100172	Madurai  Cemco Limited	
+miss:not_selected	0.44005355580916555	S1-486356832	Jordan Montessori School	112 Olde Ash Lane, Charleston, WV	S3-993639400	Rizaveoiri	Olde Ash Lane, Charleston, West Virginia
+miss:not_in_candidates		S1-24773972	Best Estate Private Limited	Bangalore, No. 142, Enzyme Tech Park, 4Th & 5Th Floor, Hosur Rd, Koramangala Industrial Layout, Karnataka	S3-409015901	BE	No. 142, Enzyme Tech Park, 4Th & 5Th Floor, Hosur Rd, Koramangala Industrial Layout, Bangalore, Karnataka
+miss:assigned_elsewhere	0.00021230948383615706	S1-400039450	Shiv Ventures Private Limited	Indore, Scheme No. 54, Madhya Pradesh, 121 A B, Indore	S3-544434172	Zephjax	#1-21 A B, Scheme No. 54, Indore, MP
+miss:not_in_candidates		S1-682594847	National League LLC	VA, Virginia Beach City, 1932 Grey Friars Chase	S3-237093382	National League (LLC)	
+miss:not_in_candidates		S1-231001117	YYA Smart Dental	5373 Rocks Road, Pylesville, MD	S3-602454084	YYA Dental Services	Maryland, Pylesville, 5373 Rocks Road
+miss:not_in_candidates		S1-739226759	Engineering & Sons Private Limited	Kheya Apartment, 1St Floor, Fl-1 130 Santoshpur Avenue, Kolkata, Kolkata, Howrah, West Bengal	S3-141398997	Engineering & Sons Private Ltd	
+miss:not_in_candidates		S1-973172857	Akshaya Sangh	512, Elegance Tower Jasola, New Delhi, South Delhi, Delhi	S3-642216591	AS	512, Elegance Tower Jasola, New Delhi, South Delhi, Delhi
+miss:assigned_elsewhere	0.0004367801334898043	S1-312787310	TK Management Pvt. Ltd.	Plot No . 20, Sy. No 125 & 126 I.D.A. Mallapur, Uppal Mandal, Kapra Mun, Icipality, Hyderabad, Telangana	S2-627796127	Ectosol	36. PLOT NO . 20, HYDERABAD, ICIPALITY, Telangana
+miss:not_selected	0.31313592650752864	S1-118779250	Kayley Hernandez, M.D., PC	17118 Longwood, Cypress, TX	S2-604303144	Kayley Hernandez, M.D.,	
+miss:not_in_candidates		S1-675609313	Forge Western	4436 Windsor Road, Village Of Windsor, WI	S2-215882625	FORGE SERVICES	4436 WINDSOR RD, PMB 102, WINDSOR, WI
+miss:not_in_candidates		S1-305726388	Dataix	14527 Mackinaw Valley Park, Green Valley, IL	S2-904142224	Dataix Corp	
+miss:not_in_candidates		S1-817024234	Vision Care Associates Inc	Port Orchard, 3889 Donato Lane, WA	S2-264039030	Vision Cce Associates Inc	DONATO LN, PORT ORCHARD, WA
+miss:assigned_elsewhere	0.00007507397597743913	S1-767983860	Jai First Healthcare Private Limited	Ews Plot No 61/62, Deo Prayagam Ada Jhalwa Near Poonam Hospital, Allahabad, Uttar Pradesh	S2-661353099	jfhealthcare.com	PRAYAGRAJ, Uttar Pradesh, RAJROOPPUR, DEO PRAYAGAM ADA JHALWA NEAR POONAM HOSPITAL, EWS PLOT NO 61/62
+miss:not_selected	0.42803418857048037	S1-229745009	Kasper Nadar Ltd	30/F/F, Chandralok Society Nera Cadila Laboratory, Ghodasar, Ahmedabad, Gujarat	S3-918763204	Smt Kasper Ltd Services	
+miss:not_selected	0.3294222146063363	S1-813810909	Climate & Brothers Limited	Nps Anbu Nagar, Chinnaiyampalayam, Tamil Nadu, 157/2A, Erode	S2-349936462	Climate & Brothers	
+miss:assigned_elsewhere	0.18744117204756292	S1-33792474	Tri-State Enterprises LLC	2718 Dupont Street, Pasadena, TX	S2-479602815	TRI-STATE [ENTERPRISES]	
+miss:not_selected	0.4829976180639981	S1-660944026	Barillas Platforms LLC	402 12th Street, Newton, KS	S2-74693514	Barillas LLC Service	
+miss:not_in_candidates		S1-393647438	United Industries Private Limited	Flat-203, Biswanath Plaza Tankapani Road, Bhubaneswar, Khordha, Orissa	S2-706012945	ୟୁନାଇଟେଡ୍ ଇଣ୍ଡଷ୍ଟ୍ରିଜ୍ ପ୍ରାଇଭେଟ୍ ଲିମିଟେଡ୍	FLAT-2-03, BHUBANESWAR, Orissa, KHORDHA
+miss:not_in_candidates		S1-623194269	Pediatric Specialists of Wilmington	285 Carlow Drive, Wilmington, DE	S2-677419274	Pediatric Specia1ists of	285 1/2 CARLOW DRIVE, WILMINGTON CITY, DE
+miss:not_in_candidates		S1-60710979	Indian Producer Pvt Ltd	Plot No. 6, Behind Gurunanak Petrol Pump, Surana Nagar, Jalna Road, Aurangabad, Maharashtra	S2-896936840	Ltd Indian Pvt Services	AURANGABAD, Maharashtra, AURANGABAD, DOOR NO 6, BEHIND GURUNANAK PETROL PUMP, SURANA NAGAR, JALNA ROAD
+miss:not_in_candidates		S1-633568190	Cardiology Care	4405 Mustang Drive, Killeen, TX	S2-84188269	Cardiology Care Co	
+miss:not_selected	0.3996028100033414	S1-327442226	Opperman's Anchor Communications	UT, 10277 1280, White City	S2-875215632	Opperman's  Anchor	
+miss:not_in_candidates		S1-543277114	Shree Energy Private Limited	24/2, Saisamarth Park, Flat No 4, National Park, Near Siddharth Hall, Manikbag, Sinhagad, Road, Pune, Maharashtra	S2-330159864	श्री एनर्जी प्राइवेट लिमिटेड	24/2, PUNE, महाराष्ट्र
+miss:not_in_candidates		S1-593296936	Trusted Elm Inc	Tulsa, OK, 7783 Skelly Drive	S3-436671089	Trusted Inc Center	Skelly Drive, Tulsa, Oklahoma
+miss:not_in_candidates		S1-428230423	Mann Tri-State Source	44191 Airport Road, Unit B, California, MD	S3-333576702	Mann TrgiiState (Source)	
+miss:assigned_elsewhere	0.10806708342081155	S1-817390374	Buor	811 Lyon Street, Laramie, WY	S3-25315100	Buor Ltd	
+miss:not_selected	0.0942265462783599	S1-661843479	Sidonia Wright Parts PC	44779 King Way, Unit K, California, MD	S3-664335372	Wright, Sidonia Parts LLC	4779 King Way, # K, California, Maryland
+miss:not_in_candidates		S1-539707736	Southern Infrastructure Private Limited	Mumbai, Jai Murli Govind Society, Plot No.755 5Th Road, Khar West, Maharashtra, 11, Mumbai City	S3-730737831	southerninfrastructure.com	Mumbai, 11, MH
+miss:not_in_candidates		S1-60492752	Jay Healthcare Private Limited	76 Khangra Patty Pandit Purusottam Roy Street 3Rd Floor, Kolkata, Howrah, West Bengal	S2-699100168	জয় হেলথকেয়ার প্রাইভেট লিমিটেড	NO 76 KHANGRA PATTY PANDIT PURUSOTTAM ROY STREET 3RD FLOOR, KOLKATA, পশ্চিমবঙ্গ
+miss:not_in_candidates		S1-449353781	Raj Exports Private Limited	11/6, Gobindapur Road, Kolkata, Kolkata, Howrah, West Bengal	S3-815136570	Raj Private  Limited Services	11/6, Gobindapur Road, Kolkata, Howrah, Kolkata, WB
+miss:not_in_candidates		S1-64961608	Fresh Internet Inc	VA, Bristol City, Unit APT 104, 126 Waverly Lane	S2-144210344	Fresh Inc-Services	
+miss:not_in_candidates		S1-157789372	WS Hydro PC	4010 Saint Andrews Lane, Big Lake, MN	S2-322575170	WS HYDCRO PC PC	
