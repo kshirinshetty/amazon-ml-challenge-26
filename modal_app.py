@@ -4,7 +4,7 @@ Each run gets runs/<name>/ (code snapshot, model, metrics, errors, submission fi
   R=002_my-change; mkdir -p runs/$R
   modal run modal_app.py --run $R 2>&1 | tee runs/$R/modal.log                 # full pipeline
   modal run modal_app.py --run $R --start fit 2>&1 | tee runs/$R/modal.log     # reuse cached blocking + features
-Stages: download -> normalize -> block -> features -> fit -> predict (--start/--stop pick a range).
+Stages: download -> normalize -> block -> prune -> features -> fit -> predict (--start/--stop pick a range).
 """
 import shutil
 import subprocess
@@ -18,7 +18,7 @@ image = (modal.Image.debian_slim(python_version="3.12").apt_install("curl", "unz
          .uv_sync().add_local_dir("src", "/root/src"))
 DOWNLOAD = ("mkdir -p data && curl -sSL https://cdn.unstop.com/files/6ab10eb3b23ba_student_resource.zip"
             " -o data/sr.zip && cd data && unzip -qo sr.zip -x '__MACOSX/*' && rm sr.zip")
-STAGES = ["download", "normalize", "block", "features", "fit", "predict"]
+STAGES = ["download", "normalize", "block", "prune", "features", "fit", "predict"]
 
 
 @app.function(image=image, volumes={"/vol": vol}, cpu=32, memory=65536, timeout=3 * 3600)
@@ -40,8 +40,9 @@ def main(run: str, start: str = "download", stop: str = "predict"):
             step.remote(["sh", "-c", DOWNLOAD])
         elif stage == "normalize":
             step.remote(["normalize.py"])
-        elif stage in ("block", "features"):  # train and test in parallel containers
-            list(step.map([[f"{stage}.py", "train"], [f"{stage}.py", "test"]]))
+        elif stage in ("block", "prune", "features"):  # train and test in parallel containers
+            script, extra = ("block.py", ["--prune"]) if stage == "prune" else (f"{stage}.py", [])
+            list(step.map([[script, split, *extra] for split in ("train", "test")]))
         else:
             step.remote(["match.py", stage, run_dir])
     if STAGES.index(stop) >= STAGES.index("fit"):

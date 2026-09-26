@@ -5,9 +5,9 @@ from the challenge data. No external data, APIs or pretrained models are used; t
 LightGBM classifier (MIT license) trained from scratch on the provided training labels.
 
 ```
-raw TSVs ─▶ normalize.py ─▶ block.py ─▶ features.py ─▶ match.py fit ─▶ match.py predict ─▶ output/*.tsv
-            text cleanup     candidate    pair           LightGBM +       best-S1
-                             generation   similarities   F0.5 threshold   assignment
+raw TSVs ─▶ normalize.py ─▶ block.py ─▶ block.py --prune ─▶ features.py ─▶ match.py fit/predict ─▶ output/*.tsv
+            text cleanup +   top-3 S1     drop weak / cap     pair           LightGBM, F0.5 threshold,
+            learned maps     retrieval    per-S1 candidates   similarities   best-S1 assignment
 ```
 
 ## Setup
@@ -22,8 +22,10 @@ raw TSVs ─▶ normalize.py ─▶ block.py ─▶ features.py ─▶ match.py 
 
 ```bash
 python src/normalize.py             # raw TSVs -> work/{train,test}.parquet, work/train_gt.parquet
-python src/block.py train           # candidate generation -> work/train_cands.parquet (prints recall@K)
-python src/block.py test            # -> work/test_cands.parquet
+python src/block.py train           # retrieval: top-3 S1 per S2/S3 record -> work/train_cands_full.parquet
+python src/block.py test            # -> work/test_cands_full.parquet
+python src/block.py train --prune   # candidate pruning -> work/train_cands.parquet (prints recall vs size)
+python src/block.py test --prune    # -> work/test_cands.parquet (= candidate_pairs.tsv)
 python src/features.py train        # pair features + labels -> work/train_feats.parquet
 python src/features.py test         # -> work/test_feats.parquet
 python src/match.py fit final       # LightGBM + threshold tuning -> final/model.txt, final/metrics.json
@@ -38,7 +40,7 @@ recall, the F0.5-vs-threshold curve, feature importances and per-country test st
 
 | File | Role |
 |---|---|
-| `src/normalize.py` | Unicode transliteration, legal-suffix removal, address abbreviation/state canonicalisation |
-| `src/block.py` | Candidate generation: each S2/S3 record retrieves its top-K S1 records (same country) by sparse TF-IDF cosine |
+| `src/normalize.py` | Transliteration, alias/legal-suffix removal, spelling maps learned from training pairs, per-country filler-word detection |
+| `src/block.py` | Candidate generation: each S2/S3 record retrieves its top-K S1 records (same country) by sparse TF-IDF cosine; `--prune` drops weak rank-2/3 pairs and caps each S1's list |
 | `src/features.py` | Pairwise string/number/context features for every candidate pair |
 | `src/match.py` | LightGBM training, macro-F0.5 threshold search, one-S1-per-record assignment, output writing |

@@ -1,0 +1,145 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-S1WZb6u5SbceLIZLgs1p0Q
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/normalize.py
+/root/src/normalize.py:205: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  gt.with_columns(pl.col("matched_entity_ids").fill_null("").str.split(",")).explode(
+/root/src/normalize.py:125: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  count = lambda c: d.select(t=pl.col(c)).explode("t").group_by("t").len(c)
+/root/src/normalize.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  n_t = d.select("uq").explode("uq").group_by("uq").len("n_t")
+/root/src/normalize.py:131: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  best = (d.select("uq", "us").explode("uq").explode("us").group_by("uq", "us").len("n")
+/root/src/normalize.py:145: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  t = (df.select("country", "src", t=pl.col(col).str.split(" ").list.unique()).explode("t")
+train {'name': 1468, 'addr': 4707} maps; {'India': {'name': 53, 'addr': 10}, 'US': {'name': 24, 'addr': 18}} filler tokens
+test {'name': 1468, 'addr': 4707} maps; {'US': {'name': 25, 'addr': 17}, 'France': {'name': 24, 'addr': 11}, 'India': {'name': 57, 'addr': 10}} filler tokens
+$ /.uv/.venv/bin/python /root/src/block.py train
+$ /.uv/.venv/bin/python /root/src/block.py test
+India: 883188 S1, 4133346 queries
+France: 259452 S1, 1434993 queries
+     250000/1434993  5.8s
+     500000/1434993  5.5s
+     750000/1434993  5.6s
+    1000000/1434993  5.5s
+    1250000/1434993  5.5s
+     250000/4133346  8.0s
+    1434993/1434993  3.9s
+India: 809986 S1, 4717565 queries
+     500000/4133346  7.7s
+     750000/4133346  7.7s
+    1000000/4133346  7.6s
+    1250000/4133346  7.6s
+    1500000/4133346  7.7s
+    1750000/4133346  7.7s
+     250000/4717565  10.5s
+    2000000/4133346  7.6s
+    2250000/4133346  7.3s
+     500000/4717565  11.1s
+    2500000/4133346  7.3s
+     750000/4717565  11.0s
+    2750000/4133346  7.2s
+    3000000/4133346  7.2s
+    1000000/4717565  10.5s
+    3250000/4133346  7.2s
+    1250000/4717565  10.7s
+    3500000/4133346  7.2s
+    3750000/4133346  7.4s
+    1500000/4717565  10.8s
+    4000000/4133346  7.2s
+    4133346/4133346  3.8s
+    1750000/4717565  10.6s
+US: 1323633 S1, 6186873 queries
+    2000000/4717565  10.4s
+    2250000/4717565  10.9s
+    2500000/4717565  9.9s
+     250000/6186873  7.6s
+    2750000/4717565  10.1s
+     500000/6186873  7.4s
+    3000000/4717565  10.7s
+     750000/6186873  7.3s
+    1000000/6186873  7.6s
+    3250000/4717565  11.9s
+    1250000/6186873  7.4s
+    3500000/4717565  10.3s
+    1500000/6186873  7.4s
+    1750000/6186873  7.4s
+    3750000/4717565  10.0s
+    2000000/6186873  7.6s
+    4000000/4717565  10.1s
+    2250000/6186873  7.3s
+    4250000/4717565  10.4s
+    2500000/6186873  7.8s
+    2750000/6186873  7.7s
+    4500000/4717565  9.8s
+    3000000/6186873  7.5s
+    4717565/4717565  8.5s
+US: 663106 S1, 3817031 queries
+    3250000/6186873  7.7s
+    3500000/6186873  7.5s
+    3750000/6186873  7.9s
+    4000000/6186873  8.0s
+     250000/3817031  8.5s
+    4250000/6186873  7.9s
+     500000/3817031  8.6s
+    4500000/6186873  7.5s
+     750000/3817031  8.4s
+    4750000/6186873  7.4s
+    1000000/3817031  8.3s
+    5000000/6186873  7.6s
+    1250000/3817031  8.3s
+    5250000/6186873  7.5s
+    1500000/3817031  8.5s
+    5500000/6186873  7.5s
+    1750000/3817031  8.6s
+    5750000/6186873  7.8s
+    2000000/3817031  8.5s
+    6000000/6186873  7.3s
+    6186873/6186873  5.8s
+    2250000/3817031  8.5s
+    2500000/3817031  8.3s
+    2750000/3817031  8.2s
+    3000000/3817031  8.2s
+    3250000/3817031  8.3s
+    3500000/3817031  8.2s
+    3750000/3817031  8.6s
+    3817031/3817031  2.2s
+$ /.uv/.venv/bin/python /root/src/block.py train --prune
+$ /.uv/.venv/bin/python /root/src/block.py test --prune
+  rel    cap  recall  cands/S1
+  0.0    inf  0.9550     14.03
+  0.0     50  0.9536     11.96
+  0.0     30  0.9522     11.15
+REL=0.0 CAP=1000000000: pairs=29901920  candidates per S1: avg 17.26, median 11.0, p99 127.0, max 4668
+  0.0     20  0.9493     10.18
+  0.5    inf  0.9548     10.94
+  0.5     50  0.9536      9.38
+  0.5     30  0.9525      8.94
+  0.5     20  0.9501      8.43
+  0.6    inf  0.9545      9.38
+  0.6     50  0.9535      8.12
+  0.6     30  0.9527      7.81
+  0.6     20  0.9510      7.49
+  0.7    inf  0.9535      7.00
+  0.7     50  0.9529      6.47
+  0.7     30  0.9524      6.27
+  0.7     20  0.9518      6.11
+  0.8    inf  0.9524      6.13
+  0.8     50  0.9520      5.79
+  0.8     30  0.9517      5.64
+  0.8     20  0.9513      5.52
+  0.9    inf  0.9500      5.65
+  0.9     50  0.9497      5.41
+  0.9     30  0.9494      5.29
+  0.9     20  0.9491      5.20
+ 1.01    inf  0.9375      4.68
+ 1.01     50  0.9374      4.63
+ 1.01     30  0.9373      4.60
+ 1.01     20  0.9372      4.57
+REL=0.0 CAP=1000000000: pairs=30958278  candidates per S1: avg 14.03, median 9.0, p99 94.0, max 4344
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-S1WZb6u5SbceLIZLgs1p0Q
