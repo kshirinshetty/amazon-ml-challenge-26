@@ -1,0 +1,52 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-paY1OB4p0NA5oO2HtOzph5
+✓ Created objects.
+$ /.uv/.venv/bin/python /root/src/block.py train
+$ /.uv/.venv/bin/python /root/src/block.py test
+India: 883188 S1, 4133346 queries
+France: 259452 S1, 1434993 queries
+India: 809986 S1, 4717565 queries
+US: 1323633 S1, 6186873 queries
+US: 663106 S1, 3817031 queries
+pairs=29905466  avg candidates per S1=17.26
+pairs=30959601  avg candidates per S1=14.03
+recall@1 = 0.9317  avg cands/S1 = 4.68
+recall@2 = 0.9459  avg cands/S1 = 9.35
+recall@3 = 0.9528  avg cands/S1 = 14.03
+$ /.uv/.venv/bin/python /root/src/features.py train
+$ /.uv/.venv/bin/python /root/src/features.py test
+shape: (9, 32)
+shape: (9, 33)
+$ /.uv/.venv/bin/python /root/src/match.py fit
+Training until validation scores don't improve for 30 rounds
+[50]    valid_0's binary_logloss: 0.0462353
+[100]   valid_0's binary_logloss: 0.0408521
+[150]   valid_0's binary_logloss: 0.0411659
+[200]   valid_0's binary_logloss: 0.0397285
+Early stopping, best iteration is:
+[219]   valid_0's binary_logloss: 0.039643
+trained on 12424458 pairs in 64s, best iter 219
+  t=0.10  F0.5=0.8998
+  t=0.15  F0.5=0.9132
+  t=0.20  F0.5=0.9223
+  t=0.25  F0.5=0.9293
+  t=0.30  F0.5=0.9350
+  t=0.35  F0.5=0.9398
+  t=0.40  F0.5=0.9434
+  t=0.45  F0.5=0.9461
+  t=0.50  F0.5=0.9478
+  t=0.55  F0.5=0.9487
+  t=0.60  F0.5=0.9490
+  t=0.65  F0.5=0.9489
+  t=0.70  F0.5=0.9484
+  t=0.75  F0.5=0.9472
+  t=0.80  F0.5=0.9455
+  t=0.85  F0.5=0.9427
+  t=0.90  F0.5=0.9375
+  t=0.95  F0.5=0.9233
+blocking recall=0.9527  oracle F0.5 (perfect matcher)=0.9836  best t=0.6  F0.5=0.9490
+$ /.uv/.venv/bin/python /root/src/match.py predict
+1732544 S1 | 5675403 matches | 17.26 candidates per S1
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-paY1OB4p0NA5oO2HtOzph5

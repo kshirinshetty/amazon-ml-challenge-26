@@ -1,0 +1,44 @@
+# Business Entity Resolution — reproduction guide
+
+End-to-end pipeline that regenerates `output/matching_results.tsv` and `output/candidate_pairs.tsv`
+from the challenge data. No external data, APIs or pretrained models are used; the only model is a
+LightGBM classifier (MIT license) trained from scratch on the provided training labels.
+
+```
+raw TSVs ─▶ normalize.py ─▶ block.py ─▶ features.py ─▶ match.py fit ─▶ match.py predict ─▶ output/*.tsv
+            text cleanup     candidate    pair           LightGBM +       best-S1
+                             generation   similarities   F0.5 threshold   assignment
+```
+
+## Setup
+
+- Python 3.12, then `pip install -r requirements.txt` (versions pinned).
+- Unzip the challenge's `student_resource.zip` so the data sits at
+  `data/student_resource/dataset/{train,test}/*.tsv` **relative to this folder**.
+- Resources: we ran on 32 CPU cores / 64 GB RAM (~25 min end to end). 16 cores work but take
+  ~1–1.5 h; ≥32 GB RAM is recommended for the feature and training steps (~30M candidate pairs).
+
+## Run (from this folder)
+
+```bash
+python src/normalize.py             # raw TSVs -> work/{train,test}.parquet, work/train_gt.parquet
+python src/block.py train           # candidate generation -> work/train_cands.parquet (prints recall@K)
+python src/block.py test            # -> work/test_cands.parquet
+python src/features.py train        # pair features + labels -> work/train_feats.parquet
+python src/features.py test         # -> work/test_feats.parquet
+python src/match.py fit final       # LightGBM + threshold tuning -> final/model.txt, final/metrics.json
+python src/match.py predict final   # -> final/output/matching_results.tsv, final/output/candidate_pairs.tsv
+```
+
+`final/metrics.json` holds the validation F0.5 (20% of training S1 entities held out), blocking
+recall, the F0.5-vs-threshold curve, feature importances and per-country test statistics;
+`final/errors.tsv` holds a sample of validation false merges and missed matches.
+
+## Files
+
+| File | Role |
+|---|---|
+| `src/normalize.py` | Unicode transliteration, legal-suffix removal, address abbreviation/state canonicalisation |
+| `src/block.py` | Candidate generation: each S2/S3 record retrieves its top-K S1 records (same country) by sparse TF-IDF cosine |
+| `src/features.py` | Pairwise string/number/context features for every candidate pair |
+| `src/match.py` | LightGBM training, macro-F0.5 threshold search, one-S1-per-record assignment, output writing |

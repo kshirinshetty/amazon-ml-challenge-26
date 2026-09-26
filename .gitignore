@@ -1,1 +1,9 @@
 data/
+.venv/
+__pycache__/
+work/
+output/
+logs/
+runs/*/output/
+submission/
+.agents/
