@@ -35,9 +35,13 @@ RMAX = 10  # keep ranks < RMAX
 KEY_MAX_S1 = 50  # skip keys shared by more S1s ("sri ganesh traders")
 KEY_TOP = 2  # per record and key: the S1s closest on the *other* field
 NUM1 = pl.col("ad").str.extract(r"\b(\d+)\b")
-KEYS = {  # bit -> (key expression, field used to rank S1s sharing the key)
+KEYS = {  # bit -> (key expression, field used to rank S1s sharing the key); tools/pass_coverage*.py
     1: (pl.col("nm").str.split(" ").list.sort().list.join(" "), "ad"),  # name words, any order
-    2: (pl.concat_str([NUM1, pl.col("ad").str.extract(r"\b\d+\s+([a-z]{3,})")], separator=" "), "nm"),  # number + street
+    2: (pl.concat_str([NUM1, pl.col("ad").str.extract(  # house number + first real word after it ("109/110 durga")
+        r"\b\d+\b[^a-z]*?(?:\b[a-z]{1,2}\b\s+)*\b([a-z]{3,})")], separator=" "), "nm"),
+    4: (pl.col("nm").str.replace_all(r"(\B)[aeiou]", "").str.split(" ").list.sort().list.join(" "), "ad"),  # skeleton
+    8: (pl.col("nm").str.replace_all(" ", ""), "ad"),  # spacing-free name ("moon light" = "moonlight")
+    16: (pl.col("nm").str.split(" ").list.head(2).list.join(" "), "ad"),  # first two name words
 }
 
 
