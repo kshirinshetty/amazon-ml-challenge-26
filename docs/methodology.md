@@ -1,8 +1,8 @@
 # ML Challenge 2026: Business Entity Resolution Solution Template
 
 **Team Name:** wsg  
-**Team Members:** [List all team members]  
-**Submission Date:** [Date]
+**Team Members:** Siddartha Aralakuppe Yogesha, Kshirin Shetty  
+**Submission Date:** 2026-09-26
 
 ---
 
