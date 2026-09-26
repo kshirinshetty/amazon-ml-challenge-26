@@ -17,7 +17,6 @@ WORK = "work"
 THREADS = int(os.environ.get("OMP_NUM_THREADS") or os.cpu_count())  # Modal sets this from the cpu request
 FOLD = pl.col("s1").hash(seed=42) % 5
 VALID_FOLD, TRAIN_FOLDS = 0, [1, 2, 3, 4]  # 20% validation, 80% training
-PSEUDO_HI, PSEUDO_LO = 0.97, 0.03  # --pseudo: confident test pairs of unseen countries become labels
 PARAMS = dict(objective="binary", learning_rate=0.1, num_leaves=255, min_data_in_leaf=100,
               feature_fraction=0.9, bagging_fraction=0.8, bagging_freq=1, num_threads=THREADS, verbose=-1)
 
@@ -83,26 +82,10 @@ def error_sample(best, pred, gt, n=300):
             .select("kind", "p", "s1", "s1_name", "s1_addr", "q", "q_name", "q_addr"))
 
 
-def pseudo_labels(feats):
-    """Self-training for countries absent from train (France): the previous run's confident test pairs
-    (work/test_probs.parquet, written by predict) join the training set as labels."""
-    train_c = pl.read_parquet(f"{WORK}/train.parquet", columns=["country"])["country"].unique()
-    country = (pl.read_parquet(f"{WORK}/test.parquet", columns=["entity_id", "src", "country"])
-               .filter((pl.col("src") != 1) & ~pl.col("country").is_in(train_c.implode())).select(q="entity_id"))
-    probs = (pl.read_parquet(f"{WORK}/test_probs.parquet").join(country, on="q")
-             .filter((pl.col("p") >= PSEUDO_HI) | (pl.col("p") <= PSEUDO_LO))
-             .select("q", "s1", label=(pl.col("p") >= PSEUDO_HI).cast(pl.Int8)))
-    ps = pl.read_parquet(f"{WORK}/test_feats.parquet").join(probs, on=["q", "s1"]).select(*feats, "label")
-    print(f"pseudo-labels: {len(ps)} pairs, {ps['label'].mean():.3f} positive", flush=True)
-    return ps
-
-
-def fit(run_dir, pseudo=False):
+def fit(run_dir):
     f = pl.read_parquet(f"{WORK}/train_feats.parquet").with_columns(fold=FOLD)
     feats = [c for c in f.columns if c not in ("q", "s1", "label", "fold")]
     tr = f.filter(pl.col("fold").is_in(TRAIN_FOLDS))
-    if pseudo:
-        tr = pl.concat([tr.select(*feats, "label"), pseudo_labels(feats)], how="vertical_relaxed")
     va = f.filter(pl.col("fold") == VALID_FOLD).sample(fraction=0.25, seed=0)
     t0 = time.time()
     model = lgb.train(PARAMS, lgb.Dataset(tr.select(feats).to_numpy(), tr["label"].to_numpy()),
@@ -128,7 +111,7 @@ def fit(run_dir, pseudo=False):
         "val_f05_threshold": curve[t_best], "threshold": float(t_best),
         "blocking_recall": len(found) / len(gt), "oracle_f05": f05(found, gt, s1_ids),
         "f05_by_threshold": curve, "best_iter": model.best_iteration,
-        "n_train_pairs": n_train, "train_seconds": round(train_s), "params": PARAMS, "feats": feats, "pseudo": pseudo,
+        "n_train_pairs": n_train, "train_seconds": round(train_s), "params": PARAMS, "feats": feats,
         "feature_gain": dict(sorted(zip(feats, model.feature_importance("gain").round().tolist()),
                                     key=lambda kv: -kv[1])),
     }
@@ -153,7 +136,6 @@ def predict(run_dir):
     metrics = json.load(open(f"{run_dir}/metrics.json"))
     model = lgb.Booster(model_file=f"{run_dir}/model.txt")
     pairs = predict_pairs(model, pl.read_parquet(f"{WORK}/test_feats.parquet"), metrics["feats"])
-    pairs.write_parquet(f"{WORK}/test_probs.parquet")  # input for the next run's --pseudo
     s1 = (pl.read_parquet(f"{WORK}/test.parquet", columns=["entity_id", "src", "country"])
           .filter(pl.col("src") == 1).select(s1="entity_id", country="country"))
     m = decide(pairs, metrics.get("rule", "threshold"), metrics["threshold"])
@@ -179,7 +161,4 @@ if __name__ == "__main__":
     # expected-F: confident pair kept, weak tail dropped; an S1 with only weak candidates predicts nothing
     B = pl.DataFrame({"q": ["1", "2", "3", "4"], "s1": ["a", "a", "a", "b"], "p": [0.95, 0.9, 0.2, 0.3]})
     assert sorted(expected_f(B)["q"].to_list()) == ["1", "2"]
-    if sys.argv[1] == "fit":
-        fit(sys.argv[2], pseudo="--pseudo" in sys.argv)
-    else:
-        predict(sys.argv[2])
+    {"fit": fit, "predict": predict}[sys.argv[1]](sys.argv[2])

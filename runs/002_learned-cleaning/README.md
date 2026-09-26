@@ -29,7 +29,7 @@ Hyperparameters otherwise as 001 (LightGBM `lr=0.1, num_leaves=255, min_data_in_
 | Largest candidate list (test) | 181,535 | **30** |
 | `candidate_pairs.tsv` | 408 MB | **196 MB** |
 | Test matches / S1, % empty | France 3.37/5.8%, India 3.24/6.5%, US 3.28/6.2% | France 3.24/5.8%, India 3.18/5.9%, US 3.28/5.6% |
-| Leaderboard | 0.933 | _pending_ |
+| **Leaderboard (public)** | 0.933 | **0.945** (2026-09-26 23:19 IST) |
 
 Prune grid on train (recall vs candidates/S1): no prune 0.9550 / 14.0 · rel 0.5 cap 30 0.9525 / 8.9 ·
 **rel 0.7 cap 30 0.9524 / 6.3** · rel 0.8 cap 30 0.9517 / 5.6 · top-1 only 0.9375 / 4.7.
@@ -42,6 +42,12 @@ Files: [`metrics.json`](metrics.json), [`errors.tsv`](errors.tsv), [`src/`](src/
 (`modal_normalize.log` first cleaning attempt, `modal_prep.log` normalize → block → prune grid, `modal.log` prune → predict).
 
 ## Notes / next
+
+- **Post-run finding (drove run 003):** several "filler" words removed here are decoy markers, not noise.
+  Share of S2/S3 records containing the word that are decoys (base 26%): US `midtown/eastgate/greater/
+  northside/lakeside/riverside/westgate` ~100%, `holdings` 87%, `ltd` 72%, `co` 65%; India
+  `overseas/infratech/bakery/provision/pharmacy` 93–99%. Removing them made decoys identical to their S1.
+  (`services`, `center`, `sri/shri/dr` really are noise: 18–26%.) 74% of false merges are decoys.
 
 - Cleaning barely moved blocking recall (+0.2pt); most of the gain is in the matcher (cleaner names,
   number features, 2× training data, expected-F decisions).

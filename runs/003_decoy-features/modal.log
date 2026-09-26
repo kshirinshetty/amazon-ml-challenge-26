@@ -1,0 +1,131 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-iozP3W9YHnv9ZcwfypK7Ih
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/features.py train
+$ /.uv/.venv/bin/python /root/src/features.py test
+/root/src/features.py:85: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:85: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:102: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:104: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:102: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:107: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:104: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:107: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+[('India', 'trust', 0.938543679064807), ('India', 'of', 0.9355651617029912), ('India', 'al', 0.9249630374284168), ('India', 'asociates', 0.9231453702416254), ('India', 'clinic', 0.9202201627613782), ('India', 'shre', 0.9191842124863661), ('India', 'brothers', 0.9153492070134552), ('India', 'bangalore', 0.9145809696709177), ('India', 'delhi', 0.9131349759692728), ('India', 'golden', 0.9101552262470275), ('India', 'star', 0.9096802956360517), ('India', 'mumbai', 0.9093772639479079), ('India', 'pvt', 0.9069454503924302), ('India', 'schol', 0.9067785608651516), ('India', 'society', 0.9067171672256421), ('US', 'lakeside', 0.991008174082858), ('US', 'greater', 0.9902710492159683), ('US', 'midtown', 0.9900562212839075), ('US', 'northside', 0.9898509802130304), ('US', 'southside', 0.9896229742594995), ('US', 'group', 0.9895823212105719), ('US', 'south', 0.9894550786252533), ('US', 'highland', 0.9893599995627579), ('US', 'holdings', 0.9893199409089637), ('US', 'harbor', 0.9891633198079683), ('US', 'sumit', 0.9890506618657341), ('US', 'north', 0.9886757591628175), ('US', 'coastal', 0.9885867673573439), ('US', 'eastgate', 0.9885777347349478), ('US', 'uptown', 0.9885293551819857)]
+  2000000/13842734
+[('France', 'snc', 0.985402888578685), ('France', 'holding', 0.985248897937238), ('France', 'participations', 0.9850041591316673), ('France', 'distribution', 0.9843073900289763), ('France', 'international', 0.983386469854346), ('France', 'maisondesant', 0.960137923979405), ('France', 'calais', 0.9212436583660315), ('France', 'bordeaux', 0.921040056904369), ('France', 'deleves', 0.9006200947190244), ('France', 'ei', 0.8919456301194573), ('France', 'roubaix', 0.8890450659675885), ('France', 'nazaire', 0.8885212590177154), ('France', 'sainte', 0.8867720579917042), ('France', 'freres', 0.8778651372173631), ('France', 'tourcoing', 0.8707108077514302), ('India', 'of', 0.9488293241736087), ('India', 'trust', 0.9471668483859281), ('India', 'new', 0.9452050923601321), ('India', 'bangalore', 0.9441688891019056), ('India', 'al', 0.9441480076600279), ('India', 'shre', 0.9433304927312918), ('India', 'mumbai', 0.9424476401826434), ('India', 'delhi', 0.9417396001144238), ('India', 'surya', 0.9388276965351634), ('India', 'south', 0.9351427049307913), ('India', 'clinic', 0.93352229787197), ('India', 'sons', 0.933473412729862), ('India', 'east', 0.9321336100561183), ('India', 'super', 0.9287361061822701), ('India', 'hari', 0.9272128457969827), ('US', 'uptown', 0.9920424006805583), ('US', 'lakeside', 0.9914470619401803), ('US', 'northside', 0.9914321935339234), ('US', 'riverside', 0.9913963885873079), ('US', 'greater', 0.9907700701565124), ('US', 'holdings', 0.9907238875552953), ('US', 'downtown', 0.9906113262962976), ('US', 'west', 0.990453927362543), ('US', 'westgate', 0.9903419463256862), ('US', 'south', 0.9902956365701806), ('US', 'central', 0.9901520588776356), ('US', 'group', 0.9901212600012964), ('US', 'midtown', 0.9899998591992443), ('US', 'valey', 0.9899388471459742), ('US', 'sumit', 0.9899056089089521)]
+  2000000/13469326
+  4000000/13842734
+  4000000/13469326
+  6000000/13842734
+  6000000/13469326
+  8000000/13842734
+  8000000/13469326
+  10000000/13842734
+  10000000/13469326
+  12000000/13842734
+  12000000/13469326
+  13842734/13842734
+  13469326/13469326
+shape: (9, 45)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ len_aq    ┆ len_as    ┆ num_jac   ┆ num_q_in │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ ---       ┆ ---       ┆ ---       ┆ _s       │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ f64       ┆ f64       ┆ f64       ┆ ---      │
+│           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ f64      │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 13469326  ┆ 13469326  ┆ 1.3469326 ┆ … ┆ 1.3469326 ┆ 1.3469326 ┆ 1.3469326 ┆ 1.346932 │
+│           ┆           ┆           ┆ e7        ┆   ┆ e7        ┆ e7        ┆ e7        ┆ 6e7      │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 0.401372  ┆ … ┆ 39.032471 ┆ 47.668079 ┆ NaN       ┆ 0.415376 │
+│ std       ┆ null      ┆ null      ┆ 0.690363  ┆ … ┆ 20.250914 ┆ 20.161082 ┆ NaN       ┆ 0.492787 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 0.0       ┆ 7.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 099       ┆ 556       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 26.0      ┆ 31.0      ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 33.0      ┆ 44.0      ┆ 0.0       ┆ 0.0      │
+│ 75%       ┆ null      ┆ null      ┆ 1.0       ┆ … ┆ 49.0      ┆ 60.0      ┆ 1.0       ┆ 1.0      │
+│ max       ┆ S3-999999 ┆ S1-999998 ┆ 2.0       ┆ … ┆ 235.0     ┆ 235.0     ┆ 1.0       ┆ 1.0      │
+│           ┆ 995       ┆ 909       ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+shape: (9, 46)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ len_as    ┆ num_jac   ┆ num_q_in_ ┆ label    │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ ---       ┆ ---       ┆ s         ┆ ---      │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ f64       ┆ f64       ┆ ---       ┆ f64      │
+│           ┆           ┆           ┆           ┆   ┆           ┆           ┆ f64       ┆          │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 13842734  ┆ 13842734  ┆ 1.3842734 ┆ … ┆ 1.3842734 ┆ 1.3842734 ┆ 1.3842734 ┆ 1.384273 │
+│           ┆           ┆           ┆ e7        ┆   ┆ e7        ┆ e7        ┆ e7        ┆ 4e7      │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 0.384148  ┆ … ┆ 42.652891 ┆ NaN       ┆ 0.504463  ┆ 0.525553 │
+│ std       ┆ null      ┆ null      ┆ 0.68075   ┆ … ┆ 20.375165 ┆ NaN       ┆ 0.49998   ┆ 0.499347 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 8.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 037       ┆ 221       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 28.0      ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 34.0      ┆ 0.333333  ┆ 1.0       ┆ 1.0      │
+│ 75%       ┆ null      ┆ null      ┆ 1.0       ┆ … ┆ 55.0      ┆ 1.0       ┆ 1.0       ┆ 1.0      │
+│ max       ┆ S3-999999 ┆ S1-999999 ┆ 2.0       ┆ … ┆ 216.0     ┆ 1.0       ┆ 1.0       ┆ 1.0      │
+│           ┆ 88        ┆ 26        ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/003_decoy-features
+Training until validation scores don't improve for 30 rounds
+[50]    valid_0's binary_logloss: 0.040782
+[100]   valid_0's binary_logloss: 0.0325697
+[150]   valid_0's binary_logloss: 0.0310285
+[200]   valid_0's binary_logloss: 0.0306253
+[250]   valid_0's binary_logloss: 0.0306215
+Early stopping, best iteration is:
+[245]   valid_0's binary_logloss: 0.0305188
+trained on 11071916 pairs in 66s, best iter 245
+  t=0.10  F0.5=0.9629
+  t=0.15  F0.5=0.9649
+  t=0.20  F0.5=0.9663
+  t=0.25  F0.5=0.9674
+  t=0.30  F0.5=0.9682
+  t=0.35  F0.5=0.9690
+  t=0.40  F0.5=0.9695
+  t=0.45  F0.5=0.9700
+  t=0.50  F0.5=0.9704
+  t=0.55  F0.5=0.9707
+  t=0.60  F0.5=0.9710
+  t=0.65  F0.5=0.9712
+  t=0.70  F0.5=0.9712
+  t=0.75  F0.5=0.9711
+  t=0.80  F0.5=0.9707
+  t=0.85  F0.5=0.9698
+  t=0.90  F0.5=0.9676
+  t=0.95  F0.5=0.9608
+blocking recall=0.9524  oracle F0.5=0.9834  best t=0.70  F0.5=0.9712  expected-F rule F0.5=0.9711  -> threshold
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/003_decoy-features
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 8.276275       ┆ 3.10674     ┆ 6.936158  │
+│ India   ┆ 809986 ┆ 7.780453       ┆ 3.194943    ┆ 6.602954  │
+│ US      ┆ 663106 ┆ 7.570391       ┆ 3.265375    ┆ 6.013971  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-iozP3W9YHnv9ZcwfypK7Ih
