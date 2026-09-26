@@ -30,7 +30,7 @@ Model: LightGBM `learning_rate 0.05` (was 0.1), `num_leaves 511` (255), `min_dat
 | Blocking recall / oracle | 0.9524 / 0.9834 | 0.9581 / 0.9852 | 0.9581 / 0.9852 |
 | Test candidates / S1 | 7.8 | 9.4 | 9.4 |
 | France matches / S1, % empty | 3.11 / 6.9% | 3.16 / 6.5% | 3.18 / 6.5% |
-| Leaderboard | 0.957 | — | _pending_ |
+| Leaderboard | 0.957 | — | **0.961** |
 
 Top gains: `num_jac` 39.0%, `a_tset` 22.1%, `dec_max` 7.4%, `s_num_mindiff` 5.4%, `rank` 5.1%,
 `g_same_num_frac` 4.1%; new ambiguity features ~1.6% combined.

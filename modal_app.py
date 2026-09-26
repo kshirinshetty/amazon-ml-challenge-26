@@ -6,7 +6,7 @@ Each run gets runs/<name>/ (code snapshot, model, metrics, errors, submission fi
   modal run modal_app.py --run $R --start fit 2>&1 | tee runs/$R/modal.log     # reuse cached blocking + features
   modal run modal_app.py --run $R --start fit --pseudo                         # + self-training on France
   modal run modal_app.py --script tools/decoys.py                             # ad-hoc analysis script
-Stages: download -> normalize -> block -> prune -> features -> fit -> predict (--start/--stop pick a range).
+Stages: download -> normalize -> block -> prune -> features -> fit -> predict -> stack (--start/--stop pick a range).
 """
 import os
 import shutil
@@ -21,7 +21,7 @@ image = (modal.Image.debian_slim(python_version="3.12").apt_install("curl", "unz
          .uv_sync().add_local_dir("src", "/root/src").add_local_dir("tools", "/root/tools"))
 DOWNLOAD = ("mkdir -p data && curl -sSL https://cdn.unstop.com/files/6ab10eb3b23ba_student_resource.zip"
             " -o data/sr.zip && cd data && unzip -qo sr.zip -x '__MACOSX/*' && rm sr.zip")
-STAGES = ["download", "normalize", "block", "prune", "features", "fit", "predict"]
+STAGES = ["download", "normalize", "block", "prune", "features", "fit", "predict", "stack"]
 
 
 @app.function(image=image, volumes={"/vol": vol}, cpu=32, memory=65536, timeout=3 * 3600)
@@ -49,6 +49,9 @@ def main(run: str = "", start: str = "download", stop: str = "predict", script: 
         elif stage in ("block", "prune", "features"):  # train and test in parallel containers
             py, extra = ("block.py", ["--prune"]) if stage == "prune" else (f"{stage}.py", [])
             list(step.map([[py, split, *extra] for split in ("train", "test")]))
+        elif stage == "stack":  # stage 2 on top of this run's stage-1 model; replaces output/
+            step.remote(["stack.py", "fit", run_dir])
+            step.remote(["stack.py", "predict", run_dir])
         else:  # --pseudo: self-train on the previous run's confident predictions for unseen countries
             extra = (["--pseudo"] if pseudo and stage == "fit" else []) + (
                 ["--unseen-t", str(unseen_t)] if unseen_t >= 0 and stage == "predict" else [])

@@ -1,0 +1,67 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-mUNn4dlKKokTSdgjhr8LNG
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/007_stage2-stacking
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0330179
+[200]   valid_0's binary_logloss: 0.0263919
+[300]   valid_0's binary_logloss: 0.0255429
+Early stopping, best iteration is:
+[326]   valid_0's binary_logloss: 0.0254524
+trained on 12904374 pairs in 227s, best iter 326
+  t=0.10  F0.5=0.9652
+  t=0.15  F0.5=0.9672
+  t=0.20  F0.5=0.9688
+  t=0.25  F0.5=0.9701
+  t=0.30  F0.5=0.9712
+  t=0.35  F0.5=0.9722
+  t=0.40  F0.5=0.9729
+  t=0.45  F0.5=0.9736
+  t=0.50  F0.5=0.9740
+  t=0.55  F0.5=0.9744
+  t=0.60  F0.5=0.9746
+  t=0.65  F0.5=0.9747
+  t=0.70  F0.5=0.9747
+  t=0.75  F0.5=0.9745
+  t=0.80  F0.5=0.9742
+  t=0.85  F0.5=0.9736
+  t=0.90  F0.5=0.9723
+  t=0.95  F0.5=0.9689
+blocking recall=0.9581  oracle F0.5=0.9852  best t=0.65  F0.5=0.9747  expected-F rule F0.5=0.9746  -> threshold  | test-like dense F0.5=0.9638 @ t=0.7
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/007_stage2-stacking
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 11.437029      ┆ 3.153354    ┆ 6.571543  │
+│ India   ┆ 809986 ┆ 9.452783       ┆ 3.207791    ┆ 6.585669  │
+│ US      ┆ 663106 ┆ 8.489507       ┆ 3.258383    ┆ 6.118177  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+$ /.uv/.venv/bin/python /root/src/stack.py fit runs/007_stage2-stacking
+  oof fold 1: 946 trees, 405s
+  oof fold 2: 747 trees, 334s
+  oof fold 3: 797 trees, 336s
+  oof fold 4: 777 trees, 332s
+  oof fold 0: 326 trees, 212s
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0239788
+[200]   valid_0's binary_logloss: 0.0208727
+Early stopping, best iteration is:
+[191]   valid_0's binary_logloss: 0.0208209
+stage 2: 191 trees, 96s
+stage1: normal 0.9747@0.65  dense 0.9637@0.7
+stage2: normal 0.9770@0.7  dense 0.9674@0.7
+$ /.uv/.venv/bin/python /root/src/stack.py predict runs/007_stage2-stacking
+stage-2 test: 5685614 matches, 9.38 candidates per S1
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-mUNn4dlKKokTSdgjhr8LNG
