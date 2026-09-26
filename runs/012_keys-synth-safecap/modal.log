@@ -1,0 +1,154 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-Rrj61g8yC1Cquyu9hQj5cR
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/features.py train
+$ /.uv/.venv/bin/python /root/src/features.py test
+/root/src/features.py:85: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:85: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:102: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:104: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:107: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:102: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:104: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:107: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:126: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:129: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+[('France', 'holding', 0.9852198229850914), ('France', 'snc', 0.9850856108478785), ('France', 'participations', 0.9849421812746485), ('France', 'distribution', 0.9841850219485722), ('France', 'international', 0.9834996400319805), ('France', 'maisondesant', 0.9599340345800242), ('France', 'calais', 0.9221144103191521), ('France', 'bordeaux', 0.9187220631001674), ('France', 'ei', 0.8921719270462255), ('France', 'roubaix', 0.8910896158176856), ('France', 'sainte', 0.8874883406976308), ('France', 'nazaire', 0.8827483338886846), ('France', 'tourcoing', 0.8697599673917966), ('France', 'jean', 0.8657527929594506), ('France', 'deleves', 0.8655609358436545), ('India', 'of', 0.9494741912518871), ('India', 'trust', 0.9473300260166948), ('India', 'shre', 0.9444421283963782), ('India', 'mumbai', 0.9444412765166297), ('India', 'bangalore', 0.9441281258606333), ('India', 'new', 0.9438726873075826), ('India', 'delhi', 0.9401105462319302), ('India', 'al', 0.9395849896979578), ('India', 'south', 0.9372538986728207), ('India', 'surya', 0.9353015778783358), ('India', 'sons', 0.9339994926214584), ('India', 'east', 0.9333840781455939), ('India', 'super', 0.9320273742383142), ('India', 'clinic', 0.9317944680268307), ('India', 'society', 0.9274267902962997), ('US', 'uptown', 0.9921433446021887), ('US', 'lakeside', 0.9914470177430778), ('US', 'northside', 0.9914303435061049), ('US', 'riverside', 0.991396344128352), ('US', 'greater', 0.9907700254825049), ('US', 'holdings', 0.9907442611590422), ('US', 'downtown', 0.9906132235751313), ('US', 'west', 0.9904523778923714), ('US', 'westgate', 0.9903424075214377), ('US', 'south', 0.9902389273156708), ('US', 'central', 0.9901525315876339), ('US', 'group', 0.9901026375401515), ('US', 'midtown', 0.9899992875284694), ('US', 'valey', 0.9899393363078178), ('US', 'sumit', 0.9899055644076229)]
+  2000000/23350017
+/root/src/features.py:126: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:129: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+  4000000/23350017
+  6000000/23350017
+[('India', 'trust', 0.9477615311563082), ('India', 'of', 0.9471025980899642), ('India', 'asociates', 0.944639526160672), ('India', 'al', 0.9427459728305079), ('India', 'brothers', 0.9414850945833025), ('India', 'clinic', 0.9388863266434928), ('India', 'golden', 0.9386595411166772), ('India', 'bangalore', 0.9373380231515068), ('India', 'star', 0.9342197484766298), ('India', 'mumbai', 0.9332841458327276), ('India', 'schol', 0.933173331612756), ('India', 'indian', 0.9331472443757053), ('India', 'om', 0.9311950866889752), ('India', 'society', 0.9309325358146395), ('India', 'super', 0.9303617432729308), ('US', 'sumit', 0.9879472531538204), ('US', 'highland', 0.9876353396394806), ('US', 'holdings', 0.9874529211078231), ('US', 'group', 0.9873568475281331), ('US', 'south', 0.9872811565842778), ('US', 'harbor', 0.9871504902950413), ('US', 'central', 0.9870571582719623), ('US', 'metro', 0.9869959564513289), ('US', 'valey', 0.9868926721787582), ('US', 'west', 0.9868688701723646), ('US', 'coastal', 0.9868393639622665), ('US', 'downtown', 0.9866639343095087), ('US', 'uptown', 0.986643689804064), ('US', 'north', 0.9865174867811071), ('US', 'east', 0.9862662451624885)]
+  2000000/29261448
+  8000000/23350017
+  4000000/29261448
+  10000000/23350017
+  6000000/29261448
+  12000000/23350017
+  8000000/29261448
+  14000000/23350017
+  10000000/29261448
+  16000000/23350017
+  12000000/29261448
+  18000000/23350017
+  14000000/29261448
+  20000000/23350017
+  22000000/23350017
+  16000000/29261448
+  23350017/23350017
+  18000000/29261448
+shape: (9, 52)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ len_aq    ┆ len_as    ┆ num_jac   ┆ num_q_in │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ ---       ┆ ---       ┆ ---       ┆ _s       │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ f64       ┆ f64       ┆ f64       ┆ ---      │
+│           ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆ f64      │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 23350017  ┆ 23350017  ┆ 2.3350017 ┆ … ┆ 2.3350017 ┆ 2.3350017 ┆ 2.3350017 ┆ 2.335001 │
+│           ┆           ┆           ┆ e7        ┆   ┆ e7        ┆ e7        ┆ e7        ┆ 7e7      │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 3.130589  ┆ … ┆ 39.487788 ┆ 48.520765 ┆ NaN       ┆ 0.335271 │
+│ std       ┆ null      ┆ null      ┆ 3.939436  ┆ … ┆ 20.786151 ┆ 20.041506 ┆ NaN       ┆ 0.472085 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 0.0       ┆ 7.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 099       ┆ 556       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 26.0      ┆ 32.0      ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 1.0       ┆ … ┆ 34.0      ┆ 45.0      ┆ 0.0       ┆ 0.0      │
+│ 75%       ┆ null      ┆ null      ┆ 6.0       ┆ … ┆ 51.0      ┆ 61.0      ┆ 0.5       ┆ 1.0      │
+│ max       ┆ S3-999999 ┆ S1-999998 ┆ 17.0      ┆ … ┆ 235.0     ┆ 235.0     ┆ 1.0       ┆ 1.0      │
+│           ┆ 995       ┆ 909       ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+  20000000/29261448
+  22000000/29261448
+  24000000/29261448
+  26000000/29261448
+  28000000/29261448
+  29261448/29261448
+shape: (9, 53)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ len_as    ┆ num_jac   ┆ num_q_in_ ┆ label    │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ ---       ┆ ---       ┆ s         ┆ ---      │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ f64       ┆ f64       ┆ ---       ┆ f64      │
+│           ┆           ┆           ┆           ┆   ┆           ┆           ┆ f64       ┆          │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 29261448  ┆ 29261448  ┆ 2.9261448 ┆ … ┆ 2.9261448 ┆ 2.9261448 ┆ 2.9261448 ┆ 2.926144 │
+│           ┆           ┆           ┆ e7        ┆   ┆ e7        ┆ e7        ┆ e7        ┆ 8e7      │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 3.081171  ┆ … ┆ 43.259294 ┆ NaN       ┆ 0.362444  ┆ 0.253274 │
+│ std       ┆ null      ┆ null      ┆ 3.953015  ┆ … ┆ 20.530237 ┆ NaN       ┆ 0.480706  ┆ 0.434887 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 8.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 037       ┆ 221       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 28.0      ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 1.0       ┆ … ┆ 35.0      ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 75%       ┆ null      ┆ null      ┆ 6.0       ┆ … ┆ 56.0      ┆ 0.6       ┆ 1.0       ┆ 1.0      │
+│ max       ┆ S3-SYN999 ┆ S1-999999 ┆ 17.0      ┆ … ┆ 216.0     ┆ 1.0       ┆ 1.0       ┆ 1.0      │
+│           ┆ 998       ┆ 26        ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/012_keys-synth-safecap
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0279855
+[200]   valid_0's binary_logloss: 0.0229985
+[300]   valid_0's binary_logloss: 0.0222014
+[400]   valid_0's binary_logloss: 0.0220225
+[500]   valid_0's binary_logloss: 0.0219468
+Early stopping, best iteration is:
+[489]   valid_0's binary_logloss: 0.0218776
+trained on 23408445 pairs in 357s, best iter 489
+  t=0.10  F0.5=0.9594
+  t=0.15  F0.5=0.9631
+  t=0.20  F0.5=0.9656
+  t=0.25  F0.5=0.9674
+  t=0.30  F0.5=0.9690
+  t=0.35  F0.5=0.9703
+  t=0.40  F0.5=0.9714
+  t=0.45  F0.5=0.9723
+  t=0.50  F0.5=0.9732
+  t=0.55  F0.5=0.9737
+  t=0.60  F0.5=0.9740
+  t=0.65  F0.5=0.9741
+  t=0.70  F0.5=0.9741
+  t=0.75  F0.5=0.9738
+  t=0.80  F0.5=0.9733
+  t=0.85  F0.5=0.9722
+  t=0.90  F0.5=0.9698
+  t=0.95  F0.5=0.9633
+blocking recall=0.9702  oracle F0.5=0.9897  best t=0.65  F0.5=0.9741  expected-F rule F0.5=0.9741  -> threshold  | test-like dense F0.5=0.9614 @ t=0.7
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/012_keys-synth-safecap
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 15.061302      ┆ 3.157775    ┆ 6.376131  │
+│ India   ┆ 809986 ┆ 14.31753       ┆ 3.260156    ┆ 6.248503  │
+│ US      ┆ 663106 ┆ 11.83119       ┆ 3.217974    ┆ 6.179857  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-Rrj61g8yC1Cquyu9hQj5cR

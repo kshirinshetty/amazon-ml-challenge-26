@@ -1,0 +1,16 @@
+{
+  "runs": [
+    "runs/009_multipass-blocking",
+    "runs/010_multipass-synth"
+  ],
+  "weights": [
+    0.3,
+    0.7
+  ],
+  "threshold": 0.6,
+  "n_matches": 5620339,
+  "val_real_testdensity": {
+    "normal": 0.9764,
+    "dense": 0.9658
+  }
+}
