@@ -13,7 +13,7 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 | Run | What changed | Blocking recall (val) | Candidates / S1 (test) | Val F0.5 | Leaderboard |
 |---|---|---|---|---|---|
 | [000](runs/000_blocking-char3-v0/) | blocking v0: char-3gram name + address-word TF-IDF, `max_df=0.002` | 0.851 (train) | — | — | — |
-| [001](runs/001_tfidf-lgbm-baseline/) | **baseline**: char-4gram name + address uni/bigram TF-IDF blocking, LightGBM on 29 features | 0.953 | 17.3 | 0.949 | _pending_ |
+| [001](runs/001_tfidf-lgbm-baseline/) | **baseline**: char-4gram name + address uni/bigram TF-IDF blocking, LightGBM on 29 features | 0.953 | 17.3 | 0.949 | **0.933** |
 
 Every `runs/<NNN_name>/` holds a `README.md` (architecture, hyperparameters, results, notes), the
 `src/` snapshot that produced it, `model.txt`, `metrics.json` (validation curve, feature gains,

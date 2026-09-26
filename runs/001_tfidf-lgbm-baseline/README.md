@@ -37,7 +37,7 @@ Full code: [`src/`](src/). All numbers: [`metrics.json`](metrics.json). Mistakes
 | Oracle F0.5 (perfect matcher on these candidates) | 0.984 |
 | Test candidates / S1 | 17.3 (France 16.6, India 17.5, US 17.3) |
 | Test matches / S1, % empty | France 3.37 / 5.8%, India 3.24 / 6.5%, US 3.28 / 6.2% |
-| Leaderboard | _pending_ |
+| **Leaderboard (public)** | **0.933** (submitted 2026-09-26 21:32 IST; #1 at the time: 0.9907) |
 
 F0.5 vs threshold: 0.30 → 0.935, 0.40 → 0.943, 0.50 → 0.948, **0.60 → 0.949**, 0.70 → 0.948, 0.80 → 0.946, 0.90 → 0.938.
 
