@@ -19,10 +19,15 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 | [004](runs/004_france-selftrain/) | 003 + self-training on confident France test pairs | 0.952 | 7.8 | 0.970 | not submitted (France unchanged) |
 | [005](runs/005_deeper-retrieval/) | 003 + top-10 retrieval, prune REL 0.8 / cap 30 | 0.958 | 9.4 | 0.971 | not submitted (no val gain) |
 | [006](runs/006_ambiguity-bigger-model/) | 005 + name/address ambiguity + made-up-name features, larger LightGBM (lr 0.05, 511 leaves) | 0.958 | 9.4 | **0.975** | **0.961** |
-| [007](runs/007_stage2-stacking/) | 006 + stage-2 stacking on out-of-fold stage-1 probabilities; thresholds from test-like (dense) validation | 0.958 | 9.4 | **0.977** (dense **0.967**) | _pending_ |
+| [007](runs/007_stage2-stacking/) | 006 + stage-2 stacking on out-of-fold stage-1 probabilities; thresholds from test-like (dense) validation | 0.958 | 9.4 | **0.977** (dense **0.967**) | 0.960 |
+| [probes](runs/probes/) | 006 model at stricter thresholds 0.80 / 0.90 | — | — | — | 0.959 / 0.956 |
+| [008](runs/008_synthetic-decoys/) | 006 + 2.6M synthetic decoys (train at test decoy density) | 0.957 | 9.4 | 0.973 real-only* | not submitted |
+| [009](runs/009_multipass-blocking/) | 006 + exact-key blocking passes (sorted name words; house number + street) | **0.967** | 11.9 | **0.978** (dense **0.968**) | _pending_ |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).
+
+\* 008: real validation records with synthetic decoys in each S1's context (006 model: 0.969 there).
 
 Every `runs/<NNN_name>/` holds a `README.md` (architecture, hyperparameters, results, notes), the
 `src/` snapshot that produced it, `model.txt`, `metrics.json` (validation curve, feature gains,

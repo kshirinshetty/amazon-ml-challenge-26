@@ -31,8 +31,16 @@ Density-matched training barely helps (`tools/exp_density.py`: dense 0.9638 base
 | Validation F0.5 (normal) | 0.9747 | **0.9770** |
 | **Validation F0.5 (dense, ≈ leaderboard)** | 0.9637 | **0.9674** |
 | Test candidates / S1 | 9.38 | 9.38 |
-| Leaderboard | 0.961 (run 006) | _pending_ |
+| **Leaderboard** | 0.961 (run 006) | **0.960** |
 
 Stage-2 gain by feature: `p` 84.8%, `q_p2` 7.7%, `q_pmax` 4.1%, `q_gap` 2.2% — it mostly resolves records
 torn between two look-alike S1s; sibling-agreement features contribute ~0.1%. The record-level context does
 not depend on decoy density, so the dense estimate should transfer.
+
+## Post-submission analysis (leaderboard 0.960 — stage 2 did not transfer)
+
+Stage 2 mostly *added* matches on test (US +51k, India +34k, France +16k vs run 006; few removed) and many of
+the additions are textbook decoys (`DP Healthcare 3327 …` → `BP Healthcare 03330 …`, `Enrages Maison SAS 13 …`
+→ `Enrages Club SAS 15 …`). The dense validation removes true records but does not add decoys per S1, so it
+could not see this. Leaderboard threshold probes on the 006 model (0.80 → 0.959, 0.90 → 0.956, vs 0.65 → 0.961)
+showed that simply being stricter is not the fix either. Stage 2 is shelved.

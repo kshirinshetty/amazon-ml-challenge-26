@@ -16,6 +16,8 @@ import time
 import numpy as np
 import polars as pl
 import scipy.sparse as sp
+from rapidfuzz import fuzz
+from rapidfuzz.process import cpdist
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sparse_dot_topn import sp_matmul_topn
 
@@ -28,6 +30,15 @@ MAX_DF = 0.005  # drop n-grams in >0.5% of S1 docs: long posting lists dominate 
 REL = 0.8  # keep rank>0 pairs with score >= REL * the record's best score (K=10: recall 0.9582 at 7.3/S1 on train)
 CAP = 30  # max candidates per S1, best scores first (true matches per S1 <= 11)
 RMAX = 10  # keep ranks < RMAX
+# Exact-key passes: TF-IDF drops n-grams common across S1s, so a name made only of common words
+# ("Coimbatore Foundation") can lose its own identical S1. Keys recover 43% of those misses on train.
+KEY_MAX_S1 = 50  # skip keys shared by more S1s ("sri ganesh traders")
+KEY_TOP = 2  # per record and key: the S1s closest on the *other* field
+NUM1 = pl.col("ad").str.extract(r"\b(\d+)\b")
+KEYS = {  # bit -> (key expression, field used to rank S1s sharing the key)
+    1: (pl.col("nm").str.split(" ").list.sort().list.join(" "), "ad"),  # name words, any order
+    2: (pl.concat_str([NUM1, pl.col("ad").str.extract(r"\b\d+\s+([a-z]{3,})")], separator=" "), "nm"),  # number + street
+}
 
 
 def rowdot(A, B):
@@ -59,11 +70,46 @@ def block_country(s1, q):
             "addr_cos": rowdot(Qa[rows], Sa[cols]),
         }))
         print(f"  {lo + len(c):>9}/{len(q)}  {time.time() - t:.1f}s", flush=True)
-    return pl.concat(out)
+    tf = pl.concat(out)
+    kp = key_pairs(s1, q)
+    new = kp.join(tf.select("q", "s1"), on=["q", "s1"], how="anti")
+    if len(new):  # TF-IDF cosines for the pairs only the keys found
+        new = (new.join(q.select(q="entity_id").with_row_index("qi"), on="q")
+               .join(s1.select(s1="entity_id").with_row_index("si"), on="s1"))
+        uq = np.unique(new["qi"].to_numpy())
+        sub = q[pl.Series(uq)]
+        Qn, Qa = vn.transform(key(sub)), va.transform(sub["ad"].to_list())
+        r, c = np.searchsorted(uq, new["qi"].to_numpy()), new["si"].to_numpy()
+        nc, ac = rowdot(Qn[r], Sn[c]), rowdot(Qa[r], Sa[c])
+        new = new.select("q", "s1", "via_key").with_columns(
+            name_cos=pl.Series(nc), addr_cos=pl.Series(ac), score=pl.Series(W_NAME * nc + (1 - W_NAME) * ac))
+    allc = pl.concat([tf.join(kp, on=["q", "s1"], how="left").with_columns(pl.col("via_key").fill_null(0)),
+                      new.with_columns(rank=pl.lit(0, pl.Int8))], how="diagonal_relaxed")
+    print(f"  key passes: {len(kp)} key pairs, {len(new)} not found by TF-IDF", flush=True)
+    return allc.with_columns(rank=(pl.col("score").rank("ordinal", descending=True).over("q") - 1).cast(pl.Int16))
+
+
+def key_pairs(s1, q):
+    """Exact-key candidates: (q, s1, via_key bitmask), top KEY_TOP per record and key by the other field."""
+    parts = []
+    for bit, (expr, other) in KEYS.items():
+        sk = s1.select(s1="entity_id", key=expr, o_s=other).filter(pl.col("key").is_not_null() & (pl.col("key") != ""))
+        sk = sk.filter(pl.len().over("key") <= KEY_MAX_S1)
+        pr = (q.select(q="entity_id", key=expr, o_q=other).filter(pl.col("key").is_not_null() & (pl.col("key") != ""))
+              .join(sk, on="key"))
+        if not len(pr):
+            continue
+        pr = pr.with_columns(sim=cpdist(pr["o_q"].to_list(), pr["o_s"].to_list(), scorer=fuzz.ratio, workers=-1))
+        parts.append(pr.sort("sim", descending=True).group_by("q", maintain_order=True).head(KEY_TOP)
+                     .select("q", "s1", via_key=pl.lit(bit, pl.Int8)))
+    if not parts:
+        return pl.DataFrame(schema={"q": pl.String, "s1": pl.String, "via_key": pl.Int8})
+    return pl.concat(parts).group_by("q", "s1").agg(pl.col("via_key").sum().cast(pl.Int8))
 
 
 def prune(c, rel=REL, cap=CAP, rmax=RMAX):
-    return (c.filter((pl.col("rank") == 0) | ((pl.col("rank") < rmax) & (pl.col("score") >= rel * pl.col("score").max().over("q"))))
+    keyed = (pl.col("via_key") > 0) if "via_key" in c.columns else pl.lit(False)  # key-pass pairs skip REL/RMAX
+    return (c.filter((pl.col("rank") == 0) | keyed | ((pl.col("rank") < rmax) & (pl.col("score") >= rel * pl.col("score").max().over("q"))))
             .filter(pl.col("score").rank("ordinal", descending=True).over("s1") <= cap))
 
 
