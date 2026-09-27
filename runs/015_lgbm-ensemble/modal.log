@@ -1,0 +1,77 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-7kqixDJXxBgao08JsNKlRh
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/015_lgbm-ensemble --reuse runs/014_relative-tiebreak/model.txt
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0222414
+[200]   valid_0's binary_logloss: 0.0171092
+[300]   valid_0's binary_logloss: 0.0164248
+[400]   valid_0's binary_logloss: 0.0162697
+[500]   valid_0's binary_logloss: 0.0161592
+Early stopping, best iteration is:
+[502]   valid_0's binary_logloss: 0.0161581
+member {'seed': 1}: best iter 502, 353s
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/015_lgbm-ensemble --reuse runs/014_relative-tiebreak/model.txt
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0222414
+[200]   valid_0's binary_logloss: 0.0171092
+[300]   valid_0's binary_logloss: 0.0164248
+[400]   valid_0's binary_logloss: 0.0162697
+[500]   valid_0's binary_logloss: 0.0161592
+Early stopping, best iteration is:
+[502]   valid_0's binary_logloss: 0.0161581
+member {'seed': 1}: best iter 502, 319s
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0211736
+[200]   valid_0's binary_logloss: 0.0165665
+[300]   valid_0's binary_logloss: 0.0160655
+[400]   valid_0's binary_logloss: 0.0159423
+[500]   valid_0's binary_logloss: 0.0158963
+[600]   valid_0's binary_logloss: 0.0158896
+Early stopping, best iteration is:
+[546]   valid_0's binary_logloss: 0.0158856
+member {'seed': 2, 'num_leaves': 1023, 'min_data_in_leaf': 100}: best iter 546, 825s
+member 0 alone: dense F0.5=0.9717
+member 1 alone: dense F0.5=0.9718
+member 2 alone: dense F0.5=0.9722
+  t=0.10  F0.5=0.9717
+  t=0.15  F0.5=0.9738
+  t=0.20  F0.5=0.9752
+  t=0.25  F0.5=0.9764
+  t=0.30  F0.5=0.9774
+  t=0.35  F0.5=0.9782
+  t=0.40  F0.5=0.9790
+  t=0.45  F0.5=0.9795
+  t=0.50  F0.5=0.9800
+  t=0.55  F0.5=0.9804
+  t=0.60  F0.5=0.9807
+  t=0.65  F0.5=0.9809
+  t=0.70  F0.5=0.9809
+  t=0.75  F0.5=0.9808
+  t=0.80  F0.5=0.9805
+  t=0.85  F0.5=0.9800
+  t=0.90  F0.5=0.9788
+  t=0.95  F0.5=0.9757
+blocking recall=0.9706  oracle F0.5=0.9899  best t=0.70  F0.5=0.9809  expected-F rule F0.5=0.9807  -> threshold  | test-like dense F0.5=0.9721 @ t=0.7
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/015_lgbm-ensemble
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 15.061295      ┆ 3.227267    ┆ 6.255492  │
+│ India   ┆ 809986 ┆ 14.317466      ┆ 3.269981    ┆ 6.258256  │
+│ US      ┆ 663106 ┆ 11.831184      ┆ 3.342641    ┆ 5.856379  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-7kqixDJXxBgao08JsNKlRh
