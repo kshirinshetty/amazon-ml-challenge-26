@@ -10,13 +10,13 @@
 
 A blocking + gradient-boosting pipeline built around two findings from the data. (1) Every Source 2/3
 record matches at most one Source 1 entity, so candidate generation runs *from* each S2/S3 record into a
-per-country Source 1 index (sparse TF-IDF top-10 plus exact-key passes), and each record is finally assigned
+per-country Source 1 index (sparse TF-IDF top-10 plus exact-key and address passes), and each record is finally assigned
 to at most one entity. (2) About a quarter of Source 2/3 records (≈42% on test) are **decoys** — near-copies
 of a real business with an extra marker word or a shifted house number — so most features are designed to
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
-(absent from training). A LightGBM classifier over 61 pair features reaches validation F0.5 = **0.981**
-(**0.972** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.1%
-blocking recall** at 13.5 candidates per Source 1 entity; public leaderboard **0.970**.
+(absent from training). A LightGBM classifier over 61 pair features reaches validation F0.5 = **0.984**
+(**0.976** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.8%
+blocking recall** at 14.5 candidates per Source 1 entity (test); best public leaderboard so far **0.970** (run 014).
 
 ---
 
@@ -74,14 +74,18 @@ but kept in a "full" name for the decoy features.
      words sorted; consonant skeleton of the sorted words; spacing-free name; first two name words; first
      house number + first real word after it. Keys shared by >50 S1s are skipped; per record and key the
      2 S1s closest on the *other* field are kept.
-  3. **Pruning**: a record keeps rank-2..10 S1s only if their score is ≥0.8× its best; key-pass pairs are
-     kept; runner-up candidates are capped at 30 per S1 (a record's own best candidate is never cut —
+  3. **Address pass**: each record's single closest S1 by address TF-IDF alone. Records whose name loses to
+     look-alike S1 names in the combined score (a dropped word, a made-up trade name, an Indic-script name) but
+     carry the S1's address are otherwise never retrieved: training recall 97.1% → 97.8% (India 95.2% → 97.0%
+     on a sample) for +1.1 candidates per S1.
+  4. **Pruning**: a record keeps rank-2..10 S1s only if their score is ≥0.8× its best; key-pass pairs are
+     and address-pass pairs are kept; runner-up candidates are capped at 30 per S1 (a record's own best candidate is never cut —
      at hub S1s with hundreds of candidates that used to drop true pairs).
-- **Candidate pairs generated:** 23.4M on test — **13.5 per S1** (reduction ratio >99.999% vs all pairs).
+- **Candidate pairs generated:** 25.2M on test — **14.5 per S1** (reduction ratio >99.999% vs all pairs).
 - **How we ensured true matches were not lost:** recall was measured on training labels for every change.
   v0 (char 3-grams, heavier pruning) 85.1% → char 4-grams + address bigrams 95.3% → top-10 95.8% →
-  exact-key passes 96.7% → more keys + cap that never drops a record's best candidate **97.1%**
-  (97.6% before pruning). A loss decomposition showed never-retrieved true pairs as the largest
+  exact-key passes 96.7% → more keys + cap that never drops a record's best candidate 97.1% → address pass
+  **97.8%**. A loss decomposition showed never-retrieved true pairs as the largest
   remaining loss, which is what motivated the key passes (they recover 43% of the TF-IDF misses).
 
 ---
@@ -105,8 +109,9 @@ but kept in a "full" name for the decoy features.
   records pointing at the S1 and this record's rank among them; **sibling agreement** (other records of the
   S1 sharing this record's house number; this record's words no other sibling has); source id.
 
-**Model type:** LightGBM binary classifier (`learning_rate 0.05, num_leaves 511, min_data_in_leaf 50,
-feature_fraction 0.8, bagging 0.8`), early stopping, trained on candidate pairs of 80% of training S1s.  
+**Model type:** LightGBM binary classifier (`learning_rate 0.05, num_leaves 1023, min_data_in_leaf 100,
+feature_fraction 0.8, bagging 0.8`), early stopping, trained on candidate pairs of 80% of training S1s
+(a 3-model average was tried and matched the 1023-leaf model alone).  
 **Threshold selection method:** each S2/S3 record is assigned to its highest-probability S1 candidate and
 kept if p ≥ t; t maximizes macro F0.5 (the exact leaderboard metric, singletons included) on a held-out 20%
 of training S1s at test decoy density.
@@ -115,7 +120,7 @@ of training S1s at test decoy density.
 
 ## 5. Results & Error Analysis
 
-- **F_0.5 Score (macro):** **0.981** on held-out training S1s; **0.972** at test decoy density (the
+- **F_0.5 Score (macro):** **0.984** on held-out training S1s; **0.976** at test decoy density (the
   leaderboard proxy: it predicted 0.961, 0.967 and 0.969 for the runs submitted after it was introduced,
   which scored 0.961, 0.967 and 0.970). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → **0.970**.
 - **Where the remaining loss is** (test-density validation, fixing one error type perfectly):
@@ -131,7 +136,7 @@ of training S1s at test decoy density.
 
 ## 6. Conclusion
 
-Reverse, multi-pass blocking keeps the candidate set small (~13 per S1) while retaining 97.1% of true pairs,
+Reverse, multi-pass blocking keeps the candidate set small (~14 per S1) while retaining 97.8% of true pairs,
 and label-free features that describe how decoys are made let a single LightGBM model separate near-copies
 from true variants in any country. The most useful lessons: validate at the test's decoy density, and
 measure where the loss is before optimizing — blocking recall mattered more than model complexity.
@@ -149,7 +154,7 @@ measure where the loss is before optimizing — blocking recall mattered more th
 | `src/normalize.py` | `python src/normalize.py` | `work/{train,test}.parquet`, `work/train_gt.parquet`, learned maps |
 | `src/block.py` | `python src/block.py train\|test` then `--prune` | `work/{split}_cands.parquet` (= candidate_pairs) |
 | `src/features.py` | `python src/features.py train\|test` | `work/{split}_feats.parquet` |
-| `src/match.py` | `python src/match.py fit DIR` then `predict DIR` | `DIR/model.txt`, `DIR/metrics.json`, `DIR/output/*.tsv` |
+| `src/match.py` | `python src/match.py fit DIR` then `predict DIR` | `DIR/model_0.txt`, `DIR/metrics.json`, `DIR/output/*.tsv` |
 
 Dependencies are pinned in `requirements.txt`. No external data, APIs or pretrained models; LightGBM is
 MIT-licensed and trained from scratch on the provided data.
@@ -164,7 +169,8 @@ MIT-licensed and trained from scratch on the provided data.
 | 006 | ambiguity features, larger LightGBM, top-10 retrieval | 0.958 | 9.4 | 0.975 (0.964) | 0.961 |
 | 009 | exact-key blocking passes | 0.967 | 11.9 | 0.978 (0.968) | — |
 | 013 | more exact keys, cap never drops a record's best candidate | 0.971 | 13.5 | 0.979 (0.970) | 0.967 |
-| **014** | within-record tie-break features (raw text, gap to the record's best candidate) | **0.971** | 13.5 | **0.981 (0.972)** | **0.970** |
+| 014 | within-record tie-break features (raw text, gap to the record's best candidate) | 0.971 | 13.5 | 0.981 (0.972) | 0.970 |
+| **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | _pending_ |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),

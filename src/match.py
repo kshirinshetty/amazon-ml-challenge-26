@@ -1,7 +1,8 @@
 """Train LightGBM on candidate-pair features, tune the match threshold for macro F0.5 on
 held-out S1 entities, and write the submission files. Everything a run produces goes in RUN_DIR.
 
-Usage: uv run python src/match.py fit RUN_DIR       # -> model.txt, metrics.json, errors.tsv
+Usage: uv run python src/match.py fit RUN_DIR [--reuse a.txt,b.txt]  # -> model_*.txt, metrics.json, errors.tsv
+       uv run python src/match.py refit RUN_DIR SRC_RUN_DIR  # SRC's ensemble retrained on all folds
        uv run python src/match.py predict RUN_DIR   # -> output/matching_results.tsv, output/candidate_pairs.tsv
 """
 import json
@@ -21,6 +22,8 @@ PSEUDO_HI, PSEUDO_LO = 0.97, 0.03  # --pseudo: confident test pairs of unseen co
 PARAMS = dict(objective="binary", learning_rate=0.05, num_leaves=511, min_data_in_leaf=50,
               feature_fraction=0.8, bagging_fraction=0.8, bagging_freq=1, num_threads=THREADS, verbose=-1)
 ROUNDS, PATIENCE = 3000, 60
+# ensemble: members trained by fit (overrides of PARAMS), averaged with any --reuse model files
+VARIANTS = [dict(seed=2, num_leaves=1023, min_data_in_leaf=100)]  # 015: 3-model average 0.9721 vs this alone 0.9722
 
 
 def assign(pairs, t):
@@ -79,9 +82,10 @@ def sim_dense(pairs, drop=0.5):
     return out
 
 
-def predict_pairs(model, f, feats):
-    p = np.concatenate([model.predict(f[lo:lo + 5_000_000].select(feats).to_numpy())
-                        for lo in range(0, len(f), 5_000_000)])
+def predict_pairs(models, f, feats):
+    """Mean probability over the ensemble members."""
+    p = np.concatenate([np.mean([m.predict(x) for m in models], axis=0)
+                        for x in (f[lo:lo + 5_000_000].select(feats).to_numpy() for lo in range(0, len(f), 5_000_000))])
     return f.select("q", "s1").with_columns(p=p)
 
 
@@ -116,7 +120,7 @@ def pseudo_labels(feats):
     return ps
 
 
-def fit(run_dir, pseudo=False):
+def fit(run_dir, pseudo=False, reuse=()):
     f = pl.read_parquet(f"{WORK}/train_feats.parquet").with_columns(fold=FOLD)
     feats = [c for c in f.columns if c not in ("q", "s1", "label", "fold")]
     tr = f.filter(pl.col("fold").is_in(TRAIN_FOLDS))
@@ -124,16 +128,24 @@ def fit(run_dir, pseudo=False):
         tr = pl.concat([tr.select(*feats, "label"), pseudo_labels(feats)], how="vertical_relaxed")
     va = f.filter(pl.col("fold") == VALID_FOLD).sample(fraction=0.25, seed=0)
     t0 = time.time()
-    model = lgb.train(PARAMS, lgb.Dataset(tr.select(feats).to_numpy(), tr["label"].to_numpy()),
-                      num_boost_round=ROUNDS,
-                      valid_sets=[lgb.Dataset(va.select(feats).to_numpy(), va["label"].to_numpy())],
-                      callbacks=[lgb.early_stopping(PATIENCE), lgb.log_evaluation(100)])
+    models = [lgb.Booster(model_file=m) for m in reuse]
+    dtr = lgb.Dataset(tr.select(feats).to_numpy(), tr["label"].to_numpy())
+    dva = lgb.Dataset(va.select(feats).to_numpy(), va["label"].to_numpy(), reference=dtr)
+    for v in VARIANTS:
+        models.append(lgb.train({**PARAMS, **v}, dtr, num_boost_round=ROUNDS, valid_sets=[dva],
+                                callbacks=[lgb.early_stopping(PATIENCE), lgb.log_evaluation(100)]))
+        print(f"member {v}: best iter {models[-1].best_iteration}, {time.time() - t0:.0f}s", flush=True)
     train_s, n_train = time.time() - t0, len(tr)
-    print(f"trained on {n_train} pairs in {train_s:.0f}s, best iter {model.best_iteration}")
-    del tr, va
+    model = models[-1]
+    del tr, va, dtr, dva
 
     # Score every pair (records compete across folds), then evaluate on held-out S1s only.
-    all_pairs = predict_pairs(model, f, feats)
+    member = [predict_pairs([m], f, feats) for m in models]
+    all_pairs = member[0].with_columns(p=np.mean([m["p"].to_numpy() for m in member], axis=0))
+    if len(models) > 1:  # each member alone on dense validation, to see what the ensemble adds
+        for i, m in enumerate(member):
+            print(f"member {i} alone: dense F0.5={sim_dense(m)['dense']:.4f}", flush=True)
+    del member
     best = assign(all_pairs, 0.0).filter(FOLD == VALID_FOLD)
     s1_ids = (pl.read_parquet(f"{WORK}/train.parquet", columns=["entity_id", "src"])
               .filter(pl.col("src") == 1).select(s1="entity_id").filter(FOLD == VALID_FOLD)["s1"])
@@ -149,7 +161,7 @@ def fit(run_dir, pseudo=False):
         "val_f05_threshold": curve[t_best], "threshold": float(dense["t_dense"]), "threshold_normal": float(t_best),
         "val_f05_dense": dense["dense"], "f05_dense_by_threshold": dense["curve_dense"],
         "blocking_recall": len(found) / len(gt), "oracle_f05": f05(found, gt, s1_ids),
-        "f05_by_threshold": curve, "best_iter": model.best_iteration,
+        "f05_by_threshold": curve, "best_iter": model.best_iteration, "variants": VARIANTS, "reuse": list(reuse),
         "n_train_pairs": n_train, "train_seconds": round(train_s), "params": PARAMS, "feats": feats, "pseudo": pseudo,
         "feature_gain": dict(sorted(zip(feats, model.feature_importance("gain").round().tolist()),
                                     key=lambda kv: -kv[1])),
@@ -160,10 +172,31 @@ def fit(run_dir, pseudo=False):
           f"best t={t_best}  F0.5={curve[t_best]:.4f}  expected-F rule F0.5={ef:.4f}  -> {rule}  "
           f"| test-like dense F0.5={dense['dense']:.4f} @ t={dense['t_dense']}")
     os.makedirs(run_dir, exist_ok=True)
-    model.save_model(f"{run_dir}/model.txt")
+    for i, m in enumerate(models):
+        m.save_model(f"{run_dir}/model_{i}.txt")
+    metrics["models"] = [f"model_{i}.txt" for i in range(len(models))]
+    metrics["best_iters"] = [m.best_iteration if m.best_iteration > 0 else m.current_iteration() for m in models]
+    metrics["member_params"] = [PARAMS] * len(reuse) + [{**PARAMS, **v} for v in VARIANTS]
     json.dump(metrics, open(f"{run_dir}/metrics.json", "w"), indent=2)
     pred = expected_f(best) if rule == "expected_f" else best.filter(pl.col("p") >= float(t_best))
     error_sample(best, pred, gt).write_csv(f"{run_dir}/errors.tsv", separator="\t")
+
+
+def refit(run_dir, src_dir):
+    """Retrain src_dir's ensemble on all folds (its validation S1s included) with 1.25x the early-stopped rounds.
+    Keeps src_dir's threshold: nothing is left to validate on."""
+    m = json.load(open(f"{src_dir}/metrics.json"))
+    f = pl.read_parquet(f"{WORK}/train_feats.parquet")
+    d = lgb.Dataset(f.select(m["feats"]).to_numpy(), f["label"].to_numpy())
+    del f
+    os.makedirs(run_dir, exist_ok=True)
+    m["models"], m["refit_from"] = [], src_dir
+    for i, (params, it) in enumerate(zip(m["member_params"], m["best_iters"])):
+        t0 = time.time()
+        lgb.train({**params, "num_threads": THREADS}, d, num_boost_round=round(it * 1.25)).save_model(f"{run_dir}/model_{i}.txt")
+        m["models"].append(f"model_{i}.txt")
+        print(f"member {i}: {round(it * 1.25)} rounds on all folds, {time.time() - t0:.0f}s", flush=True)
+    json.dump(m, open(f"{run_dir}/metrics.json", "w"), indent=2)
 
 
 def write(s1_ids, pairs, col, path):
@@ -176,8 +209,8 @@ def predict(run_dir, unseen_t=None):
     """unseen_t: separate threshold for countries absent from training (France); output goes to
     output_unseen{t}/ so it can be compared with output/ on the leaderboard."""
     metrics = json.load(open(f"{run_dir}/metrics.json"))
-    model = lgb.Booster(model_file=f"{run_dir}/model.txt")
-    pairs = predict_pairs(model, pl.read_parquet(f"{WORK}/test_feats.parquet"), metrics["feats"])
+    models = [lgb.Booster(model_file=f"{run_dir}/{m}") for m in metrics.get("models", ["model.txt"])]
+    pairs = predict_pairs(models, pl.read_parquet(f"{WORK}/test_feats.parquet"), metrics["feats"])
     pairs.write_parquet(f"{WORK}/test_probs.parquet")  # input for the next run's --pseudo
     s1 = (pl.read_parquet(f"{WORK}/test.parquet", columns=["entity_id", "src", "country"])
           .filter(pl.col("src") == 1).select(s1="entity_id", country="country"))
@@ -211,8 +244,11 @@ if __name__ == "__main__":
     # expected-F: confident pair kept, weak tail dropped; an S1 with only weak candidates predicts nothing
     B = pl.DataFrame({"q": ["1", "2", "3", "4"], "s1": ["a", "a", "a", "b"], "p": [0.95, 0.9, 0.2, 0.3]})
     assert sorted(expected_f(B)["q"].to_list()) == ["1", "2"]
-    if sys.argv[1] == "fit":
-        fit(sys.argv[2], pseudo="--pseudo" in sys.argv)
+    if sys.argv[1] == "refit":
+        refit(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == "fit":
+        fit(sys.argv[2], pseudo="--pseudo" in sys.argv,
+            reuse=sys.argv[sys.argv.index("--reuse") + 1].split(",") if "--reuse" in sys.argv else ())
     else:
         t = sys.argv[sys.argv.index("--unseen-t") + 1] if "--unseen-t" in sys.argv else None
         predict(sys.argv[2], None if t is None else float(t))

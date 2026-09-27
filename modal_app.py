@@ -6,7 +6,7 @@ Each run gets runs/<name>/ (code snapshot, model, metrics, errors, submission fi
   modal run modal_app.py --run $R --start fit 2>&1 | tee runs/$R/modal.log     # reuse cached blocking + features
   modal run modal_app.py --run $R --start fit --pseudo                         # + self-training on France
   modal run modal_app.py --script tools/decoys.py                             # ad-hoc analysis script
-Stages: download -> normalize -> synth -> block -> prune -> features -> fit -> predict -> stack (--start/--stop).
+Stages: download -> normalize -> synth -> block -> addr -> prune -> features -> fit -> predict -> stack (--start/--stop).
 """
 import os
 import shutil
@@ -21,7 +21,7 @@ image = (modal.Image.debian_slim(python_version="3.12").apt_install("curl", "unz
          .uv_sync().add_local_dir("src", "/root/src").add_local_dir("tools", "/root/tools"))
 DOWNLOAD = ("mkdir -p data && curl -sSL https://cdn.unstop.com/files/6ab10eb3b23ba_student_resource.zip"
             " -o data/sr.zip && cd data && unzip -qo sr.zip -x '__MACOSX/*' && rm sr.zip")
-STAGES = ["download", "normalize", "synth", "block", "prune", "features", "fit", "predict", "stack"]
+STAGES = ["download", "normalize", "synth", "block", "addr", "prune", "features", "fit", "predict", "stack"]
 
 
 @app.function(image=image, volumes={"/vol": vol}, cpu=32, memory=65536, timeout=3 * 3600)
@@ -36,7 +36,7 @@ def step(args: list[str]):
 
 @app.local_entrypoint()
 def main(run: str = "", start: str = "download", stop: str = "predict", script: str = "", pseudo: bool = False,
-         unseen_t: float = -1.0, no_synth: bool = False):
+         unseen_t: float = -1.0, no_synth: bool = False, reuse: str = "", refit: str = ""):
     if script:  # analysis on the full data without touching the laptop's RAM: --script tools/x.py
         return step.remote([script])
     run_dir = f"runs/{run}"
@@ -48,6 +48,9 @@ def main(run: str = "", start: str = "download", stop: str = "predict", script: 
             step.remote(["normalize.py"])
         elif stage == "synth":  # synthetic decoys in train at test density (--no-synth strips them)
             step.remote(["synth.py"] + (["--remove"] if no_synth else []))
+        elif stage == "addr":  # address pass alone on cached retrieval (--start addr); block already includes it
+            if start == "addr":
+                list(step.map([["block.py", split, "--addr"] for split in ("train", "test")]))
         elif stage in ("block", "prune", "features"):  # train and test in parallel containers
             py, extra = ("block.py", ["--prune"]) if stage == "prune" else (f"{stage}.py", [])
             list(step.map([[py, split, *extra] for split in ("train", "test")]))
@@ -55,9 +58,12 @@ def main(run: str = "", start: str = "download", stop: str = "predict", script: 
             step.remote(["stack.py", "fit", run_dir])
             step.remote(["stack.py", "predict", run_dir])
         else:  # --pseudo: self-train on the previous run's confident predictions for unseen countries
-            extra = (["--pseudo"] if pseudo and stage == "fit" else []) + (
+            extra = (["--pseudo"] if pseudo and stage == "fit" else []) + (["--reuse", reuse] if reuse and stage == "fit" else []) + (
                 ["--unseen-t", str(unseen_t)] if unseen_t >= 0 and stage == "predict" else [])
-            step.remote(["match.py", stage, run_dir] + extra)
+            if refit and stage == "fit":  # --refit runs/<validated run>: its ensemble on all folds
+                step.remote(["match.py", "refit", run_dir, refit])
+            else:
+                step.remote(["match.py", stage, run_dir] + extra)
     if STAGES.index(stop) >= STAGES.index("fit"):
         get = lambda src, dst: subprocess.run(["modal", "volume", "get", "--force", "amazon-ml", src, dst], check=True)
         get(run_dir, "runs/")

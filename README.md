@@ -36,6 +36,7 @@ leaderboard (predicted 0.961 / 0.967 / 0.969 → actual 0.961 / 0.967 / 0.970).
 | [013](runs/013_keys-safecap-nosynth/) | 012 without synthetic decoys | **0.971** | 13.5 | **0.979** (dense **0.970**) | **0.967** |
 | **[014](runs/014_relative-tiebreak/)** | **013 + within-record tie-break features — final package** | **0.971** | 13.5 | **0.981** (dense **0.972**) | **0.970** |
 | [015](runs/015_lgbm-ensemble/) | 014 + 3-model LightGBM average (014 model, new seed, 1023 leaves) | 0.971 | 13.5 | 0.981 (dense 0.9721) | not submitted (+0.0004) |
+| **[016](runs/016_address-pass/)** | **014 + address-only top-1 retrieval pass, 1023-leaf LightGBM** | **0.978** | 14.5 | **0.984** (dense **0.976**) | _pending_ |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).

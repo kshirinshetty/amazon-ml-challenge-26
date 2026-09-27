@@ -34,6 +34,10 @@ RMAX = 10  # keep ranks < RMAX
 # ("Coimbatore Foundation") can lose its own identical S1. Keys recover 43% of those misses on train.
 KEY_MAX_S1 = 50  # skip keys shared by more S1s ("sri ganesh traders")
 KEY_TOP = 2  # per record and key: the S1s closest on the *other* field
+# Address pass: each record's closest S1 by address alone, flagged via_key bit 32. Records whose name is lost among
+# look-alike S1 names ("Ram Private Limited Center" at its S1's exact address) are otherwise never retrieved:
+# local sample recall after prune India 0.952 -> 0.970, US 0.983 -> 0.986, +1.1 candidates per S1.
+ADDR_BIT = 32
 NUM1 = pl.col("ad").str.extract(r"\b(\d+)\b")
 KEYS = {  # bit -> (key expression, field used to rank S1s sharing the key); tools/pass_coverage*.py
     1: (pl.col("nm").str.split(" ").list.sort().list.join(" "), "ad"),  # name words, any order
@@ -49,10 +53,58 @@ def rowdot(A, B):
     return np.asarray(A.multiply(B).sum(axis=1)).ravel()
 
 
+def vectorizers():
+    return (TfidfVectorizer(analyzer="char_wb", ngram_range=(4, 4), dtype=np.float32, max_df=MAX_DF),
+            TfidfVectorizer(token_pattern=r"\S+", ngram_range=(1, 2), dtype=np.float32, max_df=MAX_DF))
+
+
+def key(df):
+    return df["nm"].str.replace_all(" ", "").to_list()
+
+
+def addr_pairs(q, va, Sa, s1_ids):
+    """(q, s1, via_key=ADDR_BIT): each record's single closest S1 by address TF-IDF (empty addresses find none)."""
+    Sa_T, out = Sa.T.tocsr(), []
+    for lo in range(0, len(q), CHUNK):
+        c = q[lo:lo + CHUNK]
+        C = sp_matmul_topn(va.transform(c["ad"].to_list()), Sa_T, top_n=1, n_threads=THREADS)
+        rows = np.repeat(np.arange(len(c)), np.diff(C.indptr))
+        out.append(pl.DataFrame({"q": c["entity_id"].to_numpy()[rows], "s1": s1_ids[C.indices]}))
+    return pl.concat(out).with_columns(via_key=pl.lit(ADDR_BIT, pl.Int8))
+
+
+def cosines(new, s1, q, vn, va, Sn, Sa):
+    """TF-IDF cosines and combined score for pairs retrieval did not score (key / address passes)."""
+    new = (new.join(q.select(q="entity_id").with_row_index("qi"), on="q")
+           .join(s1.select(s1="entity_id").with_row_index("si"), on="s1"))
+    uq = np.unique(new["qi"].to_numpy())
+    sub = q[pl.Series(uq)]
+    Qn, Qa = vn.transform(key(sub)), va.transform(sub["ad"].to_list())
+    r, c = np.searchsorted(uq, new["qi"].to_numpy()), new["si"].to_numpy()
+    nc, ac = rowdot(Qn[r], Sn[c]), rowdot(Qa[r], Sa[c])
+    return new.select("q", "s1", "via_key").with_columns(
+        name_cos=pl.Series(nc), addr_cos=pl.Series(ac), score=pl.Series(W_NAME * nc + (1 - W_NAME) * ac))
+
+
+def rerank(c):
+    return c.with_columns(rank=(pl.col("score").rank("ordinal", descending=True).over("q") - 1).cast(pl.Int16))
+
+
+def add_addr(full, s1, q):
+    """Address pass on top of an existing candidate set (block.py SPLIT --addr): no need to redo retrieval."""
+    vn, va = vectorizers()
+    Sn, Sa = vn.fit_transform(key(s1)).tocsr(), va.fit_transform(s1["ad"].to_list()).tocsr()
+    ap = addr_pairs(q, va, Sa, s1["entity_id"].to_numpy())
+    new = ap.join(full.select("q", "s1"), on=["q", "s1"], how="anti")
+    full = (full.join(ap.select("q", "s1", a=pl.lit(ADDR_BIT, pl.Int8)), on=["q", "s1"], how="left")
+            .with_columns(via_key=pl.col("via_key") | pl.col("a").fill_null(0)).drop("a"))
+    print(f"  address pass: {len(ap)} pairs, {len(new)} new", flush=True)
+    new = cosines(new, s1, q, vn, va, Sn, Sa).with_columns(rank=pl.lit(0, pl.Int16))
+    return rerank(pl.concat([full, new], how="diagonal_relaxed"))
+
+
 def block_country(s1, q):
-    vn = TfidfVectorizer(analyzer="char_wb", ngram_range=(4, 4), dtype=np.float32, max_df=MAX_DF)
-    va = TfidfVectorizer(token_pattern=r"\S+", ngram_range=(1, 2), dtype=np.float32, max_df=MAX_DF)
-    key = lambda df: df["nm"].str.replace_all(" ", "").to_list()
+    vn, va = vectorizers()
     Sn, Sa = vn.fit_transform(key(s1)), va.fit_transform(s1["ad"].to_list())
     S_T = sp.hstack([np.sqrt(W_NAME) * Sn, np.sqrt(1 - W_NAME) * Sa]).T.tocsr()
     Sn, Sa = Sn.tocsr(), Sa.tocsr()
@@ -75,22 +127,15 @@ def block_country(s1, q):
         }))
         print(f"  {lo + len(c):>9}/{len(q)}  {time.time() - t:.1f}s", flush=True)
     tf = pl.concat(out)
-    kp = key_pairs(s1, q)
+    kp = (pl.concat([key_pairs(s1, q), addr_pairs(q, va, Sa, s1_ids)])
+          .group_by("q", "s1").agg(pl.col("via_key").sum().cast(pl.Int8)))
     new = kp.join(tf.select("q", "s1"), on=["q", "s1"], how="anti")
-    if len(new):  # TF-IDF cosines for the pairs only the keys found
-        new = (new.join(q.select(q="entity_id").with_row_index("qi"), on="q")
-               .join(s1.select(s1="entity_id").with_row_index("si"), on="s1"))
-        uq = np.unique(new["qi"].to_numpy())
-        sub = q[pl.Series(uq)]
-        Qn, Qa = vn.transform(key(sub)), va.transform(sub["ad"].to_list())
-        r, c = np.searchsorted(uq, new["qi"].to_numpy()), new["si"].to_numpy()
-        nc, ac = rowdot(Qn[r], Sn[c]), rowdot(Qa[r], Sa[c])
-        new = new.select("q", "s1", "via_key").with_columns(
-            name_cos=pl.Series(nc), addr_cos=pl.Series(ac), score=pl.Series(W_NAME * nc + (1 - W_NAME) * ac))
+    if len(new):  # TF-IDF cosines for the pairs only the key / address passes found
+        new = cosines(new, s1, q, vn, va, Sn, Sa)
     allc = pl.concat([tf.join(kp, on=["q", "s1"], how="left").with_columns(pl.col("via_key").fill_null(0)),
                       new.with_columns(rank=pl.lit(0, pl.Int8))], how="diagonal_relaxed")
-    print(f"  key passes: {len(kp)} key pairs, {len(new)} not found by TF-IDF", flush=True)
-    return allc.with_columns(rank=(pl.col("score").rank("ordinal", descending=True).over("q") - 1).cast(pl.Int16))
+    print(f"  key + address passes: {len(kp)} pairs, {len(new)} not found by TF-IDF", flush=True)
+    return rerank(allc)
 
 
 def key_pairs(s1, q):
@@ -122,6 +167,14 @@ if __name__ == "__main__":
     split = sys.argv[1]
     df = pl.read_parquet(f"{WORK}/{split}.parquet", columns=["entity_id", "src", "country", "nm", "ad"])
     n_s1 = df.filter(pl.col("src") == 1).height
+    if "--addr" in sys.argv:  # add the address pass to an existing work/{split}_cands_full.parquet
+        full, parts = pl.read_parquet(f"{WORK}/{split}_cands_full.parquet"), []
+        for country in df["country"].unique().sort():
+            s1 = df.filter((pl.col("src") == 1) & (pl.col("country") == country))
+            q = df.filter((pl.col("src") != 1) & (pl.col("country") == country))
+            parts.append(add_addr(full.join(q.select(q="entity_id"), on="q"), s1, q))
+        pl.concat(parts).write_parquet(f"{WORK}/{split}_cands_full.parquet")
+        sys.exit()
     if "--prune" not in sys.argv:
         parts = []
         for country in df["country"].unique().sort():

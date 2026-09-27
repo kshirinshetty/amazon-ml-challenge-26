@@ -1,0 +1,46 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-nzpyG8wfXKbaUQS9Ah8LpR
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/block.py train --addr
+$ /.uv/.venv/bin/python /root/src/block.py test --addr
+  address pass: 1355870 pairs, 533335 new
+  address pass: 4008638 pairs, 843088 new
+  address pass: 4602757 pairs, 1084643 new
+  address pass: 3706241 pairs, 615717 new
+  address pass: 5964236 pairs, 1051161 new
+$ /.uv/.venv/bin/python /root/src/block.py train --prune
+$ /.uv/.venv/bin/python /root/src/block.py test --prune
+RMAX=10 REL=0.8 CAP=30: pairs=25204704  candidates per S1: avg 14.55, median 12.0, p99 34.0, max 572
+ rmax   rel    cap  recall  cands/S1
+    3   0.7     30  0.9763     10.81
+    3   0.7     20  0.9755     10.28
+    3   0.8     30  0.9762     10.30
+    3   0.8     20  0.9755      9.86
+    3  0.85     30  0.9760     10.15
+    3  0.85     20  0.9754      9.72
+    3   0.9     30  0.9757     10.02
+    3   0.9     20  0.9752      9.62
+    5   0.7     30  0.9777     11.72
+    5   0.7     20  0.9764     10.95
+    5   0.8     30  0.9776     10.89
+    5   0.8     20  0.9766     10.29
+    5  0.85     30  0.9774     10.61
+    5  0.85     20  0.9765     10.07
+    5   0.9     30  0.9769     10.38
+    5   0.9     20  0.9761      9.88
+   10   0.7     30  0.9784     12.89
+   10   0.7     20  0.9766     11.75
+   10   0.8     30  0.9785     11.63
+   10   0.8     20  0.9772     10.81
+   10  0.85     30  0.9782     11.18
+   10  0.85     20  0.9770     10.46
+   10   0.9     30  0.9776     10.80
+   10   0.9     20  0.9765     10.16
+RMAX=10 REL=0.8 CAP=30: pairs=25665473  candidates per S1: avg 11.63, median 10.0, p99 32.0, max 695
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-nzpyG8wfXKbaUQS9Ah8LpR
