@@ -35,6 +35,7 @@ Top-2/3 or a cosine floor added candidates for ≤ +0.1 pt. A name-only top-k pa
 | Validation F0.5 | 0.9806 | **0.9838** |
 | **Dense validation (≈ leaderboard)** | 0.9717 | **0.9759** |
 | Threshold | 0.75 | 0.75 |
+| **Leaderboard** | 0.970 | **0.974** |
 | Candidates / S1 (train / test) | 10.75 / 13.5 | 11.63 / **14.55** |
 | Test matches / S1 (France, India, US) | 3.22, 3.26, 3.33 | 3.22, 3.31, 3.34 |
 

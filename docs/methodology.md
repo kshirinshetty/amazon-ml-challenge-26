@@ -16,7 +16,7 @@ of a real business with an extra marker word or a shifted house number — so mo
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
 (absent from training). A LightGBM classifier over 61 pair features reaches validation F0.5 = **0.984**
 (**0.976** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.8%
-blocking recall** at 14.5 candidates per Source 1 entity (test); best public leaderboard so far **0.970** (run 014).
+blocking recall** at 14.5 candidates per Source 1 entity (test); public leaderboard **0.974**.
 
 ---
 
@@ -122,7 +122,7 @@ of training S1s at test decoy density.
 
 - **F_0.5 Score (macro):** **0.984** on held-out training S1s; **0.976** at test decoy density (the
   leaderboard proxy: it predicted 0.961, 0.967 and 0.969 for the runs submitted after it was introduced,
-  which scored 0.961, 0.967 and 0.970). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → **0.970**.
+  which scored 0.961, 0.967 and 0.970). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → 0.970 → **0.974**.
 - **Where the remaining loss is** (test-density validation, fixing one error type perfectly):
   never-retrieved true pairs +2.1 pts (before the key passes), retrieved-but-rejected true pairs +0.9
   (mostly records with no address), false merges +0.6 (almost all decoys).
@@ -170,7 +170,7 @@ MIT-licensed and trained from scratch on the provided data.
 | 009 | exact-key blocking passes | 0.967 | 11.9 | 0.978 (0.968) | — |
 | 013 | more exact keys, cap never drops a record's best candidate | 0.971 | 13.5 | 0.979 (0.970) | 0.967 |
 | 014 | within-record tie-break features (raw text, gap to the record's best candidate) | 0.971 | 13.5 | 0.981 (0.972) | 0.970 |
-| **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | _pending_ |
+| **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | **0.974** |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),

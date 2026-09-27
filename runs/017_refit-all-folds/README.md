@@ -21,4 +21,4 @@ No validation is possible (every labelled S1 is now in training).
 | Test matches / S1 (France, India, US) | 3.218, 3.309, 3.337 | 3.219, 3.312, 3.336 |
 | Candidates | identical | identical |
 
-Training took 526 s. Submit as a second upload next to 016: the leaderboard decides which goes in the zip.
+**Leaderboard: 0.971 vs 016's 0.974 — the refit hurt** (likely the fixed 1.25× rounds / reused threshold no longer fit the more confident model). Training took 526 s. Submit as a second upload next to 016: the leaderboard decides which goes in the zip.
