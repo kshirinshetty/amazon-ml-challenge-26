@@ -14,10 +14,9 @@ per-country Source 1 index (sparse TF-IDF top-10 plus exact-key passes), and eac
 to at most one entity. (2) About a quarter of Source 2/3 records (≈42% on test) are **decoys** — near-copies
 of a real business with an extra marker word or a shifted house number — so most features are designed to
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
-(absent from training). Training is augmented with ~2.6M synthetic decoys (from the training data only) so it
-matches the test's decoy density. A LightGBM classifier over 49 pair features reaches F0.5 = **0.977** on real
-held-out records in a test-density context (0.967 on the harder dense variant) with **97.0% blocking recall**
-at 13.5 candidates per Source 1 entity.
+(absent from training). A LightGBM classifier over 49 pair features reaches validation F0.5 = **0.979**
+(**0.970** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.1%
+blocking recall** at 13.5 candidates per Source 1 entity; public leaderboard **0.967**.
 
 ---
 
@@ -56,13 +55,6 @@ placeholders (`None`, `N/A`, `<NULL>`), reordering, dropped components.
 **Core Innovation:** label-free decoy detection and test-density-aware validation; reverse-direction,
 multi-pass blocking.
 
-**Synthetic decoys** (`synth.py`): to train at the test's decoy density, ~2.6M decoys are generated from
-the training data itself with the recipe observed in train — half re-shift a real decoy's house number, half
-turn a true record into a decoy (house number shifted by 1–30 and/or a marker word that is ≥90% decoy in
-train). They match no S1, so they only ever act as negatives, and every S1's group context (records pointing
-at it, sibling agreement, decoy scores) then looks like test. On real validation records in that context the
-model improves from 0.9730 to 0.9759 F0.5.
-
 **Normalization** (`normalize.py`): alias stripping (`X formerly Y` → `Y`), `unidecode` transliteration,
 removal of domains/phones/punctuation, repeated-letter collapse; **spelling maps learned from matched training
 pairs** (e.g. `praivet → private`, `eksports → exports`, `sacrmento → sacramento`; only S2/S3-side spellings,
@@ -88,7 +80,7 @@ but kept in a "full" name for the decoy features.
 - **Candidate pairs generated:** 23.4M on test — **13.5 per S1** (reduction ratio >99.999% vs all pairs).
 - **How we ensured true matches were not lost:** recall was measured on training labels for every change.
   v0 (char 3-grams, heavier pruning) 85.1% → char 4-grams + address bigrams 95.3% → top-10 95.8% →
-  exact-key passes 96.7% → more keys + cap that never drops a record's best candidate **97.0%**
+  exact-key passes 96.7% → more keys + cap that never drops a record's best candidate **97.1%**
   (97.6% before pruning). A loss decomposition showed never-retrieved true pairs as the largest
   remaining loss, which is what motivated the key passes (they recover 43% of the TF-IDF misses).
 
@@ -119,9 +111,9 @@ of training S1s at test decoy density.
 
 ## 5. Results & Error Analysis
 
-- **F_0.5 Score (macro):** **0.977** on real held-out records with test-like decoy density around each S1
-  (0.967 dense variant); 0.974 on the synthetic-augmented validation. Public leaderboard history:
-  0.933 → 0.945 → 0.957 → 0.961 (later runs pending at writing time).
+- **F_0.5 Score (macro):** **0.979** on held-out training S1s; **0.970** at test decoy density (the
+  leaderboard proxy: it predicted 0.961 and 0.967 for the two runs submitted after it was introduced).
+  Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → **0.967**.
 - **Where the remaining loss is** (test-density validation, fixing one error type perfectly):
   never-retrieved true pairs +2.1 pts (before the key passes), retrieved-but-rejected true pairs +0.9
   (mostly records with no address), false merges +0.6 (almost all decoys).
@@ -135,7 +127,7 @@ of training S1s at test decoy density.
 
 ## 6. Conclusion
 
-Reverse, multi-pass blocking keeps the candidate set small (~13 per S1) while retaining 97.0% of true pairs,
+Reverse, multi-pass blocking keeps the candidate set small (~13 per S1) while retaining 97.1% of true pairs,
 and label-free features that describe how decoys are made let a single LightGBM model separate near-copies
 from true variants in any country. The most useful lessons: validate at the test's decoy density, and
 measure where the loss is before optimizing — blocking recall mattered more than model complexity.
@@ -151,7 +143,6 @@ measure where the loss is before optimizing — blocking recall mattered more th
 | File | Entry point | Output |
 |---|---|---|
 | `src/normalize.py` | `python src/normalize.py` | `work/{train,test}.parquet`, `work/train_gt.parquet`, learned maps |
-| `src/synth.py` | `python src/synth.py` | synthetic decoys appended to `work/train.parquet` |
 | `src/block.py` | `python src/block.py train\|test` then `--prune` | `work/{split}_cands.parquet` (= candidate_pairs) |
 | `src/features.py` | `python src/features.py train\|test` | `work/{split}_feats.parquet` |
 | `src/match.py` | `python src/match.py fit DIR` then `predict DIR` | `DIR/model.txt`, `DIR/metrics.json`, `DIR/output/*.tsv` |
@@ -168,10 +159,9 @@ MIT-licensed and trained from scratch on the provided data.
 | 003 | label-free decoy features | 0.952 | 7.8 | 0.971 | 0.957 |
 | 006 | ambiguity features, larger LightGBM, top-10 retrieval | 0.958 | 9.4 | 0.975 (0.964) | 0.961 |
 | 009 | exact-key blocking passes | 0.967 | 11.9 | 0.978 (0.968) | — |
-| 010 | 009 + synthetic decoys at test density | 0.966 | 11.9 | 0.976 real* (0.965) | — |
-| **012** | more exact keys, cap never drops a record's best candidate, synthetic decoys | **0.970** | 13.5 | **0.977 real*** (0.967) | — |
-
-\* real validation records, each S1's context at test-like decoy density (synthetic decoys present).
+| **013** | more exact keys, cap never drops a record's best candidate | **0.971** | 13.5 | **0.979 (0.970)** | **0.967** |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
-out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956).
+out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),
+synthetic decoys generated from training data to match the test's decoy density (better on validation in that
+context, worse on the leaderboard: a blend weighted toward that model scored 0.961 vs 0.967).

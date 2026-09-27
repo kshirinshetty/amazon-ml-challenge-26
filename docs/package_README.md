@@ -5,9 +5,9 @@ from the challenge data. No external data, APIs or pretrained models are used; t
 LightGBM classifier (MIT license) trained from scratch on the provided training labels.
 
 ```
-raw TSVs ─▶ normalize.py ─▶ synth.py ─▶ block.py ─▶ block.py --prune ─▶ features.py ─▶ match.py fit/predict ─▶ output/*.tsv
-            text cleanup +   synthetic   TF-IDF top-10  drop weak /       pair           LightGBM, F0.5 threshold,
-            learned maps     decoys      + exact keys   cap per S1        similarities   best-S1 assignment
+raw TSVs ─▶ normalize.py ─▶ block.py ─▶ block.py --prune ─▶ features.py ─▶ match.py fit/predict ─▶ output/*.tsv
+            text cleanup +   TF-IDF top-10  drop weak /       pair           LightGBM, F0.5 threshold,
+            learned maps     + exact keys   cap per S1        similarities   best-S1 assignment
 ```
 
 ## Setup
@@ -22,7 +22,6 @@ raw TSVs ─▶ normalize.py ─▶ synth.py ─▶ block.py ─▶ block.py --p
 
 ```bash
 python src/normalize.py             # raw TSVs -> work/{train,test}.parquet, work/train_gt.parquet
-python src/synth.py                 # synthetic decoys in train (test's decoy density), from training data only
 python src/block.py train           # retrieval: top-3 S1 per S2/S3 record -> work/train_cands_full.parquet
 python src/block.py test            # -> work/test_cands_full.parquet
 python src/block.py train --prune   # candidate pruning -> work/train_cands.parquet (prints recall vs size)
@@ -42,7 +41,6 @@ recall, the F0.5-vs-threshold curve, feature importances and per-country test st
 | File | Role |
 |---|---|
 | `src/normalize.py` | Transliteration, alias/legal-suffix removal, spelling maps learned from training pairs, per-country filler-word detection |
-| `src/synth.py` | Synthetic decoys for the training split (shifted house numbers / marker words), so training matches the test's decoy density |
 | `src/block.py` | Candidate generation: each S2/S3 record retrieves its top-10 S1 records (same country) by sparse TF-IDF cosine, plus exact-key passes (sorted name words, name skeleton, spacing-free name, first two words, house number + street); `--prune` drops weak runner-ups and caps each S1's list |
 | `src/features.py` | Pairwise string/number/context features for every candidate pair |
 | `src/match.py` | LightGBM training, macro-F0.5 threshold/rule search on test-density validation, one-S1-per-record assignment, output writing |

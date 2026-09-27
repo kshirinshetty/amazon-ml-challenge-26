@@ -8,15 +8,11 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 - Official README, documentation template, validator: [`docs/student_resource/`](docs/student_resource/)
 - Our methodology write-up (goes in the zip as `Documentation_template.md`): [`docs/methodology.md`](docs/methodology.md)
 
-## Upload plan (as of 2026-09-27 ~06:00 IST)
+## Status (2026-09-27 13:10 IST)
 
-Best leaderboard so far: run 006, **0.961**. Candidates, all validated (`PASS`, `--check-ids`):
-
-1. `runs/012_keys-synth-safecap/output/matching_results.tsv` — best single run; **the final zip is built from it**
-   (`submission/wsg_submission.zip`).
-2. `runs/013_keys-safecap-nosynth/output/matching_results.tsv` — same without synthetic decoys. Upload both 1 and 2:
-   the difference shows whether synthetic decoys help on the real test. If 013 wins, rebuild the zip from 013.
-3. `runs/blend_009_010/output/matching_results.tsv` — blend of the previous pair (superseded, only if 1–2 disappoint).
+Best leaderboard: **run 013, 0.967** — `submission/wsg_submission.zip` is built from it. Synthetic decoys
+(008/010/012) looked good on validation but did not transfer (blend weighted to 010: 0.961). The dense
+validation *without* synthetic decoys tracks the leaderboard (predicted 0.961 for 006 and 0.967 for 013).
 
 ## Runs
 
@@ -35,9 +31,9 @@ Best leaderboard so far: run 006, **0.961**. Candidates, all validated (`PASS`, 
 | [009](runs/009_multipass-blocking/) | 006 + exact-key blocking passes (sorted name words; house number + street) | **0.967** | 11.9 | **0.978** (dense **0.968**) | _pending_ |
 | [010](runs/010_multipass-synth/) | 009 blocking + 008 synthetic decoys | 0.966 | 11.9 | 0.976 real-only* (dense 0.965) | _pending_ |
 | [011](runs/011_more-keys-synth/) | 010 + skeleton / spacing-free / first-two-words keys, looser address key | 0.968 | 13.3 | 0.973 (own, synth) | not submitted (neutral) |
-| [blend](runs/blend_009_010/) | 0.3·009 + 0.7·010 probabilities | — | 11.9 | 0.976 real-only* (dense 0.966) | _pending_ |
-| **[012](runs/012_keys-synth-safecap/)** | **011 + cap never drops a record's best candidate — final package** | **0.970** | 13.5 | **0.977 real-only*** (dense **0.967**) | _pending_ |
-| [013](runs/013_keys-safecap-nosynth/) | 012 without synthetic decoys (hedge: tests whether synthetic decoys transfer) | **0.971** | 13.5 | **0.979** (dense **0.970**) own context | _pending_ |
+| [blend](runs/blend_009_010/) | 0.3·009 + 0.7·010 probabilities | — | 11.9 | 0.976 real-only* (dense 0.966) | 0.961 |
+| [012](runs/012_keys-synth-safecap/) | 011 + cap never drops a record's best candidate | **0.970** | 13.5 | **0.977 real-only*** (dense **0.967**) | _pending_ |
+| **[013](runs/013_keys-safecap-nosynth/)** | **012 without synthetic decoys — final package** | **0.971** | 13.5 | **0.979** (dense **0.970**) | **0.967** |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).
