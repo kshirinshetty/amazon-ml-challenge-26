@@ -38,6 +38,7 @@ leaderboard (predicted 0.961 / 0.967 / 0.969 → actual 0.961 / 0.967 / 0.970).
 | [015](runs/015_lgbm-ensemble/) | 014 + 3-model LightGBM average (014 model, new seed, 1023 leaves) | 0.971 | 13.5 | 0.981 (dense 0.9721) | not submitted (+0.0004) |
 | **[016](runs/016_address-pass/)** | **014 + address-only top-1 retrieval pass, 1023-leaf LightGBM** | **0.978** | 14.5 | **0.984** (dense **0.976**) | **0.974** |
 | [017](runs/017_refit-all-folds/) | 016 refit on all training folds (1.25× rounds, 016 threshold) | 0.978 | 14.5 | — (no held-out data) | 0.971 |
+| **[018](runs/018_noise-markers/)** | **016 + 17 label-free formatting-noise features (URL names, case, accents, …)** | 0.978 | 14.5 | **0.984** (dense **0.9766**) | _pending_ |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).

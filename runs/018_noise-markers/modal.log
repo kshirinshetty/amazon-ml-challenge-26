@@ -1,0 +1,50 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-o6Jb21HwjweGv4XNXxPq3S
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ $/.uv/.venv/bin/python /root/src/features.py train --noise
+ /.uv/.venv/bin/python /root/src/features.py test --noise
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/018_noise-markers
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0199963
+[200]   valid_0's binary_logloss: 0.015312
+[300]   valid_0's binary_logloss: 0.0147889
+[400]   valid_0's binary_logloss: 0.014622
+[500]   valid_0's binary_logloss: 0.0145744
+[600]   valid_0's binary_logloss: 0.0145625
+Early stopping, best iteration is:
+[606]   valid_0's binary_logloss: 0.0145594
+member {'seed': 2, 'num_leaves': 1023, 'min_data_in_leaf': 100}: best iter 606, 691s
+  t=0.10  F0.5=0.9765
+  t=0.15  F0.5=0.9783
+  t=0.20  F0.5=0.9795
+  t=0.25  F0.5=0.9805
+  t=0.30  F0.5=0.9814
+  t=0.35  F0.5=0.9820
+  t=0.40  F0.5=0.9826
+  t=0.45  F0.5=0.9830
+  t=0.50  F0.5=0.9834
+  t=0.55  F0.5=0.9838
+  t=0.60  F0.5=0.9841
+  t=0.65  F0.5=0.9842
+  t=0.70  F0.5=0.9843
+  t=0.75  F0.5=0.9842
+  t=0.80  F0.5=0.9841
+  t=0.85  F0.5=0.9836
+  t=0.90  F0.5=0.9828
+  t=0.95  F0.5=0.9803
+blocking recall=0.9784  oracle F0.5=0.9928  best t=0.70  F0.5=0.9843  expected-F rule F0.5=0.9841  -> threshold  | test-like dense F0.5=0.9766 @ t=0.75
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/018_noise-markers
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 16.30682       ┆ 3.21725     ┆ 6.307525  │
+│ India   ┆ 809986 ┆ 15.335006      ┆ 3.312729    ┆ 6.048376  │
+│ US      ┆ 663106 ┆ 12.897979      ┆ 3.329254    ┆ 5.914439  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘

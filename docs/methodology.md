@@ -14,7 +14,7 @@ per-country Source 1 index (sparse TF-IDF top-10 plus exact-key and address pass
 to at most one entity. (2) About a quarter of Source 2/3 records (≈42% on test) are **decoys** — near-copies
 of a real business with an extra marker word or a shifted house number — so most features are designed to
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
-(absent from training). A LightGBM classifier over 61 pair features reaches validation F0.5 = **0.984**
+(absent from training). A LightGBM classifier over 78 pair features reaches validation F0.5 = **0.984**
 (**0.976** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.8%
 blocking recall** at 14.5 candidates per Source 1 entity (test); public leaderboard **0.974**.
 
@@ -92,7 +92,7 @@ but kept in a "full" name for the decoy features.
 
 ## 4. Matching Model
 
-**Features used** (61, all label-free):
+**Features used** (78, all label-free):
 - Name: rapidfuzz `ratio`, `token_set_ratio`, `token_sort_ratio`, `partial_ratio`, Jaro-Winkler; TF-IDF
   cosine; extra words on each side of the *full* name; label-free **decoy score** of the extra words
   (per country: share of records whose best S1 lacks the word *and* whose house number disagrees; 0.82–0.88
@@ -105,6 +105,9 @@ but kept in a "full" name for the decoy features.
   cleaned name/address scores the gap to the record's best candidate, an is-best flag and the number of
   candidates tied for best — breaks ties between S1s that share a normalized name (the raw address picks the
   true S1 in 97% of such ties).
+- Formatting noise of the record's raw text (true records carry more source noise than decoys, which are
+  near-copies of clean S1 text): domain-only names (4% decoys vs 26% overall), letter case, accents, digits inside
+  words, punctuation, brackets/ID tags, title prefixes, `#` / door-number / PMB / NULL address markers.
 - Other: retrieval score/rank, record's best and second-best score, gap and margin; key-pass flags;
   records pointing at the S1 and this record's rank among them; **sibling agreement** (other records of the
   S1 sharing this record's house number; this record's words no other sibling has); source id.
@@ -171,6 +174,7 @@ MIT-licensed and trained from scratch on the provided data.
 | 013 | more exact keys, cap never drops a record's best candidate | 0.971 | 13.5 | 0.979 (0.970) | 0.967 |
 | 014 | within-record tie-break features (raw text, gap to the record's best candidate) | 0.971 | 13.5 | 0.981 (0.972) | 0.970 |
 | **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | **0.974** |
+| **018** | + formatting-noise features of the raw record text | **0.978** | 14.5 | **0.984 (0.977)** | _pending_ |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),

@@ -6,7 +6,7 @@ Each run gets runs/<name>/ (code snapshot, model, metrics, errors, submission fi
   modal run modal_app.py --run $R --start fit 2>&1 | tee runs/$R/modal.log     # reuse cached blocking + features
   modal run modal_app.py --run $R --start fit --pseudo                         # + self-training on France
   modal run modal_app.py --script tools/decoys.py                             # ad-hoc analysis script
-Stages: download -> normalize -> synth -> block -> addr -> prune -> features -> fit -> predict -> stack (--start/--stop).
+Stages: download -> normalize -> synth -> block -> addr -> prune -> features -> noise -> fit -> predict -> stack (--start/--stop).
 """
 import os
 import shutil
@@ -21,7 +21,7 @@ image = (modal.Image.debian_slim(python_version="3.12").apt_install("curl", "unz
          .uv_sync().add_local_dir("src", "/root/src").add_local_dir("tools", "/root/tools"))
 DOWNLOAD = ("mkdir -p data && curl -sSL https://cdn.unstop.com/files/6ab10eb3b23ba_student_resource.zip"
             " -o data/sr.zip && cd data && unzip -qo sr.zip -x '__MACOSX/*' && rm sr.zip")
-STAGES = ["download", "normalize", "synth", "block", "addr", "prune", "features", "fit", "predict", "stack"]
+STAGES = ["download", "normalize", "synth", "block", "addr", "prune", "features", "noise", "fit", "predict", "stack"]
 
 
 @app.function(image=image, volumes={"/vol": vol}, cpu=32, memory=65536, timeout=3 * 3600)
@@ -51,6 +51,9 @@ def main(run: str = "", start: str = "download", stop: str = "predict", script: 
         elif stage == "addr":  # address pass alone on cached retrieval (--start addr); block already includes it
             if start == "addr":
                 list(step.map([["block.py", split, "--addr"] for split in ("train", "test")]))
+        elif stage == "noise":  # noise features added to cached features (--start noise); features already includes them
+            if start == "noise":
+                list(step.map([["features.py", split, "--noise"] for split in ("train", "test")]))
         elif stage in ("block", "prune", "features"):  # train and test in parallel containers
             py, extra = ("block.py", ["--prune"]) if stage == "prune" else (f"{stage}.py", [])
             list(step.map([[py, split, *extra] for split in ("train", "test")]))

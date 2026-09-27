@@ -145,6 +145,35 @@ def ambiguity_feats(c, rec):
                     "q_known_frac"))
 
 
+def noise_feats(split):
+    """Per-record formatting noise, label-free. Decoys are near-copies of clean S1 text; true records carry more
+    source noise (train: domain-only names 4% decoys vs 26% overall; lowercase names, accents, digits inside words
+    13-18%; '#' / 'door no' / 'h.no' addresses 31%). Normalization and the raw-text features lowercase all of it."""
+    r = (pl.read_parquet(f"{WORK}/{split}.parquet", columns=["entity_id", "src", "business_name", "business_address"])
+         .filter(pl.col("src") != 1))
+    n, a = pl.col("business_name").fill_null(""), pl.col("business_address").fill_null("")
+    flags = {
+        "nz_url": n.str.contains(r"(?i)www\.|\.(com|in|fr|net|org|co)\b"),
+        "nz_lower": (n == n.str.to_lowercase()) & n.str.contains(r"[a-z]"),
+        "nz_upper": (n == n.str.to_uppercase()) & n.str.contains(r"[A-Z]"),
+        "nz_addr_upper": (a == a.str.to_uppercase()) & a.str.contains(r"[A-Z]"),
+        "nz_digit_word": n.str.contains(r"[A-Za-z][0-9][A-Za-z]"),
+        "nz_lead_punct": n.str.contains(r"^[\W_]"),
+        "nz_trail_punct": n.str.contains(r"[\.,;:\-]$"),
+        "nz_dblspace": n.str.contains("  "),
+        "nz_bracket": n.str.contains(r"[\[\(]"),
+        "nz_idtag": n.str.contains(r"(?i)\(id:"),
+        "nz_title": n.str.contains(r"(?i)^(mr|mrs|ms|dr|smt|shri|sri|m/s)\b"),
+        "nz_addr_hash": a.str.contains("#"),
+        "nz_addr_door": a.str.contains(r"(?i)door no|h\.?\s?no"),
+        "nz_addr_pmb": a.str.contains(r"(?i)\bpmb\b"),
+        "nz_addr_null": a.str.contains(r"(?i)null"),
+        "nz_addr_zero": a.str.contains(r"\b0\d+"),
+    }
+    return r.select(q="entity_id", nz_accent=n.str.count_matches(r"[À-ÿ]").cast(pl.Int16),
+                    **{k: v.cast(pl.Int8) for k, v in flags.items()})
+
+
 def build(split):
     rec = pl.read_parquet(f"{WORK}/{split}.parquet").select(
         "entity_id", "src", "country", "nm", "ad", "business_name",
@@ -184,6 +213,7 @@ def build(split):
         f = f.with_columns((pl.col(f"{c}_qgap") == 0).cast(pl.Int8).alias(f"{c}_qbest"))
     f = f.with_columns(raw_n_qties=pl.col("raw_n_qbest").sum().over("q").cast(pl.Int16),
                        raw_a_qties=pl.col("raw_a_qbest").sum().over("q").cast(pl.Int16))
+    f = f.join(noise_feats(split), on="q", how="left")
     if split == "train":
         gt = pl.read_parquet(f"{WORK}/train_gt.parquet").with_columns(label=pl.lit(1, pl.Int8))
         f = f.join(gt, on=["q", "s1"], how="left").with_columns(pl.col("label").fill_null(0))
@@ -192,4 +222,8 @@ def build(split):
 
 
 if __name__ == "__main__":
-    build(sys.argv[1])
+    if "--noise" in sys.argv:  # add the noise features to an existing work/{split}_feats.parquet
+        path = f"{WORK}/{sys.argv[1]}_feats.parquet"
+        pl.read_parquet(path).join(noise_feats(sys.argv[1]), on="q", how="left").write_parquet(path)
+    else:
+        build(sys.argv[1])
