@@ -14,9 +14,9 @@ per-country Source 1 index (sparse TF-IDF top-10 plus exact-key passes), and eac
 to at most one entity. (2) About a quarter of Source 2/3 records (≈42% on test) are **decoys** — near-copies
 of a real business with an extra marker word or a shifted house number — so most features are designed to
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
-(absent from training). A LightGBM classifier over 49 pair features reaches validation F0.5 = **0.979**
-(**0.970** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.1%
-blocking recall** at 13.5 candidates per Source 1 entity; public leaderboard **0.967**.
+(absent from training). A LightGBM classifier over 61 pair features reaches validation F0.5 = **0.981**
+(**0.972** on a validation set at the test's decoy density, which tracks the leaderboard) with **97.1%
+blocking recall** at 13.5 candidates per Source 1 entity; public leaderboard **0.970**.
 
 ---
 
@@ -88,7 +88,7 @@ but kept in a "full" name for the decoy features.
 
 ## 4. Matching Model
 
-**Features used** (49, all label-free):
+**Features used** (61, all label-free):
 - Name: rapidfuzz `ratio`, `token_set_ratio`, `token_sort_ratio`, `partial_ratio`, Jaro-Winkler; TF-IDF
   cosine; extra words on each side of the *full* name; label-free **decoy score** of the extra words
   (per country: share of records whose best S1 lacks the word *and* whose house number disagrees; 0.82–0.88
@@ -97,6 +97,10 @@ but kept in a "full" name for the decoy features.
 - Address: rapidfuzz `ratio`, `token_set_ratio`, `partial_ratio`; TF-IDF cosine; house-number overlap,
   first-number equality/distance, whether the S1's first house number appears in the record; S1s sharing the
   exact address.
+- Within-record comparison: raw (uncleaned, lowercase) name and address similarity, and for these and the
+  cleaned name/address scores the gap to the record's best candidate, an is-best flag and the number of
+  candidates tied for best — breaks ties between S1s that share a normalized name (the raw address picks the
+  true S1 in 97% of such ties).
 - Other: retrieval score/rank, record's best and second-best score, gap and margin; key-pass flags;
   records pointing at the S1 and this record's rank among them; **sibling agreement** (other records of the
   S1 sharing this record's house number; this record's words no other sibling has); source id.
@@ -111,9 +115,9 @@ of training S1s at test decoy density.
 
 ## 5. Results & Error Analysis
 
-- **F_0.5 Score (macro):** **0.979** on held-out training S1s; **0.970** at test decoy density (the
-  leaderboard proxy: it predicted 0.961 and 0.967 for the two runs submitted after it was introduced).
-  Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → **0.967**.
+- **F_0.5 Score (macro):** **0.981** on held-out training S1s; **0.972** at test decoy density (the
+  leaderboard proxy: it predicted 0.961, 0.967 and 0.969 for the runs submitted after it was introduced,
+  which scored 0.961, 0.967 and 0.970). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → **0.970**.
 - **Where the remaining loss is** (test-density validation, fixing one error type perfectly):
   never-retrieved true pairs +2.1 pts (before the key passes), retrieved-but-rejected true pairs +0.9
   (mostly records with no address), false merges +0.6 (almost all decoys).
@@ -159,7 +163,8 @@ MIT-licensed and trained from scratch on the provided data.
 | 003 | label-free decoy features | 0.952 | 7.8 | 0.971 | 0.957 |
 | 006 | ambiguity features, larger LightGBM, top-10 retrieval | 0.958 | 9.4 | 0.975 (0.964) | 0.961 |
 | 009 | exact-key blocking passes | 0.967 | 11.9 | 0.978 (0.968) | — |
-| **013** | more exact keys, cap never drops a record's best candidate | **0.971** | 13.5 | **0.979 (0.970)** | **0.967** |
+| 013 | more exact keys, cap never drops a record's best candidate | 0.971 | 13.5 | 0.979 (0.970) | 0.967 |
+| **014** | within-record tie-break features (raw text, gap to the record's best candidate) | **0.971** | 13.5 | **0.981 (0.972)** | **0.970** |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),

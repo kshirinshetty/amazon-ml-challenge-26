@@ -27,6 +27,6 @@ The first launch was also preempted by Modal (log: `modal_preempted_slow.log`).
 | **Dense validation (≈ leaderboard)** | 0.9701 | **0.9717** |
 | Threshold | 0.70 | 0.75 |
 | Blocking recall / oracle | 0.9706 / 0.9899 | same |
-| Leaderboard | 0.967 | _pending_ (expected ≈ 0.969) |
+| **Leaderboard** | 0.967 | **0.970** |
 
 New features take 7.8% of gain, mostly `a_tset_qgap` 5.1% and `a_tset_qbest` 1.1%. 449 trees.

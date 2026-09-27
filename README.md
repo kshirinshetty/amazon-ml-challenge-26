@@ -8,11 +8,11 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 - Official README, documentation template, validator: [`docs/student_resource/`](docs/student_resource/)
 - Our methodology write-up (goes in the zip as `Documentation_template.md`): [`docs/methodology.md`](docs/methodology.md)
 
-## Status (2026-09-27 13:10 IST)
+## Status (2026-09-27 17:00 IST)
 
-Best leaderboard: **run 013, 0.967** — `submission/wsg_submission.zip` is built from it. Synthetic decoys
-(008/010/012) looked good on validation but did not transfer: 012 scored 0.961 vs its no-synth twin 013 at 0.967. The dense
-validation *without* synthetic decoys tracks the leaderboard (predicted 0.961 for 006 and 0.967 for 013).
+Best leaderboard: **run 014, 0.970** — `submission/wsg_submission.zip` is built from it. Handoff for a new
+session: [`docs/HANDOFF.md`](docs/HANDOFF.md). Dense validation *without* synthetic decoys tracks the
+leaderboard (predicted 0.961 / 0.967 / 0.969 → actual 0.961 / 0.967 / 0.970).
 
 ## Runs
 
@@ -33,8 +33,8 @@ validation *without* synthetic decoys tracks the leaderboard (predicted 0.961 fo
 | [011](runs/011_more-keys-synth/) | 010 + skeleton / spacing-free / first-two-words keys, looser address key | 0.968 | 13.3 | 0.973 (own, synth) | not submitted (neutral) |
 | [blend](runs/blend_009_010/) | 0.3·009 + 0.7·010 probabilities | — | 11.9 | 0.976 real-only* (dense 0.966) | 0.961 |
 | [012](runs/012_keys-synth-safecap/) | 011 + cap never drops a record's best candidate | **0.970** | 13.5 | **0.977 real-only*** (dense **0.967**) | 0.961 |
-| **[013](runs/013_keys-safecap-nosynth/)** | **012 without synthetic decoys — final package** | **0.971** | 13.5 | **0.979** (dense **0.970**) | **0.967** |
-| [014](runs/014_relative-tiebreak/) | 013 + within-record tie-break features (raw text; gap to the record's best candidate) | 0.971 | 13.5 | **0.981** (dense **0.972**) | _pending_ |
+| [013](runs/013_keys-safecap-nosynth/) | 012 without synthetic decoys | **0.971** | 13.5 | **0.979** (dense **0.970**) | **0.967** |
+| **[014](runs/014_relative-tiebreak/)** | **013 + within-record tie-break features — final package** | **0.971** | 13.5 | **0.981** (dense **0.972**) | **0.970** |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).
