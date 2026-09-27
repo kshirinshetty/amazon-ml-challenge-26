@@ -1,0 +1,26 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-XPHz2bfXr7qhL642ncZRG8
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py refit runs/017_refit-all-folds runs/016_address-pass
+member 0: 716 rounds on all folds, 526s
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/017_refit-all-folds
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 16.30682       ┆ 3.219258    ┆ 6.237377  │
+│ India   ┆ 809986 ┆ 15.335006      ┆ 3.311514    ┆ 6.018746  │
+│ US      ┆ 663106 ┆ 12.897979      ┆ 3.336206    ┆ 5.873872  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+✓ Finished downloading files to local!
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/siddarthaa/main/ap-XPHz2bfXr7qhL642ncZRG8
