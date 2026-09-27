@@ -41,6 +41,10 @@ def string_feats(c):
         a_ratio=sim(aq, as_, fuzz.ratio),
         a_tset=sim(aq, as_, fuzz.token_set_ratio),
         a_partial=sim(aq, as_, fuzz.partial_ratio),
+        # raw lowercase text keeps legal forms / spelling that cleaning removes: it breaks ties between
+        # S1s sharing a normalized name (raw-name best = true S1 in 52% of no-address ties vs 32% by chance)
+        raw_n=sim(c["rq_n"], c["rs_n"], fuzz.ratio),
+        raw_a=sim(c["rq_a"], c["rs_a"], fuzz.ratio),
     ).with_columns(
         num_q=pl.col("ad_q").str.extract_all(NUM).list.unique(),
         num_s=pl.col("ad_s").str.extract_all(NUM).list.unique(),
@@ -61,7 +65,7 @@ def string_feats(c):
     ).with_columns(
         num_jac=pl.col("num_inter") / pl.col("num_union"),
         num_q_in_s=(pl.col("num_inter") == pl.col("num_q").list.len()).cast(pl.Int8),
-    ).drop("nm_q", "nm_s", "ad_q", "ad_s", "num_q", "num_s", "tok_q", "tok_s")
+    ).drop("nm_q", "nm_s", "ad_q", "ad_s", "num_q", "num_s", "tok_q", "tok_s", "rq_n", "rs_n", "rq_a", "rs_a")
 
 
 def full_names(names):
@@ -145,6 +149,8 @@ def build(split):
     rec = pl.read_parquet(f"{WORK}/{split}.parquet").select(
         "entity_id", "src", "country", "nm", "ad", "business_name",
         translit=pl.col("business_name").str.contains(r"[^\x00-\x7F]").cast(pl.Int8),
+        raw_n=pl.col("business_name").fill_null("").str.to_lowercase(),
+        raw_a=pl.col("business_address").fill_null("").str.to_lowercase(),
         nums=pl.col("ad").str.extract_all(NUM).list.unique(),
         num1=pl.col("ad").str.extract(r"\b(\d+)\b"),
     )
@@ -162,14 +168,22 @@ def build(split):
         s1_rank=pl.col("score").rank("ordinal", descending=True).over("s1"),
     ).with_columns(gap=pl.col("top1") - pl.col("score"), margin=pl.col("top1") - pl.col("top2"))
     c = c.join(decoy_feats(c, rec, dec), on=["q", "s1"], how="left").join(ambiguity_feats(c, rec), on=["q", "s1"], how="left")
-    q = rec.filter(pl.col("src") != 1).select(q="entity_id", src="src", nm_q="nm", ad_q="ad", translit="translit")
-    s = rec.filter(pl.col("src") == 1).select(s1="entity_id", nm_s="nm", ad_s="ad")
+    q = rec.filter(pl.col("src") != 1).select(q="entity_id", src="src", nm_q="nm", ad_q="ad", translit="translit",
+                                             rq_n="raw_n", rq_a="raw_a")
+    s = rec.filter(pl.col("src") == 1).select(s1="entity_id", nm_s="nm", ad_s="ad", rs_n="raw_n", rs_a="raw_a")
     out = []
     for lo in range(0, len(c), CHUNK):
         chunk = c[lo:lo + CHUNK].join(q, on="q", how="left").join(s, on="s1", how="left")
         out.append(string_feats(chunk))
         print(f"  {lo + len(chunk)}/{len(c)}", flush=True)
     f = pl.concat(out)
+    # within-record comparison: is this candidate the closest of the record's candidates on each signal?
+    # (gap / is-best / ties instead of rank().over("q"): ranking inside ~10M small groups took hours)
+    for c in ("raw_n", "raw_a", "n_ratio", "a_tset"):
+        f = f.with_columns((pl.col(c).max().over("q") - pl.col(c)).alias(f"{c}_qgap"))
+        f = f.with_columns((pl.col(f"{c}_qgap") == 0).cast(pl.Int8).alias(f"{c}_qbest"))
+    f = f.with_columns(raw_n_qties=pl.col("raw_n_qbest").sum().over("q").cast(pl.Int16),
+                       raw_a_qties=pl.col("raw_a_qbest").sum().over("q").cast(pl.Int16))
     if split == "train":
         gt = pl.read_parquet(f"{WORK}/train_gt.parquet").with_columns(label=pl.lit(1, pl.Int8))
         f = f.join(gt, on=["q", "s1"], how="left").with_columns(pl.col("label").fill_null(0))

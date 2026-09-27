@@ -11,7 +11,7 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 ## Status (2026-09-27 13:10 IST)
 
 Best leaderboard: **run 013, 0.967** — `submission/wsg_submission.zip` is built from it. Synthetic decoys
-(008/010/012) looked good on validation but did not transfer (blend weighted to 010: 0.961). The dense
+(008/010/012) looked good on validation but did not transfer: 012 scored 0.961 vs its no-synth twin 013 at 0.967. The dense
 validation *without* synthetic decoys tracks the leaderboard (predicted 0.961 for 006 and 0.967 for 013).
 
 ## Runs
@@ -32,8 +32,9 @@ validation *without* synthetic decoys tracks the leaderboard (predicted 0.961 fo
 | [010](runs/010_multipass-synth/) | 009 blocking + 008 synthetic decoys | 0.966 | 11.9 | 0.976 real-only* (dense 0.965) | _pending_ |
 | [011](runs/011_more-keys-synth/) | 010 + skeleton / spacing-free / first-two-words keys, looser address key | 0.968 | 13.3 | 0.973 (own, synth) | not submitted (neutral) |
 | [blend](runs/blend_009_010/) | 0.3·009 + 0.7·010 probabilities | — | 11.9 | 0.976 real-only* (dense 0.966) | 0.961 |
-| [012](runs/012_keys-synth-safecap/) | 011 + cap never drops a record's best candidate | **0.970** | 13.5 | **0.977 real-only*** (dense **0.967**) | _pending_ |
+| [012](runs/012_keys-synth-safecap/) | 011 + cap never drops a record's best candidate | **0.970** | 13.5 | **0.977 real-only*** (dense **0.967**) | 0.961 |
 | **[013](runs/013_keys-safecap-nosynth/)** | **012 without synthetic decoys — final package** | **0.971** | 13.5 | **0.979** (dense **0.970**) | **0.967** |
+| [014](runs/014_relative-tiebreak/) | 013 + within-record tie-break features (raw text; gap to the record's best candidate) | 0.971 | 13.5 | **0.981** (dense **0.972**) | _pending_ |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).

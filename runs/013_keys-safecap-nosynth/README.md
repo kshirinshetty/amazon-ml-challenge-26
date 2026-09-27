@@ -13,7 +13,7 @@ real test: 012 vs 013 differ only in that.
 | Dense validation, own context | 0.9684 | **0.9701** | 0.9614 (incl. synthetic decoys) |
 | Real records, test-density context | 0.9730 | — | 0.9774 |
 | Test candidates / S1 | 11.9 | 13.5 | 13.5 |
-| Leaderboard | _pending_ | **0.967** | see root README |
+| Leaderboard | _pending_ | **0.967** | 0.961 |
 
 436 trees, threshold 0.70. Test matches / S1: France 3.18, India 3.26, US 3.32.
 If 013 beats 012 on the leaderboard, rebuild the zip from it: `./package.sh runs/013_keys-safecap-nosynth wsg`

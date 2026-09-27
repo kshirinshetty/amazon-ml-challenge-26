@@ -1,0 +1,271 @@
+✓ Initialized. View run at 
+https://modal.com/apps/siddarthaa/main/ap-caVqmjORRO77PyYr89lW5V
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/features.py test
+$ /.uv/.venv/bin/python /root/src/features.py train
+/root/src/features.py:89: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:89: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:106: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:106: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:111: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:111: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:112: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:112: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:133: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:133: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+[('France', 'holding', 0.9852793281455625), ('France', 'snc', 0.9850857283549017), ('France', 'participations', 0.9849125718381713), ('France', 'distribution', 0.9843337387897704), ('France', 'international', 0.9834102875151463), ('France', 'maisondesant', 0.9599392420135145), ('France', 'calais', 0.9221195751850662), ('France', 'bordeaux', 0.9187245247959991), ('France', 'ei', 0.8921731252167631), ('France', 'roubaix', 0.8910961520445493), ('France', 'sainte', 0.8874893680720429), ('France', 'nazaire', 0.8827524816037621), ('France', 'tourcoing', 0.8697653831226265), ('France', 'jean', 0.8657554551866844), ('France', 'deleves', 0.8655675403934469), ('India', 'of', 0.9494359131562605), ('India', 'trust', 0.9473292587514772), ('India', 'mumbai', 0.9444405415882604), ('India', 'shre', 0.9443896673491663), ('India', 'bangalore', 0.9441274763697606), ('India', 'new', 0.9438723181934623), ('India', 'delhi', 0.9401100836524178), ('India', 'al', 0.9395844244239763), ('India', 'south', 0.9372527877675827), ('India', 'surya', 0.9353003159289646), ('India', 'sons', 0.933998884966851), ('India', 'east', 0.9333831316835656), ('India', 'super', 0.9320264750993873), ('India', 'clinic', 0.9317939266826039), ('India', 'society', 0.9274260240527402), ('US', 'uptown', 0.9921433508749133), ('US', 'lakeside', 0.9914465742663997), ('US', 'northside', 0.9914303498432788), ('US', 'riverside', 0.9913963504906681), ('US', 'greater', 0.9907690505382802), ('US', 'holdings', 0.9907445934239416), ('US', 'downtown', 0.9906132297904806), ('US', 'west', 0.9904523842142229), ('US', 'westgate', 0.9903424138122072), ('US', 'south', 0.9902389334737386), ('US', 'central', 0.9901530546639163), ('US', 'group', 0.9901025432831596), ('US', 'midtown', 0.9899987664632206), ('US', 'valey', 0.9899393426883601), ('US', 'sumit', 0.9899055707760028)]
+  2000000/23349959
+[('India', 'of', 0.9351315877240857), ('India', 'trust', 0.9304476632255916), ('India', 'asociates', 0.9235284416838221), ('India', 'al', 0.9220460974480841), ('India', 'clinic', 0.9219617188164544), ('India', 'brothers', 0.917570232450177), ('India', 'shre', 0.9174233465337172), ('India', 'delhi', 0.9138470197325352), ('India', 'bangalore', 0.9125985407332752), ('India', 'golden', 0.9084336564571328), ('India', 'star', 0.9082446692375256), ('India', 'new', 0.908057634921879), ('India', 'mumbai', 0.9077117218850397), ('India', 'pvt', 0.9067385333802037), ('India', 'indian', 0.906409562622276), ('US', 'lakeside', 0.9910079204949919), ('US', 'greater', 0.990270265088567), ('US', 'midtown', 0.9900548916674811), ('US', 'northside', 0.989850726184046), ('US', 'southside', 0.9896227226107545), ('US', 'group', 0.989563958459963), ('US', 'south', 0.9894559959144946), ('US', 'highland', 0.9893591626889119), ('US', 'holdings', 0.9893341213133693), ('US', 'harbor', 0.9891103091161846), ('US', 'sumit', 0.9890504069220791), ('US', 'north', 0.9886748826913057), ('US', 'uptown', 0.9885908159882968), ('US', 'coastal', 0.9885871273101047), ('US', 'eastgate', 0.9885762357074528)]
+  2000000/23731212
+  4000000/23349959
+  4000000/23731212
+  6000000/23349959
+  6000000/23731212
+  8000000/23349959
+  8000000/23731212
+  10000000/23349959
+  10000000/23731212
+  12000000/23349959
+  12000000/23731212
+  14000000/23349959
+  14000000/23731212
+  16000000/23349959
+  16000000/23731212
+  18000000/23349959
+  18000000/23731212
+  20000000/23349959
+  20000000/23731212
+  22000000/23349959
+  23349959/23349959
+  22000000/23731212
+  23731212/23731212
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+$ /.uv/.venv/bin/python /root/src/features.py test
+/root/src/features.py:89: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:106: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:111: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:112: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:133: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+[('France', 'holding', 0.9852793281455625), ('France', 'snc', 0.9850857283549017), ('France', 'participations', 0.9849125718381713), ('France', 'distribution', 0.9843337387897704), ('France', 'international', 0.9834102875151463), ('France', 'maisondesant', 0.9599392420135145), ('France', 'calais', 0.9221195751850662), ('France', 'bordeaux', 0.9187245247959991), ('France', 'ei', 0.8921731252167631), ('France', 'roubaix', 0.8910961520445493), ('France', 'sainte', 0.8874893680720429), ('France', 'nazaire', 0.8827524816037621), ('France', 'tourcoing', 0.8697653831226265), ('France', 'jean', 0.8657554551866844), ('France', 'deleves', 0.8655675403934469), ('India', 'of', 0.9494359131562605), ('India', 'trust', 0.9473292587514772), ('India', 'mumbai', 0.9444405415882604), ('India', 'shre', 0.9443896673491663), ('India', 'bangalore', 0.9441274763697606), ('India', 'new', 0.9438723181934623), ('India', 'delhi', 0.9401100836524178), ('India', 'al', 0.9395844244239763), ('India', 'south', 0.9372527877675827), ('India', 'surya', 0.9353003159289646), ('India', 'sons', 0.933998884966851), ('India', 'east', 0.9333831316835656), ('India', 'super', 0.9320264750993873), ('India', 'clinic', 0.9317939266826039), ('India', 'society', 0.9274260240527402), ('US', 'uptown', 0.9921433508749133), ('US', 'lakeside', 0.9914465742663997), ('US', 'northside', 0.9914303498432788), ('US', 'riverside', 0.9913963504906681), ('US', 'greater', 0.9907690505382802), ('US', 'holdings', 0.9907445934239416), ('US', 'downtown', 0.9906132297904806), ('US', 'west', 0.9904523842142229), ('US', 'westgate', 0.9903424138122072), ('US', 'south', 0.9902389334737386), ('US', 'central', 0.9901530546639163), ('US', 'group', 0.9901025432831596), ('US', 'midtown', 0.9899987664632206), ('US', 'valey', 0.9899393426883601), ('US', 'sumit', 0.9899055707760028)]
+  2000000/23349959
+  4000000/23349959
+  6000000/23349959
+  8000000/23349959
+  10000000/23349959
+  12000000/23349959
+  14000000/23349959
+  16000000/23349959
+  18000000/23349959
+  20000000/23349959
+  22000000/23349959
+  23349959/23349959
+Stopping app - user stopped from CLI.
+Runner terminated.
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/sidd/Desktop/amazon-ml/modal_app.py:53 in main                         │
+│                                                                              │
+│   52 │   │   │   py, extra = ("block.py", ["--prune"]) if stage == "prune" e │
+│ ❱ 53 │   │   │   list(step.map([[py, split, *extra] for split in ("train", " │
+│   54 │   │   elif stage == "stack":  # stage 2 on top of this run's stage-1  │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:856 in __iter__                                          │
+│                                                                              │
+│    855 │   │   │   with Runner() as runner:                                  │
+│ ❱  856 │   │   │   │   yield from run_async_gen(runner, self._async_iterable │
+│    857 │   │   except NestedEventLoops:                                      │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:934 in run_async_gen                                     │
+│                                                                              │
+│    933 │   │   │   else:                                                     │
+│ ❱  934 │   │   │   │   next_yield = runner.run(gen.asend(next_send))  # type │
+│    935 │   │   except KeyboardInterrupt as e:                                │
+│                                                                              │
+│ /home/sidd/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/pytho │
+│ n3.11/asyncio/base_events.py:654 in run_until_complete                       │
+│                                                                              │
+│    653 │   │                                                                 │
+│ ❱  654 │   │   return future.result()                                        │
+│    655                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:766 in asend                                             │
+│                                                                              │
+│    765 │   │   self.iterated = True                                          │
+│ ❱  766 │   │   return await self.gen.asend(value)                            │
+│    767                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:1042 in _map_async                                             │
+│                                                                              │
+│   1041 │   async_input_gen = async_zip(*[sync_or_async_iter(it) for it in in │
+│ ❱ 1042 │   async for output in _map_helper(                                  │
+│   1043 │   │   self,                                                         │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:1015 in _map_helper                                            │
+│                                                                              │
+│   1014 │   ) as map_output_stream:                                           │
+│ ❱ 1015 │   │   async for output in map_output_stream:                        │
+│   1016 │   │   │   yield output                                              │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1108 in async_merge                                      │
+│                                                                              │
+│   1107 │   │   │   │   │   assert_type(item, ExceptionWrapper)               │
+│ ❱ 1108 │   │   │   │   │   raise item.value                                  │
+│   1109                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1087 in producer                                         │
+│                                                                              │
+│   1086 │   │   │   async with aclosing(generator) as stream:                 │
+│ ❱ 1087 │   │   │   │   async for item in stream:                             │
+│   1088 │   │   │   │   │   await queue.put(ValueWrapper(item))               │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_o │
+│ bject.py:56 in wrapped                                                       │
+│                                                                              │
+│    55 │   │   async with aclosing(method(self, *args, **kwargs)) as stream:  │
+│ ❱  56 │   │   │   async for item in stream:                                  │
+│    57 │   │   │   │   yield item                                             │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_f │
+│ unctions.py:1774 in _map                                                     │
+│                                                                              │
+│   1773 │   │   │   ) as stream:                                              │
+│ ❱ 1774 │   │   │   │   async for item in stream:                             │
+│   1775 │   │   │   │   │   yield item                                        │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:971 in _map_invocation_inputplane                              │
+│                                                                              │
+│    970 │   ) as merged:                                                      │
+│ ❱  971 │   │   async for maybe_output in merged:                             │
+│    972 │   │   │   if maybe_output is not None:  # ignore None sentinels     │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1108 in async_merge                                      │
+│                                                                              │
+│   1107 │   │   │   │   │   assert_type(item, ExceptionWrapper)               │
+│ ❱ 1108 │   │   │   │   │   raise item.value                                  │
+│   1109                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1087 in producer                                         │
+│                                                                              │
+│   1086 │   │   │   async with aclosing(generator) as stream:                 │
+│ ❱ 1087 │   │   │   │   async for item in stream:                             │
+│   1088 │   │   │   │   │   await queue.put(ValueWrapper(item))               │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:926 in poll_outputs                                            │
+│                                                                              │
+│    925 │   │   ) as streamer:                                                │
+│ ❱  926 │   │   │   async for idx, output in streamer:                        │
+│    927 │   │   │   │   if not order_outputs:                                 │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1237 in async_map_ordered                                │
+│                                                                              │
+│   1236 │   async with aclosing(async_map(async_zip(counter(), input_generato │
+│ ❱ 1237 │   │   async for output_idx, output_item in stream:                  │
+│   1238 │   │   │   buffer[output_idx] = output_item                          │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1213 in async_map                                        │
+│                                                                              │
+│   1212 │   ) as stream:                                                      │
+│ ❱ 1213 │   │   async for item in stream:                                     │
+│   1214 │   │   │   yield item                                                │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1108 in async_merge                                      │
+│                                                                              │
+│   1107 │   │   │   │   │   assert_type(item, ExceptionWrapper)               │
+│ ❱ 1108 │   │   │   │   │   raise item.value                                  │
+│   1109                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1087 in producer                                         │
+│                                                                              │
+│   1086 │   │   │   async with aclosing(generator) as stream:                 │
+│ ❱ 1087 │   │   │   │   async for item in stream:                             │
+│   1088 │   │   │   │   │   await queue.put(ValueWrapper(item))               │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1202 in worker                                           │
+│                                                                              │
+│   1201 │   │   │   if isinstance(item, ValueWrapper):                        │
+│ ❱ 1202 │   │   │   │   res = await prevent_cancellation_abortion(async_mappe │
+│   1203 │   │   │   │   yield res                                             │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1167 in prevent_cancellation_abortion                    │
+│                                                                              │
+│   1166 │   try:                                                              │
+│ ❱ 1167 │   │   return await asyncio.shield(t)                                │
+│   1168 │   except asyncio.CancelledError:                                    │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/async_utils.py:1226 in mapper_func_wrapper                              │
+│                                                                              │
+│   1225 │   async def mapper_func_wrapper(tup: tuple[int, T]) -> tuple[int, V │
+│ ❱ 1226 │   │   return (tup[0], await async_mapper_func(tup[1]))              │
+│   1227                                                                       │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:915 in fetch_output                                            │
+│                                                                              │
+│    914 │   │   │   else:                                                     │
+│ ❱  915 │   │   │   │   raise e                                               │
+│    916 │   │   return (item.idx, output)                                     │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/pa │
+│ rallel_map.py:910 in fetch_output                                            │
+│                                                                              │
+│    909 │   │   try:                                                          │
+│ ❱  910 │   │   │   output = await _process_result(item.result, item.data_for │
+│    911 │   │   except Exception as e:                                        │
+│                                                                              │
+│ /home/sidd/.local/share/uv/tools/modal/lib/python3.11/site-packages/modal/_u │
+│ tils/function_utils.py:574 in _process_result                                │
+│                                                                              │
+│   573 │   │                                                                  │
+│ ❱ 574 │   │   raise RemoteError(result.exception)                            │
+│   575                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError
