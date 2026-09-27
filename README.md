@@ -10,7 +10,7 @@ Source 1 entity; smaller candidate sets rank higher in the final review.
 
 ## Status (2026-09-27 17:00 IST)
 
-Best leaderboard: **0.974** (016, 018). `submission/wsg_submission.zip` is built from **022** (dense val 0.9806). Handoff for a new
+Best leaderboard: **0.974** (016, 018). `submission/wsg_submission.zip` is built from **023** (dense val 0.9809). Handoff for a new
 session: [`docs/HANDOFF.md`](docs/HANDOFF.md). Dense validation *without* synthetic decoys tracks the
 leaderboard (predicted 0.961 / 0.967 / 0.969 → actual 0.961 / 0.967 / 0.970).
 
@@ -42,7 +42,8 @@ leaderboard (predicted 0.961 / 0.967 / 0.969 → actual 0.961 / 0.967 / 0.970).
 | [019](runs/019_scratch-addr2/) | 018 from scratch on a new Modal workspace + second address match (≥ 90% of best) | 0.979 | 15.3 | 0.9845 (dense 0.9769) | not submitted |
 | [020](runs/020_lr003/) | 019 features, LightGBM lr 0.03 | 0.979 | 15.3 | 0.9846 (dense 0.9770) | not submitted |
 | [021](runs/021_leaves2047/) | 019 features, 2047 leaves | 0.979 | 15.3 | 0.9844 (dense 0.9768) | not submitted |
-| **[022](runs/022_cross-encoder/)** | **019 + fine-tuned multilingual-e5-small cross-encoder blended 50/50 on hard pairs** | 0.979 | 15.3 | **0.9870** (dense **0.9806**) | _pending_ |
+| [022](runs/022_cross-encoder/) | 019 + fine-tuned multilingual-e5-small cross-encoder blended 50/50 on hard pairs | 0.979 | 15.3 | 0.9870 (dense 0.9806) | _pending_ |
+| **[023](runs/023_cross-encoder-base/)** | **022 with multilingual-e5-base (278M) cross-encoder** | 0.979 | 15.3 | **0.9871** (dense **0.9809**) | _pending_ |
 
 Since 007, "dense" = validation with half the true records removed, matching the test's ~42% decoy share;
 it tracks the leaderboard (006: dense 0.9638, leaderboard 0.961).

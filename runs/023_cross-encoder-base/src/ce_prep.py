@@ -18,14 +18,11 @@ from match import FOLD, VALID_FOLD  # noqa: E402
 
 BASE = os.environ.get("CE_BASE", "runs/019_scratch-addr2")
 MAX_TRAIN = 3_000_000
-LO, HI, P2, PMIN = 0.002, 0.9995, 0.005, 0.002  # 022: 0.02, 0.995, 0.02, 0.005 (4% of pairs; blend dense 0.9806)
 m = json.load(open(f"{BASE}/metrics.json"))
 model = lgb.Booster(model_file=f"{BASE}/{m.get('models', ['model.txt'])[0]}")
 
 
 def probs(split):
-    if os.path.exists(f"work/lgb_{split}_probs.parquet"):  # same base model: reuse
-        return pl.read_parquet(f"work/lgb_{split}_probs.parquet")
     f = pl.read_parquet(f"work/{split}_feats.parquet")
     p = np.concatenate([model.predict(f[lo:lo + 4_000_000].select(m["feats"]).to_numpy())
                         for lo in range(0, len(f), 4_000_000)])
@@ -43,8 +40,8 @@ def texts(split):
 def hard(pr):
     qs = (pr.group_by("q").agg(pmax=pl.col("p").max(), p2=pl.col("p").top_k(2).min(), n=pl.len())
           .with_columns(p2=pl.when(pl.col("n") > 1).then(pl.col("p2")).otherwise(0.0))
-          .filter(pl.col("pmax").is_between(LO, HI) | (pl.col("p2") > P2)).select("q"))
-    return (pr.join(qs, on="q").filter(pl.col("p") >= PMIN)
+          .filter(pl.col("pmax").is_between(0.02, 0.995) | (pl.col("p2") > 0.02)).select("q"))
+    return (pr.join(qs, on="q").filter(pl.col("p") >= 0.005)
             .sort("p", descending=True).group_by("q", maintain_order=True).head(5))
 
 

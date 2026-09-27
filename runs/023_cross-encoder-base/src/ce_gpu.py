@@ -11,11 +11,11 @@ app = modal.App("amazon-ml-ce")
 vol = modal.Volume.from_name("amazon-ml")
 image = modal.Image.debian_slim(python_version="3.12").pip_install(
     "torch==2.4.1", "transformers==4.44.2", "polars==1.9.0", "pyarrow", "numpy<2", "sentencepiece")
-MODEL, MAXLEN = "intfloat/multilingual-e5-small", 128  # 023: e5-base
+MODEL, MAXLEN = "intfloat/multilingual-e5-base", 128
 
 
 @app.function(image=image, gpu="H100", volumes={"/vol": vol}, timeout=3600, cpu=8, memory=65536)
-def run(dry: bool = False, max_train: int = 1_500_000, bs: int = 512, lr: float = 8e-5):
+def run(dry: bool = False, max_train: int = 1_500_000, bs: int = 256, lr: float = 4e-5):
     import time
 
     import numpy as np

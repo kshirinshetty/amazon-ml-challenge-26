@@ -10,7 +10,7 @@ import polars as pl
 sys.path.insert(0, "/root/src")
 from match import assign, sim_dense, write  # noqa: E402
 
-RUN = os.environ.get("CE_RUN", "runs/024_ce-wide")
+RUN = os.environ.get("CE_RUN", "runs/022_cross-encoder")
 
 
 def blend(probs, ce, w):

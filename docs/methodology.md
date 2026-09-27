@@ -15,7 +15,7 @@ to at most one entity. (2) About a quarter of Source 2/3 records (≈42% on test
 of a real business with an extra marker word or a shifted house number — so most features are designed to
 expose exactly that, and they are computed **without labels**, which makes them work unchanged on France
 (absent from training). A LightGBM classifier over 78 pair features, blended on the uncertain pairs with a
-fine-tuned multilingual **cross-encoder** (`intfloat/multilingual-e5-small`, MIT, 118M parameters) that reads the
+fine-tuned multilingual **cross-encoder** (`intfloat/multilingual-e5-base`, MIT, 278M parameters) that reads the
 raw name and address of both records, reaches validation F0.5 = **0.987** (**0.981** on a validation set at the
 test's decoy density, which tracks the leaderboard) with **97.9% blocking recall** at 15.3 candidates per Source 1
 entity (test).
@@ -117,14 +117,15 @@ but kept in a "full" name for the decoy features.
 **Model type:** LightGBM binary classifier (`learning_rate 0.05, num_leaves 1023, min_data_in_leaf 100,
 feature_fraction 0.8, bagging 0.8`), early stopping, trained on candidate pairs of 80% of training S1s
 (a 3-model average was tried and matched the 1023-leaf model alone).  
-**Cross-encoder (second stage on hard pairs):** `intfloat/multilingual-e5-small` (MIT license, 118M parameters,
+**Cross-encoder (second stage on hard pairs):** `intfloat/multilingual-e5-base` (MIT license, 278M parameters,
 pretrained on public multilingual text; no business lookups) fine-tuned as a pair classifier on
 `"name | address"` of the S2/S3 record vs the S1, raw text (case, accents, scripts kept). It sees only the
 **hard** pairs: records whose best LightGBM probability is in [0.02, 0.995] or whose second-best exceeds 0.02
 (≈ 4% of candidate pairs; up to 5 candidates per record). Trained 1 epoch on 0.74M such pairs from records with
-no validation-fold candidate (bf16, batch 512, lr 8e-5, 2 min on one H100). Final probability on hard pairs:
+no validation-fold candidate (bf16, batch 256, lr 4e-5, 5 min on one H100; the 118M e5-small variant scored
+0.9806 dense vs 0.9809 for e5-base). Final probability on hard pairs:
 `0.5·p_LightGBM + 0.5·p_cross-encoder`; the weight and threshold (0.6) were picked on dense validation
-(weights 0 / 0.2 / 0.35 / 0.5 / 0.65 / 0.8 → 0.9769 / 0.9791 / 0.9804 / **0.9806** / 0.9803 / 0.9790). Alone the
+(weights 0 / 0.2 / 0.35 / 0.5 → 0.9769 / 0.9793 / 0.9806 / **0.9809**). Alone the
 cross-encoder is weaker than LightGBM on these pairs (accuracy 0.75 vs 0.88), but its errors are different:
 it reads spelling, transliteration and formatting that the hand-made features reduce to a few similarity scores.  
 **Threshold selection method:** each S2/S3 record is assigned to its highest-probability S1 candidate and
@@ -188,7 +189,8 @@ MIT-licensed and trained from scratch on the provided data.
 | **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | **0.974** |
 | 018 | + formatting-noise features of the raw record text | 0.978 | 14.5 | 0.984 (0.977) | 0.974 |
 | 020 | + second address match per record, LightGBM lr 0.03 | 0.979 | 15.3 | 0.984 (0.977) | — |
-| **022** | + cross-encoder (multilingual-e5-small) blended on hard pairs | **0.979** | 15.3 | **0.987 (0.981)** | _pending_ |
+| 022 | + cross-encoder (multilingual-e5-small) blended on hard pairs | 0.979 | 15.3 | 0.987 (0.9806) | — |
+| **023** | cross-encoder multilingual-e5-base | **0.979** | 15.3 | **0.987 (0.9809)** | _pending_ |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),
