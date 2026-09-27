@@ -189,7 +189,7 @@ MIT-licensed and trained from scratch on the provided data.
 | **016** | address-only retrieval pass; 1023-leaf LightGBM | **0.978** | 14.5 | **0.984 (0.976)** | **0.974** |
 | 018 | + formatting-noise features of the raw record text | 0.978 | 14.5 | 0.984 (0.977) | 0.974 |
 | 020 | + second address match per record, LightGBM lr 0.03 | 0.979 | 15.3 | 0.984 (0.977) | — |
-| 022 | + cross-encoder (multilingual-e5-small) blended on hard pairs | 0.979 | 15.3 | 0.987 (0.9806) | — |
+| 022 | + cross-encoder (multilingual-e5-small) blended on hard pairs | 0.979 | 15.3 | 0.987 (0.9806) | **0.981** |
 | **023** | cross-encoder multilingual-e5-base | **0.979** | 15.3 | **0.987 (0.9809)** | _pending_ |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
