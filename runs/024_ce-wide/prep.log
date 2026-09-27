@@ -1,0 +1,13 @@
+✓ Initialized. View run at 
+https://modal.com/apps/avocadotostada/main/ap-VFvMJ5C0wp4dusb3fugWoI
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/tools/ce_prep.py
+train pairs 27162963; hard 2912529 (2519048 records); ce_train 2127086 (pos 0.795); ce_val 785443
+test pairs 26498050; hard 3093379 (2776803 records)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/avocadotostada/main/ap-VFvMJ5C0wp4dusb3fugWoI
