@@ -1,0 +1,438 @@
+✓ Initialized. View run at 
+https://modal.com/apps/avocadotostada/main/ap-526hadJCbxcIhvpnA0OHDx
+Building image im-YVcSaCUCGSsYFIw2mP8Yk2
+
+=> Step 0: FROM base
+
+=> Step 1: RUN apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index [21.8 kB]
+Ign:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index
+Get:6 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+Get:7 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [345 kB]
+Fetched 9405 kB in 1s (10.3 MB/s)
+Reading package lists...
+
+=> Step 2: RUN apt-get install -y curl unzip
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libcurl4 libnghttp2-14 libpsl5 librtmp1 libssh2-1 publicsuffix
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  curl libcurl4 libnghttp2-14 libpsl5 librtmp1 libssh2-1 publicsuffix unzip
+0 upgraded, 8 newly installed, 0 to remove and 62 not upgraded.
+Need to get 1369 kB of archives.
+After this operation, 2932 kB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u3 [72.4 kB]
+Get:2 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+Get:3 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+Get:4 http://deb.debian.org/debian-security bookworm-security/main amd64 libssh2-1 amd64 1.10.0-3+deb12u1 [176 kB]
+Get:5 http://deb.debian.org/debian bookworm/main amd64 libcurl4 amd64 7.88.1-10+deb12u15 [392 kB]
+Get:6 http://deb.debian.org/debian bookworm/main amd64 curl amd64 7.88.1-10+deb12u15 [316 kB]
+Get:7 http://deb.debian.org/debian bookworm/main amd64 publicsuffix all 20230209.2326-1 [126 kB]
+Get:8 http://deb.debian.org/debian-security bookworm-security/main amd64 unzip amd64 6.0-28+deb12u1 [167 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 1369 kB in 0s (36.0 MB/s)
+Selecting previously unselected package libnghttp2-14:amd64.
+(Reading database ... 
+[1A(Reading database ... 5%
+[1A(Reading database ... 10%
+[1A(Reading database ... 15%
+[1A(Reading database ... 20%
+[1A(Reading database ... 25%
+[1A(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%
+[1A(Reading database ... 16439 files and directories currently installed.)
+Preparing to unpack .../0-libnghttp2-14_1.52.0-1+deb12u3_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../1-libpsl5_0.21.2-1_amd64.deb ...
+Unpacking libpsl5:amd64 (0.21.2-1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../2-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../3-libssh2-1_1.10.0-3+deb12u1_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../4-libcurl4_7.88.1-10+deb12u15_amd64.deb ...
+Unpacking libcurl4:amd64 (7.88.1-10+deb12u15) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../5-curl_7.88.1-10+deb12u15_amd64.deb ...
+Unpacking curl (7.88.1-10+deb12u15) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../6-publicsuffix_20230209.2326-1_all.deb ...
+Unpacking publicsuffix (20230209.2326-1) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../7-unzip_6.0-28+deb12u1_amd64.deb ...
+Unpacking unzip (6.0-28+deb12u1) ...
+Setting up libpsl5:amd64 (0.21.2-1) ...
+Setting up unzip (6.0-28+deb12u1) ...
+Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+Setting up libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+Setting up publicsuffix (20230209.2326-1) ...
+Setting up libcurl4:amd64 (7.88.1-10+deb12u15) ...
+Setting up curl (7.88.1-10+deb12u15) ...
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
+Saving image...
+Image saved, took 3.98s
+
+Built image im-YVcSaCUCGSsYFIw2mP8Yk2 in 7.82s
+
+
+Building image im-ByaOw76g0EKdOcaaG8PD2a
+
+=> Step 0: FROM base
+
+=> Step 1: COPY --from=ghcr.io/astral-sh/uv:latest /uv /.uv/uv
+Getting image source signatures
+Copying blob sha256:54723a59ba9fe2be41df3ad59d75d4738b62774f60a8e988163ed08002fa4215
+Copying blob sha256:c899545868f84f908ee09e6d932033fc14acdf3a2a8b2d6cdacf573c85450bba
+Copying config sha256:de5ce60260f893ece94ee7b7e9bdc7d0cd51b33e74aabef1358342e642ca71e7
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M3HV0JQKXYVMET3ZPF0C9XWB/registry-unpacktm2a4f
+
+=> Step 2: COPY /.pyproject.toml /.uv/pyproject.toml
+
+=> Step 3: COPY /.uv.lock /.uv/uv.lock
+
+=> Step 4: RUN /.uv/uv sync --project=/.uv --no-install-workspace --compile-bytecode --frozen
+Using CPython 3.12.10 interpreter at: /usr/local/bin/python3
+Creating virtual environment at: /.uv/.venv
+Downloading numpy (15.9MiB)
+Downloading pyarrow (47.8MiB)
+Downloading lightgbm (3.3MiB)
+Downloading scipy (33.7MiB)
+Downloading rapidfuzz (3.0MiB)
+Downloading polars-runtime-32 (47.6MiB)
+Downloading scikit-learn (8.7MiB)
+ Downloaded lightgbm
+ Downloaded rapidfuzz
+ Downloaded scikit-learn
+ Downloaded numpy
+ Downloaded scipy
+ Downloaded polars-runtime-32
+ Downloaded pyarrow
+Prepared 15 packages in 1.15s
+Installed 15 packages in 355ms
+Bytecode compiled 2874 files in 967ms
+ + cloudpickle==3.1.2
+ + joblib==1.6.0
+ + lightgbm==4.7.0
+ + narwhals==2.26.0
+ + numpy==2.5.3
+ + polars==1.44.2
+ + polars-runtime-32==1.44.2
+ + psutil==7.2.2
+ + pyarrow==25.0.1
+ + rapidfuzz==3.14.6
+ + scikit-learn==1.9.1
+ + scipy==1.18.1
+ + sparse-dot-topn==1.2.0
+ + threadpoolctl==3.7.0
+ + unidecode==1.4.0
+
+=> Step 5: ENV PATH=/.uv/.venv/bin:$PATH
+Saving image...
+Image saved, took 1.05s
+
+Built image im-ByaOw76g0EKdOcaaG8PD2a in 5.68s
+
+
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ sh -c mkdir -p data && curl -sSL https://cdn.unstop.com/files/6ab10eb3b23ba_student_resource.zip -o data/sr.zip && cd data && unzip -qo sr.zip -x '__MACOSX/*' && rm sr.zip
+$ /.uv/.venv/bin/python /root/src/normalize.py
+/root/src/normalize.py:205: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  gt.with_columns(pl.col("matched_entity_ids").fill_null("").str.split(",")).explode(
+/root/src/normalize.py:125: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  count = lambda c: d.select(t=pl.col(c)).explode("t").group_by("t").len(c)
+/root/src/normalize.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  n_t = d.select("uq").explode("uq").group_by("uq").len("n_t")
+/root/src/normalize.py:131: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  best = (d.select("uq", "us").explode("uq").explode("us").group_by("uq", "us").len("n")
+/root/src/normalize.py:145: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  t = (df.select("country", "src", t=pl.col(col).str.split(" ").list.unique()).explode("t")
+train {'name': 1469, 'addr': 4710} maps; {'India': {'name': 53, 'addr': 10}, 'US': {'name': 24, 'addr': 18}} filler tokens
+test {'name': 1469, 'addr': 4710} maps; {'India': {'name': 57, 'addr': 10}, 'US': {'name': 25, 'addr': 17}, 'France': {'name': 24, 'addr': 11}} filler tokens
+$ /.uv/.venv/bin/python /root/src/synth.py --remove
+synthetic rows removed; 12527040 records
+$ /.uv/.venv/bin/python /root/src/block.py train
+$ /.uv/.venv/bin/python /root/src/block.py test
+India: 883188 S1, 4133346 queries
+France: 259452 S1, 1434993 queries
+     250000/1434993  5.1s
+     500000/1434993  4.9s
+     750000/1434993  4.9s
+    1000000/1434993  4.8s
+    1250000/1434993  4.8s
+    1434993/1434993  3.5s
+     250000/4133346  11.7s
+     500000/4133346  11.1s
+     750000/4133346  10.4s
+  key + address passes: 4137350 pairs, 1772820 not found by TF-IDF
+India: 809986 S1, 4717565 queries
+    1000000/4133346  10.8s
+    1250000/4133346  11.0s
+    1500000/4133346  11.1s
+     250000/4717565  8.8s
+    1750000/4133346  11.3s
+     500000/4717565  9.1s
+    2000000/4133346  11.3s
+     750000/4717565  8.9s
+    2250000/4133346  10.1s
+    1000000/4717565  9.1s
+    2500000/4133346  10.3s
+    1250000/4717565  8.7s
+    2750000/4133346  10.1s
+    1500000/4717565  8.8s
+    3000000/4133346  10.0s
+    1750000/4717565  9.0s
+    2000000/4717565  8.9s
+    3250000/4133346  10.7s
+    2250000/4717565  8.9s
+    3500000/4133346  11.0s
+    2500000/4717565  8.8s
+    3750000/4133346  10.6s
+    2750000/4717565  8.4s
+    4000000/4133346  10.5s
+    3000000/4717565  8.5s
+    4133346/4133346  5.7s
+    3250000/4717565  8.7s
+    3500000/4717565  8.7s
+    3750000/4717565  8.7s
+    4000000/4717565  8.4s
+    4250000/4717565  8.7s
+    4500000/4717565  8.8s
+    4717565/4717565  7.6s
+  key + address passes: 9006760 pairs, 4008087 not found by TF-IDF
+US: 1323633 S1, 6186873 queries
+     250000/6186873  13.4s
+     500000/6186873  13.0s
+  key + address passes: 10714094 pairs, 5082424 not found by TF-IDF
+US: 663106 S1, 3817031 queries
+     750000/6186873  13.5s
+    1000000/6186873  13.2s
+     250000/3817031  6.7s
+     500000/3817031  6.7s
+    1250000/6186873  13.8s
+     750000/3817031  7.4s
+    1000000/3817031  7.0s
+    1500000/6186873  13.2s
+    1250000/3817031  6.9s
+    1500000/3817031  6.6s
+    1750000/6186873  12.8s
+    1750000/3817031  6.9s
+    2000000/3817031  6.8s
+    2000000/6186873  13.0s
+    2250000/3817031  7.1s
+    2500000/3817031  7.1s
+    2250000/6186873  12.5s
+    2750000/3817031  7.0s
+    3000000/3817031  7.0s
+    2500000/6186873  13.2s
+    3250000/3817031  7.1s
+    2750000/6186873  12.5s
+    3500000/3817031  7.0s
+    3750000/3817031  7.1s
+    3817031/3817031  1.8s
+    3000000/6186873  13.1s
+    3250000/6186873  13.2s
+    3500000/6186873  12.7s
+    3750000/6186873  13.4s
+    4000000/6186873  13.0s
+    4250000/6186873  13.2s
+    4500000/6186873  13.8s
+  key + address passes: 7626749 pairs, 2341135 not found by TF-IDF
+    4750000/6186873  12.9s
+    5000000/6186873  12.6s
+    5250000/6186873  12.9s
+    5500000/6186873  12.2s
+    5750000/6186873  11.9s
+    6000000/6186873  12.2s
+    6186873/6186873  9.0s
+  key + address passes: 13110028 pairs, 4369633 not found by TF-IDF
+$ /.uv/.venv/bin/python /root/src/block.py train --prune
+$ /.uv/.venv/bin/python /root/src/block.py test --prune
+ rmax   rel    cap  recall  cands/S1
+    3   0.7     30  0.9771     11.52
+    3   0.7     20  0.9762     10.84
+    3   0.8     30  0.9770     11.02
+    3   0.8     20  0.9763     10.43
+RMAX=10 REL=0.8 CAP=30: pairs=26498050  candidates per S1: avg 15.29, median 13.0, p99 34.0, max 572
+    3  0.85     30  0.9769     10.86
+    3  0.85     20  0.9762     10.31
+    3   0.9     30  0.9766     10.74
+    3   0.9     20  0.9760     10.20
+    5   0.7     30  0.9783     12.40
+    5   0.7     20  0.9770     11.47
+    5   0.8     30  0.9783     11.59
+    5   0.8     20  0.9773     10.85
+    5  0.85     30  0.9782     11.32
+    5  0.85     20  0.9772     10.64
+    5   0.9     30  0.9778     11.09
+    5   0.9     20  0.9769     10.46
+   10   0.7     30  0.9790     13.54
+   10   0.7     20  0.9771     12.23
+   10   0.8     30  0.9792     12.31
+   10   0.8     20  0.9777     11.34
+   10  0.85     30  0.9789     11.87
+   10  0.85     20  0.9776     11.01
+   10   0.9     30  0.9784     11.50
+   10   0.9     20  0.9772     10.72
+RMAX=10 REL=0.8 CAP=30: pairs=27162963  candidates per S1: avg 12.31, median 10.0, p99 32.0, max 694
+$ /.uv/.venv/bin/python /root/src/features.py train
+$ /.uv/.venv/bin/python /root/src/features.py test
+/root/src/features.py:89: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:89: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .filter(pl.col("mm").is_not_null()).explode("x").filter(pl.col("x").is_not_null()))
+/root/src/features.py:106: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:111: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:112: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+/root/src/features.py:106: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  xdec = (d.select(*key, "country", tok="xq").explode("tok").join(dec, on=["country", "tok"])
+/root/src/features.py:108: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  numd = (d.select(*key, n="nums_q", t="num1_s").explode("n")
+/root/src/features.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:133: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+/root/src/features.py:111: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  tok_df = d.select("s1", tok="full_q").explode("tok").group_by("s1", "tok").len("df")
+/root/src/features.py:112: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  uniq = (d.select(*key, tok="xq").explode("tok").join(tok_df, on=["s1", "tok"])
+[('France', 'holding', 0.9852793115317481), ('France', 'snc', 0.9850856939613906), ('France', 'participations', 0.9849125553796076), ('France', 'distribution', 0.9841845888723354), ('France', 'international', 0.9834702067575053), ('France', 'maisondesant', 0.9599377178329441), ('France', 'calais', 0.9221180634637375), ('France', 'bordeaux', 0.9187238042742749), ('France', 'ei', 0.8921727745203487), ('France', 'roubaix', 0.8910942389351436), ('France', 'sainte', 0.8874890673664996), ('France', 'nazaire', 0.8827512675956054), ('France', 'tourcoing', 0.8697637979748333), ('France', 'jean', 0.8657546759707748), ('France', 'deleves', 0.8655656072863821), ('India', 'of', 0.9494375533031123), ('India', 'trust', 0.9473321782128731), ('India', 'shre', 0.9444436355365591), ('India', 'mumbai', 0.944443338007222), ('India', 'bangalore', 0.9441299476971273), ('India', 'new', 0.9438737226809846), ('India', 'delhi', 0.9401118437778577), ('India', 'al', 0.9395865753041795), ('India', 'south', 0.9372570147869784), ('India', 'surya', 0.9353051176746816), ('India', 'sons', 0.9340011971062882), ('India', 'east', 0.9332769912020673), ('India', 'super', 0.9320298963432107), ('India', 'clinic', 0.9308552527372106), ('India', 'society', 0.9274289396267041), ('US', 'uptown', 0.9921437671348646), ('US', 'lakeside', 0.9914470306484555), ('US', 'northside', 0.9914303564366421), ('US', 'riverside', 0.9913963571101899), ('US', 'greater', 0.9907695478849154), ('US', 'holdings', 0.9907445945433413), ('US', 'downtown', 0.9906132362570942), ('US', 'west', 0.9904518889198397), ('US', 'westgate', 0.9903424203572901), ('US', 'south', 0.9902399393237613), ('US', 'central', 0.9901530612306376), ('US', 'group', 0.9901029261444013), ('US', 'midtown', 0.9899993004699167), ('US', 'valey', 0.9899393493268451), ('US', 'sumit', 0.9899055774018336)]
+  2000000/26498050
+/root/src/features.py:130: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  vocab = (s1.select("country", tok=pl.col("nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+  4000000/26498050
+/root/src/features.py:133: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  known = (q.select("q", "country", tok=pl.col("q_nm").str.split(" ")).explode("tok").filter(pl.col("tok") != "")
+  6000000/26498050
+[('India', 'of', 0.9351305992938761), ('India', 'trust', 0.9304458240829618), ('India', 'asociates', 0.9235272932324222), ('India', 'al', 0.9220444857110345), ('India', 'clinic', 0.9219603019769557), ('India', 'brothers', 0.9177004516080629), ('India', 'shre', 0.9172914546609453), ('India', 'delhi', 0.9138458127951844), ('India', 'bangalore', 0.9125958940483231), ('India', 'golden', 0.9084309618993263), ('India', 'star', 0.9082421133701943), ('India', 'new', 0.9080566303035061), ('India', 'mumbai', 0.9077096931031893), ('India', 'pvt', 0.9067350385186055), ('India', 'indian', 0.9064069556375982), ('US', 'lakeside', 0.9910079400236796), ('US', 'greater', 0.990270284682113), ('US', 'midtown', 0.9900549111496518), ('US', 'northside', 0.9899051053901049), ('US', 'southside', 0.9896227419901114), ('US', 'group', 0.9895726797403892), ('US', 'south', 0.9894560160225943), ('US', 'highland', 0.9893591823563432), ('US', 'holdings', 0.9893346767599072), ('US', 'harbor', 0.989110328739646), ('US', 'sumit', 0.9890510238806595), ('US', 'north', 0.9887296909246313), ('US', 'uptown', 0.9885908349350515), ('US', 'coastal', 0.9885871465290451), ('US', 'eastgate', 0.9885762553116724)]
+  2000000/27162963
+  8000000/26498050
+  4000000/27162963
+  10000000/26498050
+  6000000/27162963
+  12000000/26498050
+  8000000/27162963
+  14000000/26498050
+  10000000/27162963
+  16000000/26498050
+  12000000/27162963
+  18000000/26498050
+  14000000/27162963
+  20000000/26498050
+  16000000/27162963
+  22000000/26498050
+  24000000/26498050
+  18000000/27162963
+  26000000/26498050
+  20000000/27162963
+  26498050/26498050
+  22000000/27162963
+  24000000/27162963
+shape: (9, 81)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ nz_addr_d ┆ nz_addr_p ┆ nz_addr_n ┆ nz_addr_ │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ oor       ┆ mb        ┆ ull       ┆ zero     │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ ---       ┆ ---       ┆ ---       ┆ ---      │
+│           ┆           ┆           ┆           ┆   ┆ f64       ┆ f64       ┆ f64       ┆ f64      │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 26498050  ┆ 26498050  ┆ 2.649805e ┆ … ┆ 2.649805e ┆ 2.649805e ┆ 2.649805e ┆ 2.649805 │
+│           ┆           ┆           ┆ 7         ┆   ┆ 7         ┆ 7         ┆ 7         ┆ e7       │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 3.861419  ┆ … ┆ 0.068192  ┆ 0.005752  ┆ 0.021292  ┆ 0.050888 │
+│ std       ┆ null      ┆ null      ┆ 4.370076  ┆ … ┆ 0.252076  ┆ 0.075625  ┆ 0.144357  ┆ 0.219768 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 099       ┆ 556       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 2.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 75%       ┆ null      ┆ null      ┆ 9.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ max       ┆ S3-999999 ┆ S1-999998 ┆ 19.0      ┆ … ┆ 1.0       ┆ 1.0       ┆ 1.0       ┆ 1.0      │
+│           ┆ 995       ┆ 909       ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+  26000000/27162963
+  27162963/27162963
+shape: (9, 82)
+┌───────────┬───────────┬───────────┬───────────┬───┬───────────┬───────────┬───────────┬──────────┐
+│ statistic ┆ q         ┆ s1        ┆ rank      ┆ … ┆ nz_addr_p ┆ nz_addr_n ┆ nz_addr_z ┆ label    │
+│ ---       ┆ ---       ┆ ---       ┆ ---       ┆   ┆ mb        ┆ ull       ┆ ero       ┆ ---      │
+│ str       ┆ str       ┆ str       ┆ f64       ┆   ┆ ---       ┆ ---       ┆ ---       ┆ f64      │
+│           ┆           ┆           ┆           ┆   ┆ f64       ┆ f64       ┆ f64       ┆          │
+╞═══════════╪═══════════╪═══════════╪═══════════╪═══╪═══════════╪═══════════╪═══════════╪══════════╡
+│ count     ┆ 27162963  ┆ 27162963  ┆ 2.7162963 ┆ … ┆ 2.7162963 ┆ 2.7162963 ┆ 2.7162963 ┆ 2.716296 │
+│           ┆           ┆           ┆ e7        ┆   ┆ e7        ┆ e7        ┆ e7        ┆ 3e7      │
+│ null_coun ┆ 0         ┆ 0         ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ t         ┆           ┆           ┆           ┆   ┆           ┆           ┆           ┆          │
+│ mean      ┆ null      ┆ null      ┆ 3.948557  ┆ … ┆ 0.009597  ┆ 0.026162  ┆ 0.052514  ┆ 0.275344 │
+│ std       ┆ null      ┆ null      ┆ 4.416043  ┆ … ┆ 0.097494  ┆ 0.159616  ┆ 0.22306   ┆ 0.446688 │
+│ min       ┆ S2-100000 ┆ S1-100000 ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│           ┆ 037       ┆ 221       ┆           ┆   ┆           ┆           ┆           ┆          │
+│ 25%       ┆ null      ┆ null      ┆ 0.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 50%       ┆ null      ┆ null      ┆ 2.0       ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 0.0      │
+│ 75%       ┆ null      ┆ null      ┆ 10.0      ┆ … ┆ 0.0       ┆ 0.0       ┆ 0.0       ┆ 1.0      │
+│ max       ┆ S3-999999 ┆ S1-999999 ┆ 18.0      ┆ … ┆ 1.0       ┆ 1.0       ┆ 1.0       ┆ 1.0      │
+│           ┆ 88        ┆ 26        ┆           ┆   ┆           ┆           ┆           ┆          │
+└───────────┴───────────┴───────────┴───────────┴───┴───────────┴───────────┴───────────┴──────────┘
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/019_scratch-addr2
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0189921
+[200]   valid_0's binary_logloss: 0.0144822
+[300]   valid_0's binary_logloss: 0.0139693
+[400]   valid_0's binary_logloss: 0.0137949
+[500]   valid_0's binary_logloss: 0.0137174
+[600]   valid_0's binary_logloss: 0.0136977
+Early stopping, best iteration is:
+[605]   valid_0's binary_logloss: 0.0136933
+member {'seed': 2, 'num_leaves': 1023, 'min_data_in_leaf': 100}: best iter 605, 660s
+  t=0.10  F0.5=0.9768
+  t=0.15  F0.5=0.9785
+  t=0.20  F0.5=0.9797
+  t=0.25  F0.5=0.9807
+  t=0.30  F0.5=0.9816
+  t=0.35  F0.5=0.9823
+  t=0.40  F0.5=0.9829
+  t=0.45  F0.5=0.9833
+  t=0.50  F0.5=0.9837
+  t=0.55  F0.5=0.9840
+  t=0.60  F0.5=0.9843
+  t=0.65  F0.5=0.9844
+  t=0.70  F0.5=0.9845
+  t=0.75  F0.5=0.9844
+  t=0.80  F0.5=0.9842
+  t=0.85  F0.5=0.9838
+  t=0.90  F0.5=0.9829
+  t=0.95  F0.5=0.9805
+blocking recall=0.9790  oracle F0.5=0.9930  best t=0.70  F0.5=0.9845  expected-F rule F0.5=0.9843  -> threshold  | test-like dense F0.5=0.9769 @ t=0.7
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/019_scratch-addr2
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 17.223749      ┆ 3.232132    ┆ 6.258961  │
+│ India   ┆ 809986 ┆ 15.925996      ┆ 3.323735    ┆ 5.9964    │
+│ US      ┆ 663106 ┆ 13.767754      ┆ 3.345759    ┆ 5.85653   │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘

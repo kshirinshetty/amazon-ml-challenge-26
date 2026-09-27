@@ -1,0 +1,46 @@
+✓ Initialized. View run at 
+https://modal.com/apps/avocadotostada/main/ap-sESNVOztXgOohI69WNiLR9
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/021_leaves2047
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0182245
+[200]   valid_0's binary_logloss: 0.0142081
+[300]   valid_0's binary_logloss: 0.0138558
+[400]   valid_0's binary_logloss: 0.0138157
+Early stopping, best iteration is:
+[419]   valid_0's binary_logloss: 0.0138107
+member {'seed': 3, 'num_leaves': 2047, 'min_data_in_leaf': 100}: best iter 419, 763s
+  t=0.10  F0.5=0.9775
+  t=0.15  F0.5=0.9792
+  t=0.20  F0.5=0.9803
+  t=0.25  F0.5=0.9812
+  t=0.30  F0.5=0.9820
+  t=0.35  F0.5=0.9826
+  t=0.40  F0.5=0.9831
+  t=0.45  F0.5=0.9834
+  t=0.50  F0.5=0.9837
+  t=0.55  F0.5=0.9839
+  t=0.60  F0.5=0.9842
+  t=0.65  F0.5=0.9843
+  t=0.70  F0.5=0.9844
+  t=0.75  F0.5=0.9844
+  t=0.80  F0.5=0.9843
+  t=0.85  F0.5=0.9838
+  t=0.90  F0.5=0.9831
+  t=0.95  F0.5=0.9809
+blocking recall=0.9790  oracle F0.5=0.9930  best t=0.70  F0.5=0.9844  expected-F rule F0.5=0.9843  -> threshold  | test-like dense F0.5=0.9768 @ t=0.75
+$ /.uv/.venv/bin/python /root/src/match.py predict runs/021_leaves2047
+shape: (3, 5)
+┌─────────┬────────┬────────────────┬─────────────┬───────────┐
+│ country ┆ n_s1   ┆ avg_candidates ┆ avg_matches ┆ pct_empty │
+│ ---     ┆ ---    ┆ ---            ┆ ---         ┆ ---       │
+│ str     ┆ u32    ┆ f64            ┆ f64         ┆ f64       │
+╞═════════╪════════╪════════════════╪═════════════╪═══════════╡
+│ France  ┆ 259452 ┆ 17.223749      ┆ 3.218484    ┆ 6.288254  │
+│ India   ┆ 809986 ┆ 15.925996      ┆ 3.314941    ┆ 6.036154  │
+│ US      ┆ 663106 ┆ 13.767754      ┆ 3.338347    ┆ 5.880206  │
+└─────────┴────────┴────────────────┴─────────────┴───────────┘

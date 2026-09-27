@@ -31,7 +31,13 @@ python src/features.py train        # pair features + labels -> work/train_feats
 python src/features.py test         # -> work/test_feats.parquet
 python src/match.py fit final       # LightGBM + threshold tuning -> final/model_0.txt, final/metrics.json
 python src/match.py predict final   # -> final/output/matching_results.tsv, final/output/candidate_pairs.tsv
+# second stage: cross-encoder on the uncertain pairs (needs a GPU; we ran ce_gpu.py on Modal, one H100, ~5 min)
+CE_BASE=final python src/ce_prep.py # LightGBM probabilities + hard pairs with raw text -> work/ce_{train,val,test}.parquet
+modal run src/ce_gpu.py             # fine-tune multilingual-e5-small, score -> work/ce_pred_{val,test}.parquet
+CE_RUN=final python src/ce_blend.py # blend weight + threshold on dense validation -> final/output/*.tsv
 ```
+`ce_gpu.py` reads/writes `/vol/work` (the Modal volume); to run it on a local GPU, call `run.local()` with the
+paths changed to `work/`. The pretrained model is downloaded from Hugging Face (MIT license).
 
 `final/metrics.json` holds the validation F0.5 (20% of training S1 entities held out), blocking
 recall, the F0.5-vs-threshold curve, feature importances and per-country test statistics;

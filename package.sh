@@ -9,6 +9,7 @@ cp "$RUN/$OUT/matching_results.tsv" "$RUN/$OUT/candidate_pairs.tsv" "$PKG/output
 cp -r "$RUN/src" "$CODE/src"
 cp docs/package_README.md "$CODE/README.md"
 uv export --frozen --no-hashes --no-emit-project -q > "$CODE/requirements.txt"
+[ -f "$RUN/requirements-extra.txt" ] && cat "$RUN/requirements-extra.txt" >> "$CODE/requirements.txt"  # cross-encoder (GPU) deps
 cp docs/methodology.md "$PKG/Documentation_template.md"
 python3 docs/student_resource/validate_submission.py --matching "$PKG/output/matching_results.tsv" \
     --candidate "$PKG/output/candidate_pairs.tsv" --test-dir data/student_resource/dataset/test

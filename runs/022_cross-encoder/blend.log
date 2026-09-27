@@ -1,0 +1,19 @@
+✓ Initialized. View run at 
+https://modal.com/apps/avocadotostada/main/ap-ytKPqqmgrHWub8NMdncFni
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/tools/ce_blend.py
+w=0.0: dense 0.9769 @ 0.7  normal 0.9845
+w=0.2: dense 0.9791 @ 0.8  normal 0.9857
+w=0.35: dense 0.9804 @ 0.65  normal 0.9867
+w=0.5: dense 0.9806 @ 0.6  normal 0.9870
+w=0.65: dense 0.9803 @ 0.65  normal 0.9867
+w=0.8: dense 0.9790 @ 0.65  normal 0.9858
+best w=0.5: {'dense': 0.9806399275574806, 't': 0.6, 'normal': 0.9869622704681424, 't_normal': 0.6}
+test matches 5768907 (3.33 per S1)
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/avocadotostada/main/ap-ytKPqqmgrHWub8NMdncFni

@@ -38,6 +38,7 @@ KEY_TOP = 2  # per record and key: the S1s closest on the *other* field
 # look-alike S1 names ("Ram Private Limited Center" at its S1's exact address) are otherwise never retrieved:
 # local sample recall after prune India 0.952 -> 0.970, US 0.983 -> 0.986, +1.1 candidates per S1.
 ADDR_BIT = 32
+ADDR_K, ADDR_REL = 2, 0.9  # up to 2 address matches, the second only within 90% of the best (India sample +0.1 pt)
 NUM1 = pl.col("ad").str.extract(r"\b(\d+)\b")
 KEYS = {  # bit -> (key expression, field used to rank S1s sharing the key); tools/pass_coverage*.py
     1: (pl.col("nm").str.split(" ").list.sort().list.join(" "), "ad"),  # name words, any order
@@ -63,14 +64,15 @@ def key(df):
 
 
 def addr_pairs(q, va, Sa, s1_ids):
-    """(q, s1, via_key=ADDR_BIT): each record's single closest S1 by address TF-IDF (empty addresses find none)."""
+    """(q, s1, via_key=ADDR_BIT): each record's closest S1s by address TF-IDF (empty addresses find none)."""
     Sa_T, out = Sa.T.tocsr(), []
     for lo in range(0, len(q), CHUNK):
         c = q[lo:lo + CHUNK]
-        C = sp_matmul_topn(va.transform(c["ad"].to_list()), Sa_T, top_n=1, n_threads=THREADS)
+        C = sp_matmul_topn(va.transform(c["ad"].to_list()), Sa_T, top_n=ADDR_K, n_threads=THREADS)
         rows = np.repeat(np.arange(len(c)), np.diff(C.indptr))
-        out.append(pl.DataFrame({"q": c["entity_id"].to_numpy()[rows], "s1": s1_ids[C.indices]}))
-    return pl.concat(out).with_columns(via_key=pl.lit(ADDR_BIT, pl.Int8))
+        out.append(pl.DataFrame({"q": c["entity_id"].to_numpy()[rows], "s1": s1_ids[C.indices], "a": C.data}))
+    return (pl.concat(out).filter(pl.col("a") >= ADDR_REL * pl.col("a").max().over("q"))
+            .select("q", "s1", via_key=pl.lit(ADDR_BIT, pl.Int8)))
 
 
 def cosines(new, s1, q, vn, va, Sn, Sa):
