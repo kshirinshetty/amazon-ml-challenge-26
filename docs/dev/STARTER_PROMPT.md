@@ -7,7 +7,7 @@ Paste this to the coding agent:
 We're competing in the Amazon ML Challenge 2026 (business entity resolution, team **wsg**). The repo is
 `/home/sidd/Desktop/amazon-ml` (GitHub `kshirinshetty/amazon-ml-challenge-26`, branch `main`).
 
-**Read these first, in order:** `docs/HANDOFF.md` (everything: setup, pipeline, every experiment, lessons, ideas),
+**Read these first, in order:** `docs/dev/HANDOFF.md` (everything: setup, pipeline, every experiment, lessons, ideas),
 the root `README.md` (runs table), `runs/014_relative-tiebreak/README.md` (current best), and
 `docs/problem_statement.md`.
 

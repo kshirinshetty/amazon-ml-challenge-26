@@ -1,7 +1,7 @@
 # ML Challenge 2026: Business Entity Resolution Solution Template
 
 **Team Name:** wsg  
-**Team Members:** Siddartha Aralakuppe Yogesha, Kshirin Shetty  
+**Team Members:** Siddartha A Yogesha, Kshirin Shetty  
 **Submission Date:** 2026-09-27
 
 ---
@@ -18,7 +18,8 @@ expose exactly that, and they are computed **without labels**, which makes them 
 fine-tuned multilingual **cross-encoder** (`intfloat/multilingual-e5-base`, MIT, 278M parameters) that reads the
 raw name and address of both records, reaches validation F0.5 = **0.987** (**0.981** on a validation set at the
 test's decoy density, which tracks the leaderboard) with **97.9% blocking recall** at 15.3 candidates per Source 1
-entity (test).
+entity (test). The final package scored **≈ 0.985**; the best public-leaderboard upload was **0.981**; final
+standing **#1066**.
 
 ---
 
@@ -136,9 +137,10 @@ of training S1s at test decoy density.
 
 ## 5. Results & Error Analysis
 
-- **F_0.5 Score (macro):** **0.984** on held-out training S1s; **0.976** at test decoy density (the
-  leaderboard proxy: it predicted 0.961, 0.967 and 0.969 for the runs submitted after it was introduced,
-  which scored 0.961, 0.967 and 0.970). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → 0.970 → **0.974**.
+- **F_0.5 Score (macro):** **0.987** on held-out training S1s; **0.981** at test decoy density (the
+  leaderboard proxy: it predicted 0.961, 0.967, 0.969, 0.976 and 0.981 for runs that scored 0.961, 0.967,
+  0.970, 0.974 and 0.981). Public leaderboard history: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → 0.970 → 0.974 →
+  **0.981**; final package (run 023) **≈ 0.985**, final standing **#1066**.
 - **Where the remaining loss is** (test-density validation, fixing one error type perfectly):
   never-retrieved true pairs +2.1 pts (before the key passes), retrieved-but-rejected true pairs +0.9
   (mostly records with no address), false merges +0.6 (almost all decoys).
@@ -190,7 +192,7 @@ MIT-licensed and trained from scratch on the provided data.
 | 018 | + formatting-noise features of the raw record text | 0.978 | 14.5 | 0.984 (0.977) | 0.974 |
 | 020 | + second address match per record, LightGBM lr 0.03 | 0.979 | 15.3 | 0.984 (0.977) | — |
 | 022 | + cross-encoder (multilingual-e5-small) blended on hard pairs | 0.979 | 15.3 | 0.987 (0.9806) | **0.981** |
-| **023** | cross-encoder multilingual-e5-base | **0.979** | 15.3 | **0.987 (0.9809)** | _pending_ |
+| **023** | cross-encoder multilingual-e5-base — **final package** | **0.979** | 15.3 | **0.987 (0.9809)** | **≈ 0.985 (final)** |
 
 Tried and rejected: France self-training on confident test pairs (no change), stage-2 stacking on
 out-of-fold probabilities (+0.4 on validation, −0.1 on the leaderboard), stricter thresholds (0.959/0.956),

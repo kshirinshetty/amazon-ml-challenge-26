@@ -1,16 +1,20 @@
-"""Cross-encoder step 3 (CPU, on Modal: --script tools/ce_blend.py): blend p = (1-w)*p_lgb + w*p_ce on the hard pairs,
-pick w and the threshold on dense validation (same sim_dense as match.py), write the submission for the best w.
-Reads work/lgb_{train,test}_probs.parquet and work/ce_pred_{val,test}.parquet; writes runs/$CE_RUN/."""
+"""Cross-encoder step 3 (CPU): blend p = (1-w)*p_lgb + w*p_ce on the hard pairs, pick w and the threshold on dense
+validation (same sim_dense as match.py), write the submission for the best w to RUN_DIR/output/.
+
+  python tools/ce_blend.py RUN_DIR                                  # locally (>= 64 GB RAM)
+  modal run modal_app.py --script "tools/ce_blend.py RUN_DIR"       # on Modal
+
+Reads work/lgb_{train,test}_probs.parquet (ce_prep.py) and work/ce_pred_{val,test}.parquet (ce_gpu.py)."""
 import json
 import os
 import sys
 
 import polars as pl
 
-sys.path.insert(0, "/root/src")
+sys.path[:0] = ["/root/src", "src"]  # Modal container / repo root
 from match import assign, sim_dense, write  # noqa: E402
 
-RUN = os.environ.get("CE_RUN", "runs/024_ce-wide")
+RUN = sys.argv[1]
 
 
 def blend(probs, ce, w):

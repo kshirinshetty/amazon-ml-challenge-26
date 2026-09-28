@@ -1,0 +1,42 @@
+✓ Initialized. View run at 
+https://modal.com/apps/avocadotostada/main/ap-xGA2iBks9BE1yB8Ut96A9G
+✓ Created objects.
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/modal_app.py
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/src
+├── 🔨 Created mount /home/sidd/Desktop/amazon-ml/tools
+└── 🔨 Created function step.
+$ /.uv/.venv/bin/python /root/src/match.py fit runs/020_lr003
+Training until validation scores don't improve for 60 rounds
+[100]   valid_0's binary_logloss: 0.0370414
+[200]   valid_0's binary_logloss: 0.0167837
+[300]   valid_0's binary_logloss: 0.0147184
+[400]   valid_0's binary_logloss: 0.0141088
+[500]   valid_0's binary_logloss: 0.0138802
+[600]   valid_0's binary_logloss: 0.013786
+[700]   valid_0's binary_logloss: 0.0137163
+[800]   valid_0's binary_logloss: 0.0136621
+[900]   valid_0's binary_logloss: 0.0136388
+[1000]  valid_0's binary_logloss: 0.0136174
+[1100]  valid_0's binary_logloss: 0.0136063
+Early stopping, best iteration is:
+[1125]  valid_0's binary_logloss: 0.0135996
+member {'seed': 2, 'num_leaves': 1023, 'min_data_in_leaf': 100, 'learning_rate': 0.03}: best iter 1125, 799s
+  t=0.10  F0.5=0.9775
+  t=0.15  F0.5=0.9791
+  t=0.20  F0.5=0.9803
+  t=0.25  F0.5=0.9813
+  t=0.30  F0.5=0.9820
+  t=0.35  F0.5=0.9827
+  t=0.40  F0.5=0.9832
+  t=0.45  F0.5=0.9835
+  t=0.50  F0.5=0.9838
+  t=0.55  F0.5=0.9841
+  t=0.60  F0.5=0.9843
+  t=0.65  F0.5=0.9845
+  t=0.70  F0.5=0.9846
+  t=0.75  F0.5=0.9845
+  t=0.80  F0.5=0.9843
+  t=0.85  F0.5=0.9839
+  t=0.90  F0.5=0.9831
+  t=0.95  F0.5=0.9807
+blocking recall=0.9790  oracle F0.5=0.9930  best t=0.70  F0.5=0.9846  expected-F rule F0.5=0.9843  -> threshold  | test-like dense F0.5=0.9770 @ t=0.75

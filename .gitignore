@@ -9,3 +9,6 @@ submission/
 .agents/
 runs/probes/*/
 runs/*/.exit
+
+# over GitHub's 100 MB file limit (run 020 was not submitted; metrics and README are tracked)
+runs/020_lr003/model_0.txt

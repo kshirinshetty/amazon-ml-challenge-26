@@ -1,31 +1,32 @@
-"""Cross-encoder step 1 (CPU, on Modal: --script tools/ce_prep.py): LightGBM probabilities for every train/test
-candidate pair from runs/$CE_BASE's model, then the *hard* pairs a text model could flip, with raw texts.
+"""Cross-encoder step 1 (CPU): LightGBM probabilities for every train/test candidate pair from RUN_DIR's model,
+then the *hard* pairs a text model could flip, with their raw texts.
 
-Hard record: its best p is in [0.02, 0.995] or its second-best p > 0.02 (a tie). Its candidates with p >= 0.005
+  python tools/ce_prep.py RUN_DIR                                   # locally (>= 64 GB RAM)
+  modal run modal_app.py --script "tools/ce_prep.py RUN_DIR"        # on Modal
+
+Hard record: its best p is in [LO, HI] or its second-best p > P2 (a tie). Its candidates with p >= PMIN
 (top 5 by p) go to the cross-encoder. Validation = every hard pair of records with a fold-0 candidate (the fold
 match.py validates on); training = hard pairs of all other records.
 Writes work/lgb_{train,test}_probs.parquet and work/ce_{train,val,test}.parquet."""
 import json
-import os
 import sys
 
 import lightgbm as lgb
 import numpy as np
 import polars as pl
 
-sys.path.insert(0, "/root/src")
+sys.path[:0] = ["/root/src", "src"]  # Modal container / repo root
 from match import FOLD, VALID_FOLD  # noqa: E402
 
-BASE = os.environ.get("CE_BASE", "runs/019_scratch-addr2")
+BASE = sys.argv[1]  # run whose LightGBM model scores the pairs, e.g. runs/019_scratch-addr2
 MAX_TRAIN = 3_000_000
-LO, HI, P2, PMIN = 0.002, 0.9995, 0.005, 0.002  # 022: 0.02, 0.995, 0.02, 0.005 (4% of pairs; blend dense 0.9806)
+# ~4% of candidate pairs (runs 022/023). The wider band of run 024 (0.002, 0.9995, 0.005, 0.002) was not finished.
+LO, HI, P2, PMIN = 0.02, 0.995, 0.02, 0.005
 m = json.load(open(f"{BASE}/metrics.json"))
 model = lgb.Booster(model_file=f"{BASE}/{m.get('models', ['model.txt'])[0]}")
 
 
 def probs(split):
-    if os.path.exists(f"work/lgb_{split}_probs.parquet"):  # same base model: reuse
-        return pl.read_parquet(f"work/lgb_{split}_probs.parquet")
     f = pl.read_parquet(f"work/{split}_feats.parquet")
     p = np.concatenate([model.predict(f[lo:lo + 4_000_000].select(m["feats"]).to_numpy())
                         for lo in range(0, len(f), 4_000_000)])

@@ -5,7 +5,7 @@ Each run gets runs/<name>/ (code snapshot, model, metrics, errors, submission fi
   modal run modal_app.py --run $R 2>&1 | tee runs/$R/modal.log                 # full pipeline
   modal run modal_app.py --run $R --start fit 2>&1 | tee runs/$R/modal.log     # reuse cached blocking + features
   modal run modal_app.py --run $R --start fit --pseudo                         # + self-training on France
-  modal run modal_app.py --script tools/decoys.py                             # ad-hoc analysis script
+  modal run modal_app.py --script "tools/ce_prep.py runs/NNN"                # any script (+ args) on full data
 Stages: download -> normalize -> synth -> block -> addr -> prune -> features -> noise -> fit -> predict -> stack (--start/--stop).
 """
 import os
@@ -37,8 +37,8 @@ def step(args: list[str]):
 @app.local_entrypoint()
 def main(run: str = "", start: str = "download", stop: str = "predict", script: str = "", pseudo: bool = False,
          unseen_t: float = -1.0, no_synth: bool = False, reuse: str = "", refit: str = ""):
-    if script:  # analysis on the full data without touching the laptop's RAM: --script tools/x.py
-        return step.remote([script])
+    if script:  # a script on the full data without touching the laptop's RAM: --script "tools/x.py ARGS"
+        return step.remote(script.split())
     run_dir = f"runs/{run}"
     shutil.copytree("src", f"{run_dir}/src", dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__"))
     for stage in STAGES[STAGES.index(start):STAGES.index(stop) + 1]:

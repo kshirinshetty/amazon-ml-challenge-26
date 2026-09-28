@@ -1,4 +1,4 @@
-"""Cross-encoder step 2 (GPU): fine-tune intfloat/multilingual-e5-small (MIT, 118M params) as a pair classifier on
+"""Cross-encoder step 2 (GPU): fine-tune intfloat/multilingual-e5-base (MIT, 278M params) as a pair classifier on
 work/ce_train.parquet ("name | address" of the S2/S3 record vs the S1), then score work/ce_{val,test}.parquet
 -> work/ce_pred_{val,test}.parquet (q, s1, p_ce).
 
@@ -11,11 +11,11 @@ app = modal.App("amazon-ml-ce")
 vol = modal.Volume.from_name("amazon-ml")
 image = modal.Image.debian_slim(python_version="3.12").pip_install(
     "torch==2.4.1", "transformers==4.44.2", "polars==1.9.0", "pyarrow", "numpy<2", "sentencepiece")
-MODEL, MAXLEN = "intfloat/multilingual-e5-small", 128  # 023: e5-base
+MODEL, MAXLEN = "intfloat/multilingual-e5-base", 128  # run 023 (final); e5-small + bs 512, lr 8e-5 = run 022
 
 
 @app.function(image=image, gpu="H100", volumes={"/vol": vol}, timeout=3600, cpu=8, memory=65536)
-def run(dry: bool = False, max_train: int = 1_500_000, bs: int = 512, lr: float = 8e-5):
+def run(dry: bool = False, max_train: int = 1_500_000, bs: int = 256, lr: float = 4e-5):
     import time
 
     import numpy as np
@@ -38,15 +38,19 @@ def run(dry: bool = False, max_train: int = 1_500_000, bs: int = 512, lr: float 
             yield idx, {k: v.cuda(non_blocking=True) for k, v in b.items()}
 
     @torch.no_grad()
-    def score(df, size=2048):
+    def score(df, size=2048, chunk=500_000):
+        """Chunked: tokenizing ~3M pairs in one call crashed the container (run 024)."""
         model.eval()
-        ids = enc(df)
-        order = np.argsort([len(x) for x in ids])  # length-sorted: little padding
-        out = np.zeros(len(ids), dtype=np.float32)
-        for idx, b in batches(ids, order, size):
-            with torch.autocast("cuda", dtype=torch.bfloat16):
-                out[idx] = torch.sigmoid(model(**b).logits.float().squeeze(-1)).cpu().numpy()
-        return out
+        out = []
+        for lo in range(0, len(df), chunk):
+            ids = enc(df[lo:lo + chunk])
+            order = np.argsort([len(x) for x in ids])  # length-sorted: little padding
+            p = np.zeros(len(ids), dtype=np.float32)
+            for idx, b in batches(ids, order, size):
+                with torch.autocast("cuda", dtype=torch.bfloat16):
+                    p[idx] = torch.sigmoid(model(**b).logits.float().squeeze(-1)).cpu().numpy()
+            out.append(p)
+        return np.concatenate(out)
 
     fake = pl.DataFrame({"q": ["a", "b"] * 2048, "s1": ["x", "y"] * 2048, "p": [0.9, 0.1] * 2048, "label": [1, 0] * 2048,
                          "text_a": ["Ram Traders | 12 MG Road, Pune", "Holdings Holdings | 82 Walnut Ave"] * 2048,

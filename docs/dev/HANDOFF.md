@@ -1,5 +1,9 @@
 # HANDOFF — Amazon ML Challenge 2026 (team wsg)
 
+> **Working notes (historical).** Written mid-competition on 2026-09-27 ~17:00 IST, when the best leaderboard score
+> was 0.970. Final results, the complete method and the reproduction guide are in the [README](../../README.md) and
+> [REPRODUCING.md](../REPRODUCING.md).
+
 Everything a new session needs to continue: goal, setup, pipeline, every experiment and its lesson, where the
 remaining points are, and what to try next. Written 2026-09-27 ~17:00 IST at the end of a long session.
 
@@ -8,7 +12,7 @@ remaining points are, and what to try next. Written 2026-09-27 ~17:00 IST at the
 ## 0. TL;DR
 
 - **Task:** entity resolution — for each Source 1 (S1) business find all matching Source 2/3 (S2/S3) records.
-  Metric: macro F0.5 per S1 (precision-heavy, singletons count). Full statement: [`docs/problem_statement.md`](problem_statement.md).
+  Metric: macro F0.5 per S1 (precision-heavy, singletons count). Full statement: [`docs/problem_statement.md`](../problem_statement.md).
 - **Best public leaderboard: 0.970 (run 014).** #1 on the board: **0.9908**. History: 0.933 → 0.945 → 0.957 → 0.961 → 0.967 → 0.970.
 - **Final package is built:** `submission/wsg_submission.zip` (170 MB, from run 014, validator PASS). Rebuild any time with
   `./package.sh runs/<run> wsg`.
